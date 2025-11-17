@@ -3,7 +3,7 @@
 import MainNavbar from "@/components/MainNavbar";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Instagram, Twitter, Youtube, Mail, X, ExternalLink, Download, Loader2, Facebook, Linkedin } from "lucide-react";
+import { ArrowUpRight, Instagram, Twitter, Youtube, Mail, X, ExternalLink, Download, Loader2, Facebook, Linkedin, Quote, Plus, Minus, HelpCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function HomePage() {
@@ -58,6 +58,7 @@ export default function HomePage() {
 
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   // Animate skills bars when they enter viewport
   useEffect(() => {
@@ -284,6 +285,33 @@ export default function HomePage() {
       title: "Website Maintenance & Support",
       description: "Ongoing website updates, bug fixes, security patches, and technical support.",
       gradient: "from-slate-600 to-gray-600"
+    }
+  ];
+
+  const faqs = [
+    {
+      q: "What services do you offer?",
+      a: "Blending creativity and functionality, I design user‑focused digital products and responsive websites that not only look stunning but also deliver."
+    },
+    {
+      q: "How fast will I receive my work?",
+      a: "Small sites typically ship within 1–2 weeks. Larger projects range from 3–6 weeks depending on scope and complexity."
+    },
+    {
+      q: "What's your refund policy?",
+      a: "If the delivered work does not match the agreed scope, I offer revisions. Refunds are handled case‑by‑case based on milestones."
+    },
+    {
+      q: "What if I have a single project?",
+      a: "Single, one‑off projects are welcome. I can scope, design, and ship an MVP or a complete site." 
+    },
+    {
+      q: "Do you offer ongoing support?",
+      a: "Yes. I provide maintenance plans covering updates, performance tuning, and security patching."
+    },
+    {
+      q: "Are there any hidden costs?",
+      a: "No. All costs are outlined upfront, including optional hosting, domain, and add‑ons."
     }
   ];
 
@@ -741,8 +769,6 @@ export default function HomePage() {
 
     
 
-
-
       {/* About Me Section */}
       <section id="about" className="relative pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden">
         {/* Custom CSS for scroll animations */}
@@ -1185,7 +1211,7 @@ export default function HomePage() {
           {/* Services Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             {/* UI/UX Design */}
-            <div className="scroll-animate stagger-1 group relative bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all hover:border-amber-500/50 overflow-hidden">
+            <div className="scroll-animate stagger-1 group relative rounded-2xl p-6 transition-all overflow-hidden">
               {/* Hover gradient overlay */}
               <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
               <div className="relative z-10">
@@ -1202,7 +1228,7 @@ export default function HomePage() {
             </div>
 
             {/* Web Development */}
-            <div className="scroll-animate stagger-2 group relative bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all hover:border-amber-500/50 overflow-hidden">
+            <div className="scroll-animate stagger-2 group relative rounded-2xl p-6 transition-all overflow-hidden">
               {/* Hover gradient overlay */}
               <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
               <div className="relative z-10">
@@ -1217,7 +1243,7 @@ export default function HomePage() {
             </div>
 
             {/* Branding with image */}
-            <div className="scroll-animate stagger-3 group relative bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all hover:border-amber-500/50 overflow-hidden">
+            <div className="scroll-animate stagger-3 group relative rounded-2xl p-6 transition-all overflow-hidden">
               {/* Hover gradient overlay */}
               <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
               <div className="relative z-10">
@@ -1240,7 +1266,7 @@ export default function HomePage() {
             </div>
 
             {/* Animation Design */}
-            <div className="scroll-animate stagger-4 group relative bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all hover:border-amber-500/50 overflow-hidden">
+            <div className="scroll-animate stagger-4 group relative rounded-2xl p-6 transition-all overflow-hidden">
               {/* Hover gradient overlay */}
               <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
               <div className="relative z-10">
@@ -1255,7 +1281,7 @@ export default function HomePage() {
             </div>
 
             {/* Product Design */}
-            <div className="scroll-animate stagger-5 group relative bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all hover:border-amber-500/50 overflow-hidden">
+            <div className="scroll-animate stagger-5 group relative rounded-2xl p-6 transition-all overflow-hidden">
               {/* Hover gradient overlay */}
               <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
               <div className="relative z-10">
@@ -1272,20 +1298,240 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section id="featured-work" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+            <div>
+              <div className="text-amber-400 text-sm font-medium flex items-center gap-2">
+                <span className="text-lg">✦</span>
+                <span>Featured Work</span>
+              </div>
+              <div className="mt-4">
+                <Link href="/#projects" className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-black font-semibold hover:bg-amber-400 transition-colors">
+                  Explore all Projects
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+            <div className="lg:col-span-2">
+              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>Showcasing My Work</h2>
+              <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Discover a showcase of digital creativity — modern UI/UX and web projects crafted to inspire your next big idea.</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div onClick={() => setSelectedProject(0)} className="group rounded-lg overflow-hidden">
+              <div className="relative aspect-[5/4]">
+                <Image src="/projects/vital.png" alt="Website Redesign" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button onClick={() => setSelectedProject(0)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
+                    View Project
+                    <ArrowUpRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+              <div className="px-1 mt-2">
+                <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors">Website Redesign</h3>
+                <p className="text-xs md:text-sm text-gray-400 mt-1">Revamping layouts into modern, responsive websites that improve usability and engagement.</p>
+              </div>
+            </div>
+            <div onClick={() => setSelectedProject(1)} className="group rounded-lg overflow-hidden">
+              <div className="relative aspect-[5/4]">
+                <Image src="/projects/culture.png" alt="Branding Identity Design" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button onClick={() => setSelectedProject(1)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
+                    View Project
+                    <ArrowUpRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+              <div className="px-1 mt-2">
+                <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors">Branding Identity Design</h3>
+                <p className="text-xs md:text-sm text-gray-400 mt-1">Crafting unique brand identities that reflect values, connect with audiences, and stand out.</p>
+              </div>
+            </div>
+            <div className="group rounded-lg overflow-hidden">
+              <div className="relative aspect-[5/4]">
+                <Image src="/vsstudio.png" alt="Creative Hub Website" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button onClick={() => setSelectedProject(1)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
+                    View Project
+                    <ArrowUpRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+              <div className="px-1 mt-2">
+                <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors">Creative Hub Website</h3>
+                <p className="text-xs md:text-sm text-gray-400 mt-1">Designing an engaging platform that brings ideas, content, and communities together.</p>
+              </div>
+            </div>
+            <div className="group rounded-lg overflow-hidden">
+              <div className="relative aspect-[5/4]">
+                <Image src="/projects/jome.png" alt="Mobile App MVP Designs" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button onClick={() => setSelectedProject(2)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
+                    View Project
+                    <ArrowUpRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+              <div className="px-1 mt-2">
+                <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors">Mobile App MVP Designs</h3>
+                <p className="text-xs md:text-sm text-gray-400 mt-1">Building clean, user-friendly MVPs that validate ideas quickly and deliver impact.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="testimonials" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
+        <div className="relative container mx-auto max-w-6xl">
+          <div className="text-center mb-8 sm:mb-12 scroll-animate stagger-1">
+            <div className="inline-flex -space-x-3">
+              <Image src="/amadeo.png" alt="Client" width={40} height={40} className="rounded-full ring-2 ring-primary" />
+              <Image src="/vsstudio.png" alt="Client" width={40} height={40} className="rounded-full ring-2 ring-primary" />
+              <Image src="/vs.png" alt="Client" width={40} height={40} className="rounded-full ring-2 ring-primary" />
+            </div>
+            <p className="mt-4 text-sm sm:text-base text-white/70">Trusted <span className="text-primary font-semibold">18,000+</span> Satisfied Clients</p>
+          </div>
+          <div className="relative mx-auto max-w-[680px] sm:max-w-[760px]">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-0">
+              <span className="block scroll-animate-scale stagger-2 text-transparent text-[5rem] sm:text-[7.5rem] lg:text-[10rem] font-bold tracking-[0.12em] uppercase leading-none select-none whitespace-nowrap mix-blend-soft-light" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.14)' }}>
+                Testimonials
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative z-10 justify-items-center">
+              <div className="scroll-animate-right stagger-3 rounded-xl bg-black border border-white/10 p-4 sm:p-5 w-full max-w-[300px] sm:max-w-[340px]">
+                <p className="text-xs sm:text-sm italic text-primary">“David captured our vision and turned it into a polished website.”</p>
+                <p className="mt-2 text-[11px] sm:text-xs text-white/70">From start to finish, the process was smooth. He brought our ideas to life and added so much value.</p>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <Image src="/amadeo.png" alt="James Mitchell" width={32} height={32} className="rounded-full" />
+                    <div>
+                      <p className="text-xs sm:text-sm text-white font-medium">James Mitchell</p>
+                      <p className="text-[11px] sm:text-xs text-white/60">CEO, Crattora Studio</p>
+                    </div>
+                  </div>
+                  <Quote className="w-5 h-5 text-white/40" />
+                </div>
+              </div>
+              <div className="scroll-animate-left stagger-4 rounded-xl bg-black border border-white/10 p-4 sm:p-5 w-full max-w-[300px] sm:max-w-[340px]">
+                <p className="text-xs sm:text-sm italic text-primary">“The design exceeded our expectations. Clean, modern, and user‑friendly.”</p>
+                <p className="mt-2 text-[11px] sm:text-xs text-white/70">Working with them was seamless. He truly understood our vision and transformed it into a design that works beautifully.</p>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <Image src="/vsstudio.png" alt="Daniel Kim" width={32} height={32} className="rounded-full" />
+                    <div>
+                      <p className="text-xs sm:text-sm text-white font-medium">Daniel Kim</p>
+                      <p className="text-[11px] sm:text-xs text-white/60">CEO, Wegems Agency</p>
+                    </div>
+                  </div>
+                  <Quote className="w-5 h-5 text-white/40" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="faqs" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+               <div className="scroll-animate-left stagger-1 text-amber-400 text-sm font-medium flex items-center gap-2">
+                <span className="text-lg">✦</span>
+                <span>Support</span>
+              </div>
+              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>FAQS</h2>
+              <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Not sure yet? Have some questions? We listed the ones most frequently asked.</p>
+            </div>
+            <div className="space-y-3">
+              {faqs.map((item, idx) => {
+                const open = openFaq === idx;
+                const delayClass = `stagger-${Math.min(idx + 1, 6)}`;
+                return (
+                  <div
+                    key={idx}
+                    onClick={() => setOpenFaq(open ? null : idx)}
+                    className={`scroll-animate-right ${delayClass} cursor-pointer rounded-xl p-4 sm:p-5 ${open ? 'border-none bg-gradient-to-r from-primary/15 via-black/70 to-black' : 'border border-white/10 hover:border-white/20'}`}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <p className={`text-white ${open ? 'font-medium' : 'font-normal'} text-sm sm:text-base`}>{item.q}</p>
+                      {open ? (
+                        <div className="flex-none inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/20 text-white/80">
+                          <Minus className="w-4 h-4" />
+                        </div>
+                      ) : (
+                        <div className="flex-none inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/20 text-white/80">
+                          <Plus className="w-4 h-4" />
+                        </div>
+                      )}
+                    </div>
+                    {open && (
+                      <p className="mt-3 text-sm text-white/70">{item.a}</p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
+        <div aria-hidden className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-black" />
+          <div className="absolute -left-10 top-0 w-[280px] h-[280px] bg-primary/12 rounded-full blur-[120px] mix-blend-soft-light" />
+          <div className="absolute left-1/3 top-0 w-[360px] h-[360px] bg-primary/8 rounded-full blur-[120px] mix-blend-soft-light" />
+          <div className="absolute right-0 bottom-0 w-[220px] h-[220px] bg-primary/6 rounded-full blur-[90px] mix-blend-soft-light" />
+        </div>
+        <div className="relative container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="w-full">
+              <div className="scroll-animate-left stagger-1 text-amber-400 text-sm font-medium flex items-center gap-2">
+                <span className="text-lg">✦</span>
+                <span>Got a project?</span>
+              </div>
+              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>
+                Surround yourself
+                <br className="hidden sm:block" />
+                with an expert
+              </h2>
+            </div>
+            <div className="scroll-animate-right stagger-3">
+              <Link href="/contact" className="group inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-black font-semibold whitespace-nowrap transition-all duration-300 ease-out will-change-transform hover:bg-primary/95 hover:-translate-y-[2px] hover:shadow-[0_10px_25px_-10px_rgba(255,252,54,0.45)] hover:ring-1 hover:ring-amber-300/40">
+                Start a Project Now
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-[1px] group-hover:-translate-y-[1px]" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 bg-gray-900/50 backdrop-blur-sm mt-12 sm:mt-16 lg:mt-20">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
+      <footer className="relative border-t border-gray-800 bg-black mt-12 sm:mt-16 lg:mt-20 overflow-hidden">
+        <div aria-hidden className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+          <div className="absolute left-6 top-0 w-[180px] h-[180px] bg-primary/8 rounded-full blur-[100px] mix-blend-soft-light" />
+          <div className="absolute right-10 bottom-0 w-[140px] h-[140px] bg-primary/6 rounded-full blur-[80px] mix-blend-soft-light" />
+        </div>
+        <div className="relative z-10 container mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 py-8 sm:py-12 text-white">
           {/* Footer Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {/* Brand Section */}
             <div className="space-y-4">
               <Link href="/" className="inline-block group">
-                <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent group-hover:scale-105 transition-transform inline-block">
+                <span className="text-2xl sm:text-3xl font-bold text-white group-hover:scale-105 transition-transform inline-block">
                   {"<moredev/>"}
                 </span>
               </Link>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-white leading-relaxed">
                 Full-Stack Software Engineer passionate about building innovative web solutions and sharing knowledge with the community.
               </p>
             </div>
@@ -1295,22 +1541,22 @@ export default function HomePage() {
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="text-amber-400 hover:text-white text-sm transition-colors">
+                  <Link href="/" className="text-white hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 text-sm transition-colors">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#projects" className="text-amber-400 hover:text-white text-sm transition-colors">
+                  <Link href="/#projects" className="text-white hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 text-sm transition-colors">
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#experience" className="text-amber-400 hover:text-white text-sm transition-colors">
+                  <Link href="/#experience" className="text-white hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 text-sm transition-colors">
                     Experience
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="text-amber-400 hover:text-white text-sm transition-colors">
+                  <Link href="/#contact" className="text-white hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 text-sm transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -1322,22 +1568,22 @@ export default function HomePage() {
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Services</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/community" className="text-amber-400 hover:text-white text-sm transition-colors">
+                  <Link href="/community" className="text-white hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 text-sm transition-colors">
                     Community Tools
                   </Link>
                 </li>
                 <li>
-                  <Link href="/donation" className="text-amber-400 hover:text-white text-sm transition-colors">
+                  <Link href="/donation" className="text-white hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 text-sm transition-colors">
                     Support Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/schedule" className="text-amber-400 hover:text-white text-sm transition-colors">
+                  <Link href="/schedule" className="text-white hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 text-sm transition-colors">
                     Schedule Meeting
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-amber-400 hover:text-white text-sm transition-colors">
+                  <Link href="/about" className="text-white hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 text-sm transition-colors">
                     About
                   </Link>
                 </li>
@@ -1352,34 +1598,34 @@ export default function HomePage() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-2.5 bg-gray-800/50 hover:bg-amber-600 border border-amber-600 hover:border-transparent rounded-lg transition-all hover:scale-110"
+                  className="group p-2.5 bg-transparent border border-white/20 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px] hover:shadow-[0_8px_20px_-8px_rgba(255,255,255,0.25)]"
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                  <Instagram className="w-4 h-4 text-white transition-colors" />
                 </a>
                 <a
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-2.5 bg-gray-800/50 hover:bg-amber-600 border border-amber-600 hover:border-transparent rounded-lg transition-all hover:scale-110"
+                  className="group p-2.5 bg-transparent border border-white/20 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px] hover:shadow-[0_8px_20px_-8px_rgba(255,255,255,0.25)]"
                   aria-label="Twitter"
                 >
-                  <Twitter className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                  <Twitter className="w-4 h-4 text-white transition-colors" />
                 </a>
                 <a
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-2.5 bg-gray-800/50 hover:bg-amber-600 border border-amber-600 hover:border-transparent rounded-lg transition-all hover:scale-110"
+                  className="group p-2.5 bg-transparent border border-white/20 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px] hover:shadow-[0_8px_20px_-8px_rgba(255,255,255,0.25)]"
                   aria-label="YouTube"
                 >
-                  <Youtube className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                  <Youtube className="w-4 h-4 text-white transition-colors" />
                 </a>
               </div>
               <div className="pt-2">
                 <a
                   href="mailto:chisaatulegwu@gmail.com"
-                  className="flex items-center gap-2 text-amber-400 hover:text-white text-sm transition-colors"
+                  className="flex items-center gap-2 text-white hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 text-sm transition-colors"
                 >
                   <Mail className="w-4 h-4 flex-shrink-0" />
                   <span className="break-all">chisaatulegwu@gmail.com</span>
@@ -1391,14 +1637,14 @@ export default function HomePage() {
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-gray-800">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-gray-400 text-center sm:text-left">
+              <p className="text-sm text-white text-center sm:text-left">
                 © {new Date().getFullYear()} <span className="text-white font-medium">moredev</span>. All rights reserved.
               </p>
-              <div className="flex gap-6 text-sm text-amber-400">
-                <Link href="/privacy" className="hover:text-white transition-colors">
+              <div className="flex gap-6 text-sm text-white">
+                <Link href="/privacy" className="hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 transition-colors">
                   Privacy Policy
                 </Link>
-                <Link href="/terms" className="hover:text-white transition-colors">
+                <Link href="/terms" className="hover:text-white hover:underline decoration-amber-400/40 underline-offset-4 transition-colors">
                   Terms of Service
                 </Link>
               </div>
