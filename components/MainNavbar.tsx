@@ -67,7 +67,7 @@ export default function MainNavbar() {
           <div className="hidden md:flex items-center">
             <Link
               href="/schedule"
-              className="relative flex items-center gap-2 px-6 py-2.5 bg-primary text-black rounded-full hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 shadow-lg overflow-hidden group hover:brightness-110 active:brightness-95"
+              className="relative flex items-center gap-2 px-6 py-2.5 bg-primary text-black rounded-lg hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 shadow-lg overflow-hidden group hover:brightness-110 active:brightness-95"
             >
               <Calendar className="w-4 h-4 relative z-10 text-black" />
               <span className="text-sm font-semibold relative z-10 text-black">Schedule Meeting</span>

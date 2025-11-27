@@ -87,7 +87,7 @@ export default function HomePage() {
       { threshold: 0.2 }
     );
     bars.forEach((bar) => observer.observe(bar));
-    
+
     const titleObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -197,101 +197,56 @@ export default function HomePage() {
 
   const services = [
     {
-      icon: "💻",
+      id: 1,
       title: "Frontend Development",
       description: "Modern, responsive web interfaces using React, Angular, Next.js, and Native web languages with pixel-perfect designs.",
-      gradient: "from-purple-600 to-pink-600"
     },
     {
-      icon: "⚙️",
+      id: 2,
       title: "Backend Development",
       description: "Scalable server-side solutions with .Net, Node.js, NestJS, Express, and RESTful API development.",
-      gradient: "from-blue-600 to-cyan-600"
     },
     {
-      icon: "📱",
+      id: 3,
       title: "Mobile App Development",
       description: "Cross-platform mobile apps with React Native, Expo, Ionic and native performance optimization.",
-      gradient: "from-green-600 to-emerald-600"
     },
     {
-      icon: "🖥️",
+      id: 4,
       title: "Desktop App Development",
       description: "Native desktop applications for Windows, macOS, and Linux using Electron, .NET, and WPF.",
-      gradient: "from-indigo-600 to-blue-600"
     },
     {
-      icon: "🔧",
+      id: 5,
       title: "Windows Services Development",
       description: "Background Windows services, system utilities, and enterprise-level Windows applications.",
-      gradient: "from-cyan-600 to-teal-600"
     },
     {
-      icon: "🚀",
-      title: "Full-Stack Development",
-      description: "End-to-end application development from database design to user interface implementation.",
-      gradient: "from-orange-600 to-red-600"
-    },
-    {
-      icon: "🔌",
-      title: "API Development & Integration",
-      description: "Custom RESTful APIs, GraphQL, third-party API integration, and microservices architecture.",
-      gradient: "from-pink-600 to-rose-600"
-    },
-    {
-      icon: "💡",
+      id: 6,
       title: "Project Consultation",
       description: "Expert technical guidance, architecture planning, and strategic technology recommendations.",
-      gradient: "from-yellow-600 to-orange-600"
     },
     {
-      icon: "📊",
-      title: "Software Project Analysis",
-      description: "Comprehensive project assessment, requirements analysis, and technical feasibility studies.",
-      gradient: "from-teal-600 to-cyan-600"
-    },
-    {
-      icon: "💰",
-      title: "Project Costing & Estimation",
-      description: "Accurate project budgeting, timeline estimation, and resource allocation planning.",
-      gradient: "from-emerald-600 to-green-600"
-    },
-    {
-      icon: "🌐",
+      id: 7,
       title: "Web Hosting Solutions",
       description: "Reliable hosting setup, server configuration, SSL certificates, and performance optimization.",
-      gradient: "from-sky-600 to-blue-600"
     },
     {
-      icon: "🔗",
+      id: 8,
       title: "Domain Registration & Management",
       description: "Domain name registration, DNS configuration, email setup, and domain transfers.",
-      gradient: "from-violet-600 to-purple-600"
     },
     {
-      icon: "📧",
+      id: 9,
       title: "Professional Email Service Setup",
       description: "Custom business email setup, G Suite/Microsoft 365 integration, and email security.",
-      gradient: "from-amber-600 to-orange-600"
-    },
-    {
-      icon: "🔍",
-      title: "Code Review & Optimization",
-      description: "Code quality assessment, performance optimization, and best practices implementation.",
-      gradient: "from-lime-600 to-green-600"
-    },
-    {
-      icon: "🛠️",
-      title: "Website Maintenance & Support",
-      description: "Ongoing website updates, bug fixes, security patches, and technical support.",
-      gradient: "from-slate-600 to-gray-600"
     }
   ];
 
   const faqs = [
     {
       q: "What services do you offer?",
-      a: "Blending creativity and functionality, I design user‑focused digital products and responsive websites that not only look stunning but also deliver."
+      a: "I build robust, intuitive software that enhances user experience and drives product success"
     },
     {
       q: "How fast will I receive my work?",
@@ -303,7 +258,7 @@ export default function HomePage() {
     },
     {
       q: "What if I have a single project?",
-      a: "Single, one‑off projects are welcome. I can scope, design, and ship an MVP or a complete site." 
+      a: "Single, one‑off projects are welcome. I can scope, design, and ship an MVP or a complete site."
     },
     {
       q: "Do you offer ongoing support?",
@@ -315,118 +270,31 @@ export default function HomePage() {
     }
   ];
 
-  const techStack = [
-    {
-      name: "C#",
-      slug: "csharp",
-      color: "ffffff",
-      bgColor: "bg-purple-600",
-      iconUrl: "/csharp.png" // Uncomment to use local icon
-    },
-    {
-      name: "Angular",
-      slug: "angular",
-      color: "DD0031",
-      // iconUrl: "/icons/angular.png"
-    },
-    {
-      name: "TypeScript",
-      slug: "typescript",
-      color: "3178C6",
-      // iconUrl: "/icons/typescript.png"
-    },
-    {
-      name: "React Native",
-      slug: "react",
-      color: "61DAFB",
-      // iconUrl: "/icons/react.png"
-    },
-    {
-      name: "Expo",
-      slug: "expo",
-      color: "ffffff",
-      bgColor: "bg-gray-900",
-      // iconUrl: "/icons/expo.png"
-    },
-    {
-      name: "Node.js",
-      slug: "nodedotjs",
-      color: "339933",
-      // iconUrl: "/icons/nodejs.png"
-    },
-    {
-      name: "NestJS",
-      slug: "nestjs",
-      color: "E0234E",
-      // iconUrl: "/icons/nestjs.png"
-    },
-    {
-      name: "Next.js",
-      slug: "nextdotjs",
-      color: "ffffff",
-      bgColor: "bg-gray-900",
-      // iconUrl: "/icons/nextjs.png"
-    },
-    {
-      name: "Visual Studio",
-      slug: "visualstudio",
-      color: "5C2D91",
-      iconUrl: "/vsstudio.png" // Example: using existing local image
-    },
-    {
-      name: "VS Code",
-      slug: "visualstudiocode",
-      color: "007ACC",
-      iconUrl: "/vs.png"
-    },
-    {
-      name: ".NET",
-      slug: "dotnet",
-      color: "512BD4",
-      // iconUrl: "/icons/dotnet.png"
-    },
-    {
-      name: "Postman",
-      slug: "postman",
-      color: "FF6C37",
-      // iconUrl: "/icons/postman.png"
-    },
-    {
-      name: "WordPress",
-      slug: "wordpress",
-      color: "21759B",
-      // iconUrl: "/icons/wordpress.png"
-    },
-    {
-      name: "HTML5",
-      slug: "html5",
-      color: "E34F26",
-      // iconUrl: "/icons/html5.png"
-    },
-    {
-      name: "CSS3",
-      slug: "css3",
-      color: "1572B6",
-      iconUrl: "/css.png",
-      // iconUrl: "/icons/css3.png"
-    },
-    {
-      name: "JavaScript",
-      slug: "javascript",
-      color: "000000",
-      bgColor: "bg-yellow-400",
-      // iconUrl: "/icons/javascript.png"
-    },
-  ];
-
   // Professional skills data for progress bars
   const skills = [
     { label: 'HTML 5', percent: 95 },
-    { label: 'JavaScript', percent: 75 },
-    { label: 'PHP', percent: 85 },
-    { label: 'Illustrator', percent: 70 },
-    { label: 'Photoshop', percent: 95 },
-    { label: 'Sony Vegas', percent: 90 },
+    { label: 'JavaScript', percent: 85 },
+    { label: 'C#', percent: 95 },
+    { label: 'TypeScript', percent: 95 },
+    { label: 'CSS', percent: 95 },
+    { label: 'Java', percent: 75 },
+  ];
+
+  const frameworks = [
+    { label: 'Angular', percent: 95 },
+    { label: 'React Native & Expo', percent: 95 },
+    { label: 'Next.js', percent: 65 },
+    { label: 'Nest.js', percent: 95 },
+    { label: 'Node.js', percent: 95 },
+    { label: '.Net', percent: 95 },
+  ];
+  const tools = [
+    { label: 'Visual Studio', percent: 95 },
+    { label: 'Vs Code', percent: 95 },
+    { label: 'Postman', percent: 95 },
+    { label: 'CursorAi', percent: 95 },
+    { label: 'TraeAi', percent: 95 },
+    { label: 'Wordpress', percent: 100 },
   ];
 
   const projects = [
@@ -665,7 +533,7 @@ export default function HomePage() {
     },
   ];
 
-    const styles = {
+  const styles = {
     tag: {
       fontFamily: "'Poppins', sans-serif",
       fontWeight: '600',
@@ -696,7 +564,7 @@ export default function HomePage() {
 
         {/* Content Container - Left Aligned */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8 items-center">
             <div className="max-w-2xl flex flex-col justify-center min-h-[50vh] lg:min-h-0">
               {/* Greeting - Elegant script font */}
               <div className="mb-6">
@@ -766,8 +634,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-    
 
       {/* About Me Section */}
       <section id="about" className="relative pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden">
@@ -946,7 +812,7 @@ export default function HomePage() {
                   fontWeight: '800',
                   letterSpacing: '-0.02em'
                 }}>
-                 Behind the Code
+                  Behind the Code
                 </h2>
               </div>
 
@@ -958,8 +824,8 @@ export default function HomePage() {
                   lineHeight: '1.7',
                   letterSpacing: '0.01em'
                 }}>
-                 Results-driven Full-Stack Software Engineer with over 4 years of progressive experience in developing and deploying scalable web and mobile applications. Demonstrated expertise in both frontend and backend technologies.
-                 {/*  I'm Chisa Success Atulegwu, a results-driven Full-Stack Software Engineer with over 4 years of progressive experience in developing and deploying scalable web and mobile applications. Demonstrated expertise in both frontend and backend technologies, with a solid foundation in building user-focused solutions that deliver measurable business value. Skilled in collaborating with cross-functional teams to deliver high-quality products from concept to launch. Passionate about leveraging modern technologies to solve complex problems and create seamless user experiences. */}
+                  Results-driven Full-Stack Software Engineer with over 4 years of progressive experience in developing and deploying scalable web and mobile applications. Demonstrated expertise in both frontend and backend technologies.
+                  {/*  I'm Chisa Success Atulegwu, a results-driven Full-Stack Software Engineer with over 4 years of progressive experience in developing and deploying scalable web and mobile applications. Demonstrated expertise in both frontend and backend technologies, with a solid foundation in building user-focused solutions that deliver measurable business value. Skilled in collaborating with cross-functional teams to deliver high-quality products from concept to launch. Passionate about leveraging modern technologies to solve complex problems and create seamless user experiences. */}
                 </p>
               </div>
 
@@ -1062,7 +928,7 @@ export default function HomePage() {
                 letterSpacing: '-0.02em'
               }}
             >
-              Professional Skills
+              Technical Proficiencies
             </h2>
           </div>
 
@@ -1086,7 +952,93 @@ export default function HomePage() {
         </div>
       </section>
 
-        {/* Experience Section */}
+      {/* Framework Skills Section */}
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex justify-center mb-8 sm:mb-12">
+            <h2
+              className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white/30"
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 800,
+                letterSpacing: '-0.02em'
+              }}
+            >
+              Framework Proficiencies
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+            {frameworks.map((skill) => (
+              <div key={skill.label} className="group flex items-center md:justify-center gap-3 p-6 rounded-xl hover:bg-white/10  hover:border-primary/50 transition-all duration-300">
+                <div className="relative">
+                  <div className="w-20 h-20 rounded-full border-4 border-white/10 flex items-center justify-center">
+                    <span className="text-2xl font-bold bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent">
+                      {skill.percent}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-primary animate-spin" style={{ animationDuration: '3s' }}></div>
+                </div>
+                <div className="md:flex-none md:text-center">
+                  <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-primary transition-colors">{skill.label}</h3>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider">Mastery Level</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Skills Section */}
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex justify-center mb-8 sm:mb-12">
+            <h2
+              className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white/30"
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 800,
+                letterSpacing: '-0.02em'
+              }}
+            >
+              Tools Proficiencies
+            </h2>
+          </div>
+
+          <div className="space-y-1">
+            {tools.map((skill, index) => (
+              <div
+                key={skill.label}
+                className="group flex items-center justify-between p-4 hover:bg-white/5 rounded-lg transition-all duration-300 border-l-2 border-transparent hover:border-primary"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <span className="text-base text-gray-300 group-hover:text-white transition-colors uppercase tracking-wide">
+                  {skill.label}
+                </span>
+                <div className="flex items-center gap-4">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <div
+                        key={i}
+                        className={`w-8 h-1 rounded-full transition-all duration-500 ${i < Math.ceil(skill.percent / 20)
+                          ? 'bg-gradient-to-r from-primary to-amber-500'
+                          : 'bg-white/10'
+                          }`}
+                        style={{ transitionDelay: `${i * 100}ms` }}
+                      ></div>
+                    ))}
+                  </div>
+                  <span className="text-sm font-mono text-primary min-w-[3rem] text-right">{skill.percent}%</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+
+        </div>
+      </section>
+
+      {/* Experience Section */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-0">
@@ -1178,7 +1130,7 @@ export default function HomePage() {
         </div>
       </section>
 
-        {/* Services Section */}
+      {/* Services Section */}
       <section id="services" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12">
         <div className="container mx-auto max-w-6xl">
           {/* Header Row */}
@@ -1199,105 +1151,47 @@ export default function HomePage() {
 
             {/* Heading + Description */}
             <div className="lg:col-span-2">
-              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>
-                Experience the Impact of User-Centered Design
+              <h2 className="scroll-animate text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white/30" style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: '800',
+                letterSpacing: '-0.02em'
+              }}>
+                How I Deliver Value
               </h2>
               <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">
-                Experience the impact of user-centered design. I craft intuitive and engaging digital solutions that put users first and elevate brands.
+                I build robust, intuitive software that enhances user experience and drives product success
               </p>
             </div>
           </div>
 
           {/* Services Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-            {/* UI/UX Design */}
-            <div className="scroll-animate stagger-1 group relative rounded-2xl p-6 transition-all overflow-hidden">
-              {/* Hover gradient overlay */}
-              <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="text-xs text-white/40 mb-1">Designing Seamless Journeys</div>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl sm:text-3xl font-bold">UI/UX Design</h3>
-                  <div className="shrink-0">
-                    <div className="w-9 h-9 rounded-full bg-gray-800/80 flex items-center justify-center text-white/80 group-hover:bg-amber-500 group-hover:text-black transition-colors">
-                      <ArrowUpRight className="w-4 h-4" />
+
+            {
+              services.map((service) => (
+                <div className="scroll-animate stagger-${service.id} border border-gray-800 group-hover:border-transparent group relative rounded-1xl p-6 transition-all overflow-hidden">
+                  {/* Hover gradient overlay */}
+                  <div aria-hidden className="pointer-events-none absolute inset-0 rounded-1xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300 group-hover:border-transparent"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="text-2xl sm:text-2xl font-medium">{service.title}</h3>
+                      {/* <div className="shrink-0">
+                        <div className="w-9 h-9 rounded-full bg-gray-800/80 flex items-center justify-center text-white/80 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+                          <ArrowUpRight className="w-4 h-4" />
+                        </div>
+                      </div> */}
                     </div>
+                    <div className="text-xs text-white/40 ">{service.description}</div>
                   </div>
                 </div>
-              </div>
-            </div>
+              ))
+            }
 
-            {/* Web Development */}
-            <div className="scroll-animate stagger-2 group relative rounded-2xl p-6 transition-all overflow-hidden">
-              {/* Hover gradient overlay */}
-              <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="text-xs text-white/40 mb-1">Building Functional Solutions</div>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl sm:text-3xl font-bold">Web Development</h3>
-                  <div className="w-9 h-9 rounded-full bg-gray-800/80 flex items-center justify-center text-white/80 group-hover:bg-amber-500 group-hover:text-black transition-colors">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Branding with image */}
-            <div className="scroll-animate stagger-3 group relative rounded-2xl p-6 transition-all overflow-hidden">
-              {/* Hover gradient overlay */}
-              <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="text-xs text-white/40 mb-1">Shaping Memorable Identities</div>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl sm:text-3xl font-bold">Branding</h3>
-                  <div className="w-9 h-9 rounded-full bg-amber-500 text-black flex items-center justify-center">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </div>
-                <div className="mt-4 flex items-center gap-3 text-xs text-white/70 flex-wrap">
-                  <span className="inline-flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-amber-500"></span>User Research & Analysis</span>
-                  <span className="inline-flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-amber-500"></span>Wireframing & Prototyping</span>
-                  <span className="inline-flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-amber-500"></span>Usability Testing & Optimization</span>
-                </div>
-                <div className="absolute right-4 bottom-4 hidden sm:block">
-                  <Image src="/vsstudio.png" alt="Branding mockup" width={160} height={110} className="rounded-lg opacity-90" />
-                </div>
-              </div>
-            </div>
-
-            {/* Animation Design */}
-            <div className="scroll-animate stagger-4 group relative rounded-2xl p-6 transition-all overflow-hidden">
-              {/* Hover gradient overlay */}
-              <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="text-xs text-white/40 mb-1">Bringing Ideas Alive</div>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl sm:text-3xl font-bold">Animation Design</h3>
-                  <div className="w-9 h-9 rounded-full bg-gray-800/80 flex items-center justify-center text-white/80 group-hover:bg-amber-500 group-hover:text-black transition-colors">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Product Design */}
-            <div className="scroll-animate stagger-5 group relative rounded-2xl p-6 transition-all overflow-hidden">
-              {/* Hover gradient overlay */}
-              <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="text-xs text-white/40 mb-1">Creating User-Centered Products</div>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl sm:text-3xl font-bold">Product Design</h3>
-                  <div className="w-9 h-9 rounded-full bg-gray-800/80 flex items-center justify-center text-white/80 group-hover:bg-amber-500 group-hover:text-black transition-colors">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
+      {/* Featured work Section */}
       <section id="featured-work" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
@@ -1307,15 +1201,15 @@ export default function HomePage() {
                 <span>Featured Work</span>
               </div>
               <div className="mt-4">
-                <Link href="/#projects" className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-black font-semibold hover:bg-amber-400 transition-colors">
+                <Link href="/gallery" className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-black font-semibold hover:bg-primary/95 transition-colors">
                   Explore all Projects
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
             <div className="lg:col-span-2">
-              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>Showcasing My Work</h2>
-              <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Discover a showcase of digital creativity — modern UI/UX and web projects crafted to inspire your next big idea.</p>
+              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>Showcasing My Work Work for Your Inspiration</h2>
+              <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Discover a showcase of digital creativity — modern mobile and web projects crafted to inspire your next big idea.</p>
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -1393,11 +1287,35 @@ export default function HomePage() {
         <div className="relative container mx-auto max-w-6xl">
           <div className="text-center mb-8 sm:mb-12 scroll-animate stagger-1">
             <div className="inline-flex -space-x-3">
-              <Image src="/amadeo.png" alt="Client" width={40} height={40} className="rounded-full ring-2 ring-primary" />
-              <Image src="/vsstudio.png" alt="Client" width={40} height={40} className="rounded-full ring-2 ring-primary" />
-              <Image src="/vs.png" alt="Client" width={40} height={40} className="rounded-full ring-2 ring-primary" />
+              <div className="w-10 h-10 rounded-full ring-2 overflow-hidden flex-shrink-0 shadow-lg shadow-primary/30">
+                <Image
+                  src="/test.jpeg"
+                  alt="Client"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="w-10 h-10 rounded-full  ring-2 overflow-hidden flex-shrink-0 shadow-lg shadow-primary/30">
+                <Image
+                  src="/ola.jpg"
+                  alt="Client"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="w-10 h-10 rounded-full  ring-2 overflow-hidden flex-shrink-0 shadow-lg shadow-primary/30">
+                <Image
+                  src="/test1.jpg"
+                  alt="Client"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
-            <p className="mt-4 text-sm sm:text-base text-white/70">Trusted <span className="text-primary font-semibold">18,000+</span> Satisfied Clients</p>
+            <p className="mt-3 text-sm sm:text-base text-white/70">Trusted <span className="text-primary font-semibold">18,000+</span> Satisfied Clients</p>
           </div>
           <div className="relative mx-auto max-w-[680px] sm:max-w-[760px]">
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-0">
@@ -1407,14 +1325,22 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative z-10 justify-items-center">
               <div className="scroll-animate-right stagger-3 rounded-xl bg-black border border-white/10 p-4 sm:p-5 w-full max-w-[300px] sm:max-w-[340px]">
-                <p className="text-xs sm:text-sm italic text-primary">“David captured our vision and turned it into a polished website.”</p>
-                <p className="mt-2 text-[11px] sm:text-xs text-white/70">From start to finish, the process was smooth. He brought our ideas to life and added so much value.</p>
+                <p className="text-xs sm:text-sm italic text-primary">“SmileDev captured our vision and turned it into a polished website.”</p>
+                <p className="mt-2 text-[11px] sm:text-xs text-white/70">Your work is exceptional and well organized , the best I must say and I would definitely recommend you to anyone out there.</p>
                 <div className="mt-3 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Image src="/amadeo.png" alt="James Mitchell" width={32} height={32} className="rounded-full" />
+                    <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
+                      <Image
+                        src="/ola.jpg"
+                        alt="Client"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div>
-                      <p className="text-xs sm:text-sm text-white font-medium">James Mitchell</p>
-                      <p className="text-[11px] sm:text-xs text-white/60">CEO, Crattora Studio</p>
+                      <p className="text-xs sm:text-sm text-white font-medium">Ola from UK</p>
+                      <p className="text-[11px] sm:text-xs text-white/60">CEO, VitalFlow</p>
                     </div>
                   </div>
                   <Quote className="w-5 h-5 text-white/40" />
@@ -1422,10 +1348,18 @@ export default function HomePage() {
               </div>
               <div className="scroll-animate-left stagger-4 rounded-xl bg-black border border-white/10 p-4 sm:p-5 w-full max-w-[300px] sm:max-w-[340px]">
                 <p className="text-xs sm:text-sm italic text-primary">“The design exceeded our expectations. Clean, modern, and user‑friendly.”</p>
-                <p className="mt-2 text-[11px] sm:text-xs text-white/70">Working with them was seamless. He truly understood our vision and transformed it into a design that works beautifully.</p>
+                <p className="mt-2 text-[11px] sm:text-xs text-white/70">The app runs perfectly, and the codebase is clean and easy to navigate. Your support throughout development was outstanding—patient, clear, and very helpful. You're the best developer I’ve worked with. 10/10, highly recommended.</p>
                 <div className="mt-3 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Image src="/vsstudio.png" alt="Daniel Kim" width={32} height={32} className="rounded-full" />
+                    <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
+                      <Image
+                        src="/test1.jpg"
+                        alt="Client"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div>
                       <p className="text-xs sm:text-sm text-white font-medium">Daniel Kim</p>
                       <p className="text-[11px] sm:text-xs text-white/60">CEO, Wegems Agency</p>
@@ -1439,19 +1373,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      
+
       <section id="faqs" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-               <div className="scroll-animate-left stagger-1 text-amber-400 text-sm font-medium flex items-center gap-2">
+              <div className="scroll-animate-left stagger-1 text-amber-400 text-sm font-medium flex items-center gap-2">
                 <span className="text-lg">✦</span>
                 <span>Support</span>
               </div>
               <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>FAQS</h2>
               <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Not sure yet? Have some questions? We listed the ones most frequently asked.</p>
             </div>
-            <div className="space-y-3">
+
+            <div className="scroll-animate-right space-y-3">
               {faqs.map((item, idx) => {
                 const open = openFaq === idx;
                 const delayClass = `stagger-${Math.min(idx + 1, 6)}`;
@@ -1459,7 +1394,7 @@ export default function HomePage() {
                   <div
                     key={idx}
                     onClick={() => setOpenFaq(open ? null : idx)}
-                    className={`scroll-animate-right ${delayClass} cursor-pointer rounded-xl p-4 sm:p-5 ${open ? 'border-none bg-gradient-to-r from-primary/15 via-black/70 to-black' : 'border border-white/10 hover:border-white/20'}`}
+                    className={`${delayClass} cursor-pointer rounded-xl p-4 sm:p-5 ${open ? 'border-none bg-gradient-to-r from-primary/15 via-black/70 to-black' : 'border border-white/10 hover:border-white/20'}`}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <p className={`text-white ${open ? 'font-medium' : 'font-normal'} text-sm sm:text-base`}>{item.q}</p>
@@ -1479,6 +1414,175 @@ export default function HomePage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <div>
+              <div className="scroll-animate-left stagger-1 text-primary text-sm font-medium flex items-center gap-2">
+                <span className="text-lg">✦</span>
+                <span>Team</span>
+              </div>
+              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>Meet My Team</h2>
+              <p className="scroll-animate-left stagger-3 text-white/70 text-sm sm:text-base mt-3 max-w-2xl">A small, passionate crew focused on building clean, user‑centered products with craft and care.</p>
+            </div>
+            <div className="scroll-animate-right stagger-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {/* <div className="scroll-animate-right stagger-2 group relative rounded-xl bg-black border border-white/10 p-4 sm:p-5 overflow-hidden h-[320px] sm:h-[360px] flex flex-col">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity bg-gradient-to-r from-primary/25 via-black/60 to-black" aria-hidden></div>
+                <div className="relative z-10">
+                  <div className="relative w-full h-10 rounded-lg overflow-hidden scroll-animate-scale stagger-2">
+                    <Image src="/moredev.png" alt="Team member" fill sizes="100vw" className="object-cover" />
+                  </div>
+                  <div className="mt-3">
+                    <p className="text-white font-medium text-sm sm:text-base">Alex Carter</p>
+                    <p className="text-white/60 text-xs">Lead Engineer</p>
+                  </div>
+                </div>
+
+                <div className="scroll-animate-right stagger-4 relative z-10 mt-4 flex items-center gap-2">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group p-2 bg-transparent border border-white/20 rounded-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px]">
+                    <Linkedin className="w-4 h-4 text-white" />
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="group p-2 bg-transparent border border-white/20 rounded-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px]">
+                    <Twitter className="w-4 h-4 text-white" />
+                  </a>
+                  <a href="https://alex.dev" target="_blank" rel="noopener noreferrer" aria-label="Website" className="group p-2 bg-transparent border border-white/20 rounded-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px]">
+                    <ExternalLink className="w-4 h-4 text-white" />
+                  </a>
+                </div>
+              </div> */}
+              <div className="scroll-animate-right stagger-2 group relative rounded-2xl bg-gradient-to-br from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-primary/40 p-6 sm:p-7 overflow-hidden h-[350px] sm:h-[350px] flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+                {/* Animated background gradient */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-primary/10 via-amber-500/5 to-transparent" aria-hidden></div>
+
+                {/* Subtle glow effect */}
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+
+                <div className="relative z-10 flex-1 flex flex-col">
+                  {/* Profile Image */}
+                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden ring-2 ring-white/10 group-hover:ring-primary/50 transition-all duration-300 mb-5">
+                    <Image
+                      src="/phil.jpg"
+                      alt="Team member"
+                      fill
+                      sizes="(max-width: 640px) 96px, 112px"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+
+                  {/* Member Info */}
+                  <div className="mb-5">
+                    <h3 className="text-white font-bold text-lg sm:text-xl mb-1.5 group-hover:text-primary transition-colors duration-300">
+                      Alex Carter
+                    </h3>
+                    <p className="text-white/50 text-xs sm:text-sm uppercase tracking-widest font-medium">
+                      Lead Engineer
+                    </p>
+
+                    {/* Accent line */}
+                    <div className="mt-3 h-0.5 w-12 bg-gradient-to-r from-primary to-amber-500 group-hover:w-20 transition-all duration-300"></div>
+                  </div>
+                  {/* Social Links */}
+                  <div className="scroll-animate-right stagger-4 flex items-center gap-2 pt-5 border-t border-white/5">
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="group/link flex-1 flex items-center justify-center p-2.5 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                      <Linkedin className="w-4 h-4 text-white/70 group-hover/link:text-primary transition-colors" />
+                    </a>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Twitter"
+                      className="group/link flex-1 flex items-center justify-center p-2.5 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                      <Twitter className="w-4 h-4 text-white/70 group-hover/link:text-primary transition-colors" />
+                    </a>
+                    <a
+                      href="https://alex.dev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Website"
+                      className="group/link flex-1 flex items-center justify-center p-2.5 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                      <ExternalLink className="w-4 h-4 text-white/70 group-hover/link:text-primary transition-colors" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="scroll-animate-right stagger-2 group relative rounded-2xl bg-gradient-to-br from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-primary/40 p-6 sm:p-7 overflow-hidden h-[350px] sm:h-[350px] flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+                {/* Animated background gradient */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-primary/10 via-amber-500/5 to-transparent" aria-hidden></div>
+
+                {/* Subtle glow effect */}
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+
+                <div className="relative z-10 flex-1 flex flex-col">
+                  {/* Profile Image */}
+                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden ring-2 ring-white/10 group-hover:ring-primary/50 transition-all duration-300 mb-5">
+                    <Image
+                      src="/moredev.png"
+                      alt="Team member"
+                      fill
+                      sizes="(max-width: 640px) 96px, 112px"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+
+                  {/* Member Info */}
+                  <div className="mb-5">
+                    <h3 className="text-white font-bold text-lg sm:text-xl mb-1.5 group-hover:text-primary transition-colors duration-300">
+                      Alex Carter
+                    </h3>
+                    <p className="text-white/50 text-xs sm:text-sm uppercase tracking-widest font-medium">
+                      Lead Engineer
+                    </p>
+
+                    {/* Accent line */}
+                    <div className="mt-3 h-0.5 w-12 bg-gradient-to-r from-primary to-amber-500 group-hover:w-20 transition-all duration-300"></div>
+                  </div>
+                  {/* Social Links */}
+                  <div className="scroll-animate-right stagger-4 flex items-center gap-2 pt-5 border-t border-white/5">
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="group/link flex-1 flex items-center justify-center p-2.5 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                      <Linkedin className="w-4 h-4 text-white/70 group-hover/link:text-primary transition-colors" />
+                    </a>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Twitter"
+                      className="group/link flex-1 flex items-center justify-center p-2.5 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                      <Twitter className="w-4 h-4 text-white/70 group-hover/link:text-primary transition-colors" />
+                    </a>
+                    <a
+                      href="https://alex.dev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Website"
+                      className="group/link flex-1 flex items-center justify-center p-2.5 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                      <ExternalLink className="w-4 h-4 text-white/70 group-hover/link:text-primary transition-colors" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
