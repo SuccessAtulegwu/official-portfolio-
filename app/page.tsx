@@ -540,7 +540,7 @@ export default function HomePage() {
   const contacts = [
     { icon: Phone, label: 'Phone', value: '+2347048247881', href: 'tel:+2347048247881' },
     { icon: Mail, label: 'Email', value: 'chisaatulegwu@gmail.com', href: 'mailto:chisaatulegwu@gmail.com' },
-    { icon: Globe, label: 'Website', value: 'www.moredev.com', href: 'https://www.moredev.com' },
+    { icon: Globe, label: 'Website', value: 'www.moredev.com', href: 'https://www.more-dev.com' },
     { icon: MapPin, label: 'Address', value: 'Abuja, Nigeria', href: null }
   ].slice(0, 4);
 
@@ -848,27 +848,31 @@ export default function HomePage() {
                   <button
                     onClick={() => handleDownloadCV()}
                     disabled={isDownloading}
-                    className="group relative w-full sm:w-auto bg-primary text-black font-medium py-3 px-0 md:py-3 md:px-3 transition-all duration-300 ease-in-out hover:brightness-110 active:brightness-95 hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 text-md md:text-md tracking-wide rounded-md overflow-hidden transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="group relative w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-xl hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 font-bold text-sm overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
+                    {/* Animated shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    
                     {/* Content */}
-                    <div className="relative z-10 flex items-center gap-3">
+                    <div className="relative z-10 flex items-center gap-2">
                       {isDownloading ? (
                         <>
-                          <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
-                          <span className="transition-all duration-300">Downloading...</span>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>Downloading...</span>
                         </>
                       ) : (
                         <>
                           {/* Modern download icon */}
-                          <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 transition-transform duration-300 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                           </svg>
-                          <span className="transition-all duration-300 group-hover:tracking-wider">Download Resume</span>
+                          <span>Download Resume</span>
                         </>
                       )}
                     </div>
-                    {/* Subtle shine effect */}
-                    <div className="absolute inset-0 -top-2 -left-2 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Pulse ring effect */}
+                    <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
                   </button>
                 </div>
 
@@ -876,13 +880,22 @@ export default function HomePage() {
                 <div className="scroll-animate-right stagger-5 w-full sm:w-auto">
                   <button
                     onClick={() => window.location.href = '/community'}
-                    className="group relative w-full sm:w-auto text-white py-3 px-6 md:py-3 md:px-6 flex items-center justify-center gap-3 text-sm md:text-sm rounded-md border border-primary transition-colors duration-200 hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    className="group relative w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 bg-transparent border-2 border-primary text-primary rounded-xl hover:bg-primary/10 transition-all duration-500 hover:shadow-lg hover:shadow-primary/30 hover:scale-105 font-bold text-sm overflow-hidden"
                   >
-                    {/* Community service icon */}
-                    <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <span>View Community Service</span>
+                    {/* Animated border shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10 flex items-center gap-2">
+                      {/* Community service icon */}
+                      <svg className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      <span>View Community Service</span>
+                    </div>
+                    
+                    {/* Pulse ring effect */}
+                    <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-50 group-hover:scale-110 transition-all duration-500"></div>
                   </button>
                 </div>
               </div>
@@ -933,7 +946,7 @@ export default function HomePage() {
       </section>
 
       {/* Tools Skills Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
+     {/*  <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
         <div className="container mx-auto max-w-6xl">
           <div className="flex justify-center mb-8 sm:mb-12">
             <h2
@@ -979,282 +992,345 @@ export default function HomePage() {
 
 
         </div>
-      </section>
+      </section> */}
 
       {/* Experience Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black mb-10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-8">
+      <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: Experience Cards */}
-            <div>
+            <div className="scroll-animate-left">
               <h2
-                className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white leading-tight"
+                className="skills-title text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 tracking-tight text-white leading-tight"
                 style={{
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: 800,
                   letterSpacing: '-0.02em'
                 }}
               >
-                Experience
+                Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-500">Experience</span>
               </h2>
 
-              <div className="space-y-4 border overflow-hidden rounded-sm border-gray-800 transition-all duration-300 hover:border-gray-700">
+              <div className="space-y-4">
                 {/* Card 1 */}
-                <div className="group relative backdrop-blur-sm p-6">
+                <div className="group relative bg-gradient-to-br from-gray-900/60 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:scale-[1.02]">
                   <div className="absolute top-6 right-6">
-                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2021 — Present</span>
+                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1 font-medium">
+                      2021 — Present
+                    </span>
                   </div>
-                  <h3 className="text-white text-xl font-semibold">Software Engineer</h3>
-                  <p className="text-gray-400 text-sm">At AllPrime</p>
-                  <p className="text-gray-300 mt-3 text-sm">
+                  
+                  {/* Accent line */}
+                  <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-primary to-amber-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <h3 className="text-white text-xl sm:text-2xl font-bold pr-32">Software Engineer</h3>
+                  <p className="text-primary text-sm font-semibold mt-1">AllPrime</p>
+                  <p className="text-gray-300 mt-4 text-sm leading-relaxed">
                     Collaborated with cross-functional teams to develop scalable applications and intuitive user interfaces. Led the implementation of modern web solutions that improved user engagement and system performance.
                   </p>
                 </div>
 
                 {/* Card 2 */}
-                <div className="group relative backdrop-blur-sm p-6">
+                <div className="group relative bg-gradient-to-br from-gray-900/60 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:scale-[1.02]">
                   <div className="absolute top-6 right-6">
-                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2024 - Present</span>
+                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1 font-medium">
+                      2024 — Present
+                    </span>
                   </div>
-                  <h3 className="text-white text-xl font-semibold">Software Engineer</h3>
-                  <p className="text-gray-400 text-sm">At CloseBuy</p>
-                  <p className="text-gray-300 mt-3 text-sm">
+                  
+                  {/* Accent line */}
+                  <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-primary to-amber-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <h3 className="text-white text-xl sm:text-2xl font-bold pr-32">Software Engineer</h3>
+                  <p className="text-primary text-sm font-semibold mt-1">CloseBuy</p>
+                  <p className="text-gray-300 mt-4 text-sm leading-relaxed">
                     Developing full-stack web and mobile applications using modern technologies. Contributing to architecture decisions, code reviews, and implementing best practices for scalable software solutions.
                   </p>
                 </div>
-
-                {/* Card 3 */}
-                <div className="group relative backdrop-blur-sm p-6">
-                  <div className="absolute top-6 right-6">
-                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2020 — 2020</span>
+              </div>
+            </div>
+            
+            {/* Right: Professional Image */}
+            <div className="scroll-animate-right relative">
+              {/* Image container with professional styling */}
+              <div className="relative group">
+                {/* Glowing border effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-amber-500 to-primary rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                
+                {/* Main image container */}
+                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-4 overflow-hidden">
+                  {/* Decorative corner accents */}
+                  <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary rounded-tl-2xl"></div>
+                  <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-primary rounded-br-2xl"></div>
+                  
+                  {/* Image with overlay gradient */}
+                  <div className="relative rounded-xl overflow-hidden">
+                    <img 
+                      src="/experience.png" 
+                      alt="Professional experience illustration" 
+                      className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    
+                    {/* Subtle overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
                   </div>
-                  <h3 className="text-white text-xl font-semibold">Project Manager</h3>
-                  <p className="text-gray-400 text-sm">At Bems</p>
-                  <p className="text-gray-300 mt-3 text-sm">
-                    Managed software development projects while pursuing my IT degree. Coordinated with technical teams to design scalable system architectures and ensure timely delivery of mission-critical applications.
-                  </p>
+                  
+                  {/* Optional stats overlay - uncomment if desired */}
+                  {/* <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-md border border-gray-700 rounded-xl p-4">
+                    <div className="flex justify-around text-center">
+                      <div>
+                        <div className="text-2xl font-bold text-primary">4+</div>
+                        <div className="text-xs text-gray-400">Years Experience</div>
+                      </div>
+                      <div className="w-px bg-gray-700"></div>
+                      <div>
+                        <div className="text-2xl font-bold text-primary">20+</div>
+                        <div className="text-xs text-gray-400">Projects Completed</div>
+                      </div>
+                      <div className="w-px bg-gray-700"></div>
+                      <div>
+                        <div className="text-2xl font-bold text-primary">10+</div>
+                        <div className="text-xs text-gray-400">Technologies</div>
+                      </div>
+                    </div>
+                  </div> */}
+                </div>
+              </div>
+
+              {/* Floating tech badges */}
+              <div className="hidden lg:block absolute -top-6 -right-6 bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl px-4 py-3 shadow-xl">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-white text-sm font-medium">Available for Projects</span>
                 </div>
               </div>
             </div>
-
-
-            <div>
-              <h2
-                className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white leading-tight"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontWeight: 800,
-                  letterSpacing: '-0.02em'
-                }}
-              >
-                Education
-              </h2>
-
-              <div className="space-y-4 border overflow-hidden rounded-sm border-gray-800 transition-all duration-300 hover:border-gray-700">
-                {/* Card 1 */}
-                <div className="group relative backdrop-blur-sm p-6">
-                  <div className="absolute top-6 right-6">
-                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2016 — 2020</span>
-                  </div>
-                  <h3 className="text-white text-xl font-semibold">Bachelor of Science</h3>
-                  <p className="text-gray-400 text-sm">Computer Science</p>
-                  <p className="text-gray-300 mt-3 text-sm">
-                    Michael Okpara University of Agriculture, Umudike, Umuahia, Abia State, Nigeria
-                  </p>
-                </div>
-
-                {/* Card 2 */}
-                <div className="group relative backdrop-blur-sm p-6">
-                  <div className="absolute top-6 right-6">
-                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2012 — 2014</span>
-                  </div>
-                  <h3 className="text-white text-xl font-semibold">National Diploma</h3>
-                  <p className="text-gray-400 text-sm">Electrical and Electronics Engineering</p>
-                  <p className="text-gray-300 mt-3 text-sm">
-                    Imo State Polytechnic Umuagwo, Imo State, Nigeria
-                  </p>
-                </div>
-
-                {/* Card 3 */}
-                <div className="group relative backdrop-blur-sm p-6">
-                  <div className="absolute top-6 right-6">
-                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2010 — 2012</span>
-                  </div>
-                  <h3 className="text-white text-xl font-semibold">Professional Computer Training</h3>
-                  <p className="text-gray-400 text-sm">Computer Science & Software Development</p>
-                  <p className="text-gray-300 mt-3 text-sm">
-                    Lexvee Computer Institute, Aba Road, Umuahia, Abia State, Nigeria
-                  </p>
-                </div>
-              </div>
-            </div>
-
           </div>
-
         </div>
       </section>
 
 
       {/* Services Section */}
-      <section id="services" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12">
-        <div className="container mx-auto max-w-6xl">
-          {/* Header Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            {/* Label + CTA */}
-            <div className="scroll-animate-left">
-              <div className="text-amber-400 text-sm font-medium flex items-center gap-2">
-                <span className="text-lg">✦</span>
-                <span>My Services</span>
-              </div>
-              <div className="mt-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-black font-semibold hover:bg-amber-400 transition-colors">
-                  Start a Project Now
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+      <section id="services" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-40 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-10 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl"></div>
+        </div>
 
-            {/* Heading + Description */}
-            <div className="lg:col-span-2">
-              <h2 className="scroll-animate text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white leading-tight" style={{
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: '800',
-                letterSpacing: '-0.02em'
-              }}>
-                How I Deliver Value
-              </h2>
-              <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">
-                I build robust, intuitive software that enhances user experience and drives product success
-              </p>
+        <div className="container mx-auto max-w-7xl relative z-10">
+          {/* Header Section */}
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="scroll-animate inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6">
+              <span className="text-lg">✦</span>
+              <span>My Services</span>
             </div>
+            
+            <h2 className="scroll-animate text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-white leading-tight" style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontWeight: '800',
+              letterSpacing: '-0.02em'
+            }}>
+              How I <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-500">Deliver Value</span>
+            </h2>
+            
+            <p className="scroll-animate text-white/70 text-base sm:text-lg max-w-3xl mx-auto mb-8">
+              I build robust, intuitive software that enhances user experience and drives product success
+            </p>
+
+            {/* <div className="scroll-animate">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-black font-semibold hover:bg-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
+                Start a Project Now
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            </div> */}
           </div>
 
-          {/* Services Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+          {/* Services Grid with Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* Service Cards */}
+            {services.map((service, index) => (
+              <div
+                key={service.id}
+                className={`scroll-animate-scale stagger-${index + 1} group relative bg-gradient-to-br from-gray-900/60 to-gray-900/40 backdrop-blur-sm rounded-2xl p-6 lg:p-7 border border-gray-800 hover:border-primary/30 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10`}
+              >
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/0 via-amber-500/0 to-primary/0 group-hover:from-primary/5 group-hover:via-amber-500/5 group-hover:to-primary/5 transition-all duration-700 pointer-events-none" />
 
-            {
-              services.map((service) => (
-                <div
-                  key={service.id}
-                  className="group relative bg-white/[0.02] backdrop-blur-sm rounded-3xl p-5 lg:p-5 border border-white/[0.05] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-500 cursor-pointer"
-                >
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-600/0 via-purple-600/0 to-pink-600/0 group-hover:from-blue-600/[0.03] group-hover:via-purple-600/[0.03] group-hover:to-pink-600/[0.03] transition-all duration-700 pointer-events-none" />
+                {/* Top accent line */}
+                <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  {/* Content */}
-                  <div className="relative">
+                {/* Content */}
+                <div className="relative">
+                  {/* Icon placeholder - you can add icons here */}
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                    <span className="text-2xl">💼</span>
+                  </div>
 
-                    {/* Title */}
-                    <h3 className="text-1xl lg:text-1xl font-bold text-white mb-1 group-hover:text-white transition-colors duration-300">
-                      {service.title}
-                    </h3>
+                  {/* Title */}
+                  <h3 className="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
 
-                    {/* Description */}
-                    <p className="text-base lg:text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                      {service.description}
-                    </p>
+                  {/* Description */}
+                  <p className="text-sm lg:text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                    {service.description}
+                  </p>
 
-                    {/* Bottom accent line */}
-                    <div className="mt-8 h-[2px] w-16 bg-gradient-to-r from-yellow-300 via-yellow-500 to-amber-600 group-hover:w-32 transition-all duration-500" />
+                  {/* Bottom accent line */}
+                  <div className="mt-6 h-[2px] w-12 bg-gradient-to-r from-primary via-amber-500 to-primary group-hover:w-full transition-all duration-500" />
+                </div>
+              </div>
+            ))}
+
+            {/* Professional Service Image - Spans 3 columns on large screens */}
+            <div className="lg:col-span-3 scroll-animate-scale">
+              <div className="relative group">
+                {/* Glowing border effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-amber-500 to-primary rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                
+                {/* Main image container */}
+                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-4 overflow-hidden">
+                  {/* Decorative corner accents */}
+                  <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-primary rounded-tr-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-primary rounded-bl-2xl"></div>
+                  
+                  {/* Image with overlay gradient */}
+                  <div className="relative rounded-xl overflow-hidden">
+                    <img 
+                      src="/service.png" 
+                      alt="Professional services illustration showcasing expertise in software development" 
+                      className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    
+                    {/* Subtle overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                  </div>
+
+                  {/* Optional overlay text */}
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <div className="bg-black/80 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                      <p className="text-white font-semibold text-lg mb-2">
+                        Ready to bring your ideas to life?
+                      </p>
+                      <p className="text-gray-300 text-sm">
+                        Let's collaborate on building exceptional software solutions tailored to your needs.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              ))
-            }
-
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Featured work Section */}
-      <section id="featured-work" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            <div>
-              <div className="text-amber-400 text-sm font-medium flex items-center gap-2">
-                <span className="text-lg">✦</span>
-                <span>Featured Work</span>
-              </div>
-              <div className="mt-4">
-                <Link href="/gallery" className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-black font-semibold hover:bg-primary/95 transition-colors">
-                  Explore all Projects
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </div>
+      <section id="featured-work" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          {/* Header Section */}
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="scroll-animate inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6">
+              <span className="text-lg">✦</span>
+              <span>Featured Work</span>
             </div>
-            <div className="lg:col-span-2">
-              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white leading-tight" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>Showcasing My Work for Your Inspiration</h2>
-              <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Discover a showcase of digital creativity, modern mobile and web projects crafted to inspire your next big idea.</p>
-            </div>
+            
+            <h2 className="scroll-animate text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-white leading-tight" style={{ 
+              fontFamily: "'Poppins', sans-serif", 
+              fontWeight: 800,
+              letterSpacing: '-0.02em' 
+            }}>
+              Showcasing My <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-500">Work</span>
+            </h2>
+            
+            <p className="scroll-animate text-white/70 text-base sm:text-lg max-w-3xl mx-auto mb-8">
+              Discover a showcase of digital creativity, modern mobile and web projects crafted to inspire your next big idea.
+            </p>
+
+            
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {
-              projects.slice(0, 4).map((item, index) => (
-                <div key={index} onClick={() => setSelectedProject(index)} className="group rounded-lg overflow-hidden">
-                  <div className="relative aspect-[5/4]">
-                    <Image src={item.image} alt="Website Redesign" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <button onClick={() => setSelectedProject(0)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
-                        View Project
-                        <ArrowUpRight className="w-4 h-4" />
-                      </button>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {projects.slice(0, 4).map((item, index) => (
+              <div 
+                key={index} 
+                onClick={() => setSelectedProject(index)} 
+                className={`scroll-animate-scale stagger-${index + 1} group relative rounded-2xl overflow-hidden cursor-pointer border border-gray-800 hover:border-primary/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10`}
+              >
+                {/* Image Container */}
+                <div className="relative aspect-[4/5] bg-gray-900">
+                  <Image 
+                    src={item.image} 
+                    alt={item.title || "Project showcase"} 
+                    fill 
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" 
+                    unoptimized 
+                  />
+                  
+                  {/* Gradient Overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+                  
+                  {/* Hover accent border */}
+                  <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/50 rounded-2xl transition-all duration-500"></div>
+                  
+                  {/* View Project Button - Center */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
+                    <button 
+                      onClick={() => setSelectedProject(index)} 
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-black text-sm font-bold hover:bg-amber-400 transition-colors shadow-xl"
+                    >
+                      View Project
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  {/* Project Number Badge - Top Left */}
+                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-black/80 backdrop-blur-sm border border-primary/30 flex items-center justify-center">
+                    <span className="text-primary font-bold text-sm">{String(index + 1).padStart(2, '0')}</span>
+                  </div>
+
+                  {/* Bottom Info Bar */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="bg-black/90 backdrop-blur-md border border-gray-700/50 rounded-xl p-3">
+                      <h3 className="text-white font-bold text-sm sm:text-base mb-1 line-clamp-1 group-hover:text-primary transition-colors">
+                        {item.title || "Featured Project"}
+                      </h3>
+                      <div className="flex items-center gap-2">
+                        <div className="h-[2px] flex-1 bg-gradient-to-r from-primary to-transparent"></div>
+                        <span className="text-primary text-xs font-medium">View Details</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              ))
-            }
+              </div>
+            ))}
+          </div>
 
-
-            {/*  <div onClick={() => setSelectedProject(1)} className="group rounded-lg overflow-hidden">
-              <div className="relative aspect-[5/4]">
-                <Image src="/projects/culture.png" alt="Branding Identity Design" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => setSelectedProject(1)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
-                    View Project
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-              <div className="px-1 mt-2">
-                <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors">Branding Identity Design</h3>
-                <p className="text-xs md:text-sm text-gray-400 mt-1">Crafting unique brand identities that reflect values, connect with audiences, and stand out.</p>
-              </div>
-            </div>
-
-            <div className="group rounded-lg overflow-hidden">
-              <div className="relative aspect-[5/4]">
-                <Image src="/vsstudio.png" alt="Creative Hub Website" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => setSelectedProject(1)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
-                    View Project
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-              <div className="px-1 mt-2">
-                <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors">Creative Hub Website</h3>
-                <p className="text-xs md:text-sm text-gray-400 mt-1">Designing an engaging platform that brings ideas, content, and communities together.</p>
-              </div>
-            </div>
-
-            <div className="group rounded-lg overflow-hidden">
-              <div className="relative aspect-[5/4]">
-                <Image src="/projects/jome.png" alt="Mobile App MVP Designs" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => setSelectedProject(2)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
-                    View Project
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-              <div className="px-1 mt-2">
-                <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors">Mobile App MVP Designs</h3>
-                <p className="text-xs md:text-sm text-gray-400 mt-1">Building clean, user-friendly MVPs that validate ideas quickly and deliver impact.</p>
-              </div>
-            </div> */}
+          {/* Bottom Call to Action */}
+          <div className="scroll-animate text-center mt-12 sm:mt-16">
+            <p className="text-gray-400 text-sm mb-4">
+              Want to see more of my work?
+            </p>
+            <Link 
+              href="/gallery" 
+              className="inline-flex items-center gap-2 text-primary hover:text-amber-400 font-semibold transition-colors group"
+            >
+              Browse Full Portfolio
+              <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
@@ -1541,28 +1617,7 @@ export default function HomePage() {
 
       <section id="cta" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
         {/* Animated Background */}
-        <div aria-hidden className="absolute inset-0 pointer-events-none">
-          {/* Base gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/5 to-black" />
-          
-          {/* Animated gradient orbs */}
-          <div className="absolute -left-10 top-0 w-[280px] h-[280px] bg-primary/12 rounded-full blur-[120px] mix-blend-soft-light animate-pulse" style={{ animationDuration: '4s' }} />
-          <div className="absolute left-1/3 top-0 w-[360px] h-[360px] bg-primary/8 rounded-full blur-[120px] mix-blend-soft-light animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
-          <div className="absolute right-0 bottom-0 w-[220px] h-[220px] bg-primary/6 rounded-full blur-[90px] mix-blend-soft-light animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }} />
-          
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-[0.02]" style={{
-            backgroundImage: `linear-gradient(rgba(255, 252, 54, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 252, 54, 0.1) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
-          }} />
-          
-          {/* Top border glow */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-          
-          {/* Corner accents */}
-          <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-primary/20 rounded-tl-3xl" />
-          <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-primary/20 rounded-br-3xl" />
-        </div>
+        
 
         {/* Content */}
         <div className="relative container mx-auto max-w-6xl">
@@ -1589,12 +1644,15 @@ export default function HomePage() {
               </div>
               
               <div className="scroll-animate-right stagger-3 flex flex-col gap-4 items-center md:items-end">
-                <Link href="/contact" className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-black font-bold text-lg whitespace-nowrap transition-all duration-300 ease-out will-change-transform hover:scale-105 hover:shadow-[0_20px_50px_-10px_rgba(255,252,54,0.5)] overflow-hidden">
-                  {/* Button shine effect */}
-                  <div className="absolute inset-0 -top-2 -left-2 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500 group-hover:animate-shine" />
+                <Link href="/contact" className="group relative inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-xl hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 font-bold text-lg whitespace-nowrap overflow-hidden">
+                  {/* Animated shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   
                   <span className="relative z-10">Start a Project Now</span>
                   <ArrowUpRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  
+                  {/* Pulse ring effect */}
+                  <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
                 </Link>
                 
                 <p className="text-sm text-gray-500">
@@ -1622,16 +1680,14 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative border-t border-gray-800 bg-black  overflow-hidden">
+      {/* <footer className="relative border-t border-gray-800 bg-black  overflow-hidden">
         <div aria-hidden className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
           <div className="absolute left-6 top-0 w-[180px] h-[180px] bg-primary/8 rounded-full blur-[100px] mix-blend-soft-light" />
           <div className="absolute right-10 bottom-0 w-[140px] h-[140px] bg-primary/6 rounded-full blur-[80px] mix-blend-soft-light" />
         </div>
         <div className="relative z-10 container mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 py-8 sm:py-12 text-white">
-          {/* Footer Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            {/* Brand Section */}
             <div className="space-y-4">
               <Link href="/" className="inline-block">
                 <img
@@ -1644,8 +1700,6 @@ export default function HomePage() {
                 Full-Stack Software Engineer passionate about building innovative web solutions and sharing knowledge with the community.
               </p>
             </div>
-
-            {/* Quick Links */}
             <div className="space-y-4">
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Quick Links</h3>
               <ul className="space-y-2">
@@ -1672,7 +1726,6 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Services */}
             <div className="space-y-4">
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Services</h3>
               <ul className="space-y-2">
@@ -1699,7 +1752,6 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Connect */}
             <div className="space-y-4">
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Connect</h3>
               <div className="flex gap-3">
@@ -1752,7 +1804,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Bottom Bar */}
+         
           <div className="pt-8 border-t border-gray-800">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-sm text-white text-center sm:text-left">
@@ -1769,7 +1821,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
 
       {/* Project Modal */}
       {selectedProject !== null && (

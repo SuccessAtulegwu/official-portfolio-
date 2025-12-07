@@ -295,7 +295,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-black rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg font-medium"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-black rounded-sm hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg font-medium"
                 >
                   {isSubmitting ? (<>
                     <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />

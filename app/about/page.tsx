@@ -203,13 +203,13 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="px-6 py-3 bg-primary text-black font-medium rounded-lg hover:opacity-90 transition-all hover:scale-105"
+                className="px-6 py-3 bg-primary text-black font-medium rounded-sm hover:opacity-90 transition-all hover:scale-105"
               >
                 Get in Touch
               </Link>
               <Link
                 href="/community"
-                className="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-black transition-all"
+                className="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-sm hover:bg-white hover:text-black transition-all"
               >
                 Explore Tools
               </Link>

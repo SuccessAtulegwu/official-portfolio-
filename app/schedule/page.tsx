@@ -329,7 +329,7 @@ export default function SchedulePage() {
                   setPhoneError("");
                   setFormData({ name: "", email: "", message: "" });
                 }}
-                className="px-8 py-3 bg-primary text-black rounded-lg hover:brightness-110 active:brightness-95 transition-all shadow-lg font-medium"
+                className="px-8 py-3 bg-primary text-black rounded-sm hover:brightness-110 active:brightness-95 transition-all shadow-lg font-medium"
               >
                 Schedule Another Meeting
               </button>
@@ -430,7 +430,7 @@ export default function SchedulePage() {
                 <div className="flex justify-end">
                   <button
                     onClick={() => setStep(2)}
-                    className="px-8 py-3 bg-primary text-black rounded-lg hover:brightness-110 active:brightness-95 transition-all shadow-lg font-medium"
+                    className="px-8 py-3 bg-primary text-black rounded-sm hover:brightness-110 active:brightness-95 transition-all shadow-lg font-medium"
                   >
                     Continue
                   </button>
@@ -585,7 +585,7 @@ export default function SchedulePage() {
                       (selectedPlatform === "whatsapp" && (!whatsappNumber.trim() || phoneError !== "")) ||
                       (selectedPlatform !== "whatsapp" && (!meetingLink.trim() || linkError !== ""))
                     }
-                    className={`px-8 py-3 rounded-lg font-medium transition-all shadow-lg ${((selectedPlatform === "whatsapp" && whatsappNumber.trim() && phoneError === "") ||
+                    className={`px-8 py-3 rounded-sm font-medium transition-all shadow-lg ${((selectedPlatform === "whatsapp" && whatsappNumber.trim() && phoneError === "") ||
                       (selectedPlatform !== "whatsapp" && meetingLink.trim() && linkError === ""))
                       ? "bg-primary text-black hover:brightness-110"
                       : "bg-gray-700 text-gray-500 cursor-not-allowed"
@@ -726,7 +726,7 @@ export default function SchedulePage() {
                   <button
                     onClick={() => setStep(4)}
                     disabled={!selectedDate || !selectedTime}
-                    className={`px-8 py-3 rounded-lg font-medium transition-all shadow-lg ${selectedDate && selectedTime
+                    className={`px-8 py-3 rounded-sm font-medium transition-all shadow-lg ${selectedDate && selectedTime
                       ? "bg-primary text-black hover:brightness-110"
                       : "bg-gray-700 text-gray-500 cursor-not-allowed"
                       }`}
@@ -888,7 +888,7 @@ export default function SchedulePage() {
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="px-8 py-3 bg-primary text-black rounded-lg hover:brightness-110 transition-all shadow-lg font-medium"
+                      className="px-8 py-3 bg-primary text-black rounded-sm hover:brightness-110 transition-all shadow-lg font-medium"
                     >
                       {isSubmitting ? (<>
                         <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />

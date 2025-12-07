@@ -6,6 +6,7 @@ import StructuredData from "@/components/StructuredData";
 import ProgressBar from "@/components/ProgressBar";
 import Chatbot from "@/components/Chatbot";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import BackgroundMusic from "@/components/BackgroundMusic";
 import { Toaster } from 'react-hot-toast';
 
 export const viewport: Viewport = {
@@ -203,6 +204,7 @@ export default function RootLayout({
         </Suspense>
         {children}
        {/*  <Chatbot /> */}
+        <BackgroundMusic />
         <Toaster 
           position="top-right"
           toastOptions={{

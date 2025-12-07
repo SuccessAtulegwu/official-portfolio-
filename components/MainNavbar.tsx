@@ -28,58 +28,91 @@ export default function MainNavbar() {
 
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo/Site Name */}
+    <nav className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl">
+        {/* Desktop Navbar - Floating Glassmorphic Design */}
+        <div className="hidden md:flex items-center justify-between h-16 bg-black/60 backdrop-blur-xl border border-gray-800/50 rounded-2xl px-6 shadow-2xl shadow-black/50 relative overflow-hidden">
+          {/* Background gradient glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50"></div>
+          
+          {/* Top border accent */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+          
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0 relative z-10 group">
+            <img
+              src="/moredevlogo.png"
+              alt="Chisa Atulegwu - Developer"
+              className="h-[45px] w-auto object-contain transition-all duration-300 group-hover:brightness-110 group-hover:scale-105"
+            />
+          </Link>
+
+          {/* Center Navigation Pills */}
+          <div className="flex items-center gap-2 relative z-10">
+            {navUrls.map(nav => (
+              <Link
+                key={nav.id.toString()}
+                href={nav.url}
+                className={`relative px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-300 group ${
+                  isActive(nav.url)
+                    ? 'bg-gradient-to-r from-primary to-amber-500 text-black shadow-lg shadow-primary/30'
+                    : 'text-white hover:bg-white/5 hover:text-primary'
+                }`}
+              >
+                {/* Active state glow */}
+                {isActive(nav.url) && (
+                  <div className="absolute inset-0 rounded-xl bg-primary blur-md opacity-40 -z-10"></div>
+                )}
+                
+                <span className="relative z-10">{nav.name}</span>
+                
+                {/* Hover underline */}
+                {!isActive(nav.url) && (
+                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-primary to-amber-500 group-hover:w-3/4 transition-all duration-300"></span>
+                )}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right Side - Premium CTA Button */}
+          <div className="flex items-center gap-3 relative z-10">
+            <Link
+              href="/schedule"
+              className="relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-xl hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 font-bold text-sm overflow-hidden group"
+            >
+              {/* Animated shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              
+              <Calendar className="w-4 h-4 relative z-10 text-black" />
+              <span className="relative z-10">Schedule Meeting</span>
+              
+              {/* Pulse ring effect */}
+              <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile Navbar - Compact Top Bar */}
+        <div className="md:hidden flex items-center justify-between h-16 bg-black/90 backdrop-blur-xl border border-gray-800/50 rounded-2xl px-4 shadow-xl">
+          {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <img
               src="/moredevlogo.png"
               alt="Chisa Atulegwu - Developer"
-              className="h-[40px] sm:h-[50px] md:h-[60px] w-auto object-contain"
+              className="h-[40px] w-auto object-contain"
             />
           </Link>
-
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-            {navUrls.map(nav =>(
-              <Link
-              key={nav.id.toString()}
-              href={nav.url}
-              className={`relative text-sm font-semibold transition-all duration-300 group ${isActive(nav.url)
-                  ? 'text-transparent bg-primary bg-clip-text'
-                  : 'text-white hover:text-transparent hover:bg-primary hover:bg-clip-text'
-                }`}
-            >
-              {nav.name}
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive(nav.url) ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
-            </Link>
-            ))}
-           
-          </div>
-
-          {/* Right Side - Schedule Button (Desktop) */}
-          <div className="hidden md:flex items-center">
-            <Link
-              href="/schedule"
-              className="relative flex items-center gap-2 px-6 py-2.5 bg-primary text-black rounded-lg hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 shadow-lg overflow-hidden group hover:brightness-110 active:brightness-95"
-            >
-              <Calendar className="w-4 h-4 relative z-10 text-black" />
-              <span className="text-sm font-semibold relative z-10 text-black">Schedule Meeting</span>
-            </Link>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-white hover:bg-gray-800 rounded-lg transition-all"
+            className="p-2.5 text-white hover:bg-white/10 rounded-xl transition-all border border-gray-800/50 hover:border-primary/30"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             )}
           </button>
         </div>
@@ -91,7 +124,7 @@ export default function MainNavbar() {
               href="/"
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${isActive('/')
-                  ? 'bg-purple-900/30 text-purple-400 border border-purple-500/30'
+                  ? 'text-primary border border-purple-500/30'
                   : 'text-white hover:bg-gray-800'
                 }`}
             >
@@ -102,7 +135,7 @@ export default function MainNavbar() {
               href="/gallery"
               onClick={() => setMobileMenuOpen(false)}
               className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${isActive('/gallery')
-                  ? 'bg-purple-900/30 text-purple-400 border border-purple-500/30'
+                  ? 'text-primary border border-purple-500/30'
                   : 'text-white hover:bg-gray-800'
                 }`}
             >
@@ -114,7 +147,7 @@ export default function MainNavbar() {
               href="/community"
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${isActive('/community')
-                  ? 'bg-purple-900/30 text-purple-400 border border-purple-500/30'
+                  ? ' text-primary border border-purple-500/30'
                   : 'text-white hover:bg-gray-800'
                 }`}
             >
@@ -173,7 +206,7 @@ export default function MainNavbar() {
             <Link
               href="/schedule"
               onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg transition-all shadow-md ${isActive('/schedule')
+              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-sm transition-all shadow-md ${isActive('/schedule')
                   ? 'bg-primary text-black scale-105'
                   : 'bg-primary text-black hover:brightness-110 active:brightness-95'
                 }`}
