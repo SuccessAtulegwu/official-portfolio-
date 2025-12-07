@@ -103,7 +103,11 @@ export default function CategoryPage({ params }: { params: { category: string } 
   ];
 
   const handleImageError = (imageId: string) => {
-    setImageError(prev => new Set([...prev, imageId]));
+    setImageError(prev => {
+      const newSet = new Set(prev);
+      newSet.add(imageId);
+      return newSet;
+    });
   };
 
   const openLightbox = (image: GalleryImage) => {

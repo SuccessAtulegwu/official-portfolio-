@@ -21,10 +21,10 @@ export default function StructuredData() {
         },
         "sameAs": [
           "https://www.linkedin.com/in/chisaatulegwu",
-          "https://github.com/chisaatulegwu",
-          "https://twitter.com/yourtwitterhandle",
-          "https://facebook.com/yourfacebookprofile",
-          "https://instagram.com/yourinstagram"
+          "https://github.com/successatulegwu",
+          "https://twitter.com/chisaatulegwu",
+          "https://facebook.com/chisaatulegwu",
+          "https://instagram.com/chisaatulegwu"
         ],
         "knowsAbout": [
           "Full Stack Development",

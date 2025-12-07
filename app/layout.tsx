@@ -139,8 +139,8 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    site: "@_smilemoredev", // Update with your actual Twitter handle
-    creator: "@_smilemoredev", // Update with your actual Twitter handle
+    site: "@chisaatulegwu", // Update with your actual Twitter handle
+    creator: "@chisaatulegwu", // Update with your actual Twitter handle
     title: "Chisa Atulegwu | Full-Stack Software Engineer Portfolio",
     description: "4+ years experience building scalable web & mobile apps. Expert in Angular, React Native, Node.js, NestJS, .NET. Check out my projects & free tools!",
     images: ["/twitter-image.png"],
