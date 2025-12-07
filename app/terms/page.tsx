@@ -1,5 +1,5 @@
 import MainNavbar from "@/components/MainNavbar";
-import { FileText, AlertCircle, Scale, Users, Mail, Instagram, Twitter, Youtube } from "lucide-react";
+import { FileText, AlertCircle, Scale, Users, Mail, Instagram, Twitter, Youtube, Facebook, LinkedinIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function TermsOfServicePage() {
@@ -206,6 +206,7 @@ export default function TermsOfServicePage() {
                 <img
                   src="/moredevlogo.png"
                   alt="Chisa Atulegwu - Developer"
+                  className="h-[50px] sm:h-[60px] w-auto object-contain"
                 />
               </Link>
               <p className="text-sm text-gray-400 leading-relaxed">
@@ -272,7 +273,7 @@ export default function TermsOfServicePage() {
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Connect</h3>
               <div className="flex gap-3">
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram./chisaatulegwu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-2.5 bg-gray-800/50 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 border border-gray-700 hover:border-transparent rounded-lg transition-all hover:scale-110"
@@ -281,7 +282,7 @@ export default function TermsOfServicePage() {
                   <Instagram className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/chisaatulegwu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-2.5 bg-gray-800/50 hover:bg-gradient-to-br hover:from-blue-600 hover:to-cyan-600 border border-gray-700 hover:border-transparent rounded-lg transition-all hover:scale-110"
@@ -290,22 +291,31 @@ export default function TermsOfServicePage() {
                   <Twitter className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                 </a>
                 <a
-                  href="https://youtube.com"
+                  href="https://facebook.com/chisaatulegwu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-2.5 bg-gray-800/50 hover:bg-gradient-to-br hover:from-red-600 hover:to-rose-600 border border-gray-700 hover:border-transparent rounded-lg transition-all hover:scale-110"
                   aria-label="YouTube"
                 >
-                  <Youtube className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                  <Facebook className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/chisaatulegwu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-2.5 bg-gray-800/50 hover:bg-gradient-to-br hover:from-red-600 hover:to-rose-600 border border-gray-700 hover:border-transparent rounded-lg transition-all hover:scale-110"
+                  aria-label="YouTube"
+                >
+                  <LinkedinIcon className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                 </a>
               </div>
               <div className="pt-2">
                 <a
-                  href="mailto:abmcodehub@gmail.com"
+                  href="mailto:chisaatulegwu@gmail.com"
                   className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span className="break-all">abmcodehub@gmail.com</span>
+                  <span className="break-all">chisaatulegwu@gmail.com</span>
                 </a>
               </div>
             </div>

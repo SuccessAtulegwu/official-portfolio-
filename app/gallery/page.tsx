@@ -404,10 +404,11 @@ export default function GalleryPage() {
               {/* Brand */}
               <div className="md:col-span-1">
                 <Link href="/">
-                  <img
-                    src="/moredevlogo.png"
-                    alt="Chisa Atulegwu - Developer"
-                  />
+                 <img
+                  src="/moredevlogo.png"
+                  alt="Chisa Atulegwu - Developer"
+                  className="h-[50px] sm:h-[60px] w-auto object-contain"
+                />
                 </Link>
                 <p className="text-gray-400 text-sm mt-3">
                   Building innovative digital solutions with passion and precision.
@@ -473,7 +474,7 @@ export default function GalleryPage() {
                 <h3 className="text-white font-semibold mb-4">Get In Touch</h3>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="/#contact" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
+                    <Link href="/contact" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
                       Contact Me
                     </Link>
                   </li>

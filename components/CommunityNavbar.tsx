@@ -42,10 +42,10 @@ export default function Navbar({
         <div className="flex items-center justify-between h-16">
           {/* Logo/Site Name */}
           <Link href="/">
-            <img
+           <img
               src="/moredevlogo.png"
               alt="Chisa Atulegwu - Developer"
-              className="w-full h-[60px] pb-1 pt-1"
+              className="h-[40px] sm:h-[50px] md:h-[60px] w-auto object-contain pt-1 pb-1"
             />
           </Link>
 

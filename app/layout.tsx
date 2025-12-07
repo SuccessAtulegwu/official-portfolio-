@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.moredev.com'), // Your actual domain
+  metadataBase: new URL('https://www.more-dev.com'), // Your actual domain
   title: {
     default: "Chisa Atulegwu | Full-Stack Software Engineer | Portfolio & Community Tools",
     template: "%s | Chisa Atulegwu - MoreDev"
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
   ],
   authors: [
     { name: "Chisa Atulegwu" },
-    { name: "MoreDev", url: "https://www.moredev.com" }
+    { name: "MoreDev", url: "https://www.more-dev.com" }
   ],
   creator: "Chisa Atulegwu - Full-Stack Software Engineer",
   publisher: "MoreDev - Developer Portfolio & Community Services",
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     locale: "en_US",
-    url: "https://www.moredev.com",
+    url: "https://www.more-dev.com",
     siteName: "Chisa Atulegwu - MoreDev Portfolio",
     title: "Chisa Atulegwu | Full-Stack Software Engineer & Developer Portfolio",
     description: "Results-driven Full-Stack Software Engineer with 4+ years of experience. Expert in Angular, React Native, Node.js, NestJS, and .NET. Showcasing innovative web and mobile projects, plus free community tools.",
@@ -168,12 +168,12 @@ export const metadata: Metadata = {
   
   // Additional tags
   alternates: {
-    canonical: "https://www.moredev.com",
+    canonical: "https://www.more-dev.com",
   },
   
   // Verification (add your verification codes)
   verification: {
-    google: "your-google-verification-code",
+    google: "pUuukKulfv3wzTvRIz1hVilhExVkys_4jSU8b4p6V5o",
     // yandex: "your-yandex-verification-code",
     // yahoo: "your-yahoo-verification-code",
   },
@@ -202,7 +202,7 @@ export default function RootLayout({
           <ProgressBar />
         </Suspense>
         {children}
-        <Chatbot />
+       {/*  <Chatbot /> */}
         <Toaster 
           position="top-right"
           toastOptions={{

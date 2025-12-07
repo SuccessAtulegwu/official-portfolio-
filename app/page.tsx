@@ -3,7 +3,7 @@
 import MainNavbar from "@/components/MainNavbar";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Instagram, Twitter, Youtube, Mail, X, ExternalLink, Download, Loader2, Facebook, Linkedin, Quote, Plus, Minus, HelpCircle, Phone, Globe, MapPin } from "lucide-react";
+import { ArrowUpRight, Instagram, Twitter, Youtube, Mail, X, ExternalLink, Download, Loader2, Facebook, Linkedin, Quote, Plus, Minus, HelpCircle, Phone, Globe, MapPin, LinkedinIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 import SkillsSection from "@/components/SkillSection";
 
@@ -1581,10 +1581,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {/* Brand Section */}
             <div className="space-y-4">
-              <Link href="/">
+              <Link href="/" className="inline-block">
                 <img
                   src="/moredevlogo.png"
                   alt="Chisa Atulegwu - Developer"
+                  className="h-[50px] sm:h-[60px] w-auto object-contain"
                 />
               </Link>
               <p className="text-sm text-white leading-relaxed">
@@ -1651,7 +1652,7 @@ export default function HomePage() {
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">Connect</h3>
               <div className="flex gap-3">
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/chisaatulegwu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-2.5 bg-transparent border border-white/20 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px] hover:shadow-[0_8px_20px_-8px_rgba(255,255,255,0.25)]"
@@ -1660,7 +1661,7 @@ export default function HomePage() {
                   <Instagram className="w-4 h-4 text-white transition-colors" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/chisaatulegwu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-2.5 bg-transparent border border-white/20 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px] hover:shadow-[0_8px_20px_-8px_rgba(255,255,255,0.25)]"
@@ -1669,13 +1670,22 @@ export default function HomePage() {
                   <Twitter className="w-4 h-4 text-white transition-colors" />
                 </a>
                 <a
-                  href="https://youtube.com"
+                  href="https://facebook.com/chisaatulegwu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-2.5 bg-transparent border border-white/20 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px] hover:shadow-[0_8px_20px_-8px_rgba(255,255,255,0.25)]"
                   aria-label="YouTube"
                 >
-                  <Youtube className="w-4 h-4 text-white transition-colors" />
+                  <Facebook className="w-4 h-4 text-white transition-colors" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/chisaatulegwu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-2.5 bg-gray-800/50 hover:bg-gradient-to-br hover:from-red-600 hover:to-rose-600 border border-gray-700 hover:border-transparent rounded-lg transition-all hover:scale-110"
+                  aria-label="YouTube"
+                >
+                  <LinkedinIcon className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                 </a>
               </div>
               <div className="pt-2">

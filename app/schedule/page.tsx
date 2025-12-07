@@ -75,7 +75,7 @@ export default function SchedulePage() {
       duration: "30 min",
       description: "Quick discussion about your project",
       icon: MessageSquare,
-      color: "from-purple-500 to-pink-500",
+      color: "from-amber-500 to-yellow-500",
     },
     {
       id: "project" as MeetingType,
@@ -83,7 +83,7 @@ export default function SchedulePage() {
       duration: "60 min",
       description: "In-depth project planning session",
       icon: Video,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-amber-500 to-orange-500",
     },
     {
       id: "support" as MeetingType,
@@ -91,7 +91,7 @@ export default function SchedulePage() {
       duration: "45 min",
       description: "Get help with technical issues",
       icon: Clock,
-      color: "from-orange-500 to-red-500",
+      color: "from-yellow-500 to-amber-600",
     },
   ];
 
@@ -101,7 +101,7 @@ export default function SchedulePage() {
       id: "zoom" as Platform,
       name: "Zoom",
       icon: Video,
-      color: "from-blue-500 to-blue-600",
+      color: "from-amber-500 to-yellow-500",
       description: "Video call via Zoom",
       requiresLink: true,
       placeholder: "https://zoom.us/j/123456789",
@@ -110,7 +110,7 @@ export default function SchedulePage() {
       id: "meet" as Platform,
       name: "Google Meet",
       icon: Video,
-      color: "from-green-500 to-green-600",
+      color: "from-yellow-500 to-amber-500",
       description: "Video call via Google Meet",
       requiresLink: true,
       placeholder: "https://meet.google.com/abc-defg-hij",
@@ -119,7 +119,7 @@ export default function SchedulePage() {
       id: "teams" as Platform,
       name: "Microsoft Teams",
       icon: Video,
-      color: "from-purple-500 to-purple-600",
+      color: "from-amber-600 to-orange-500",
       description: "Video call via Teams",
       requiresLink: true,
       placeholder: "https://teams.microsoft.com/l/meetup-join/...",
@@ -128,7 +128,7 @@ export default function SchedulePage() {
       id: "whatsapp" as Platform,
       name: "WhatsApp",
       icon: Phone,
-      color: "from-green-400 to-green-600",
+      color: "from-yellow-400 to-amber-500",
       description: "Voice/Video call via WhatsApp",
       requiresLink: false,
       placeholder: "+234 812 345 6789",
@@ -267,41 +267,41 @@ export default function SchedulePage() {
         <MainNavbar />
         <div className="container mx-auto px-4 pt-24 pb-16">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-12 shadow-xl">
-              <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-12 shadow-xl">
+              <CheckCircle className="w-20 h-20 text-primary mx-auto mb-6" />
+              <h2 className="text-3xl font-bold text-white mb-4">
                 Meeting Scheduled Successfully!
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
+              <p className="text-lg text-gray-300 mb-2">
                 Your meeting has been scheduled for:
               </p>
-              <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-6 my-6">
-                <p className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-2">
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-6 my-6">
+                <p className="text-xl font-semibold text-primary mb-2">
                   {formatDate(selectedDate)}
                 </p>
-                <p className="text-lg text-gray-700 dark:text-gray-300">
+                <p className="text-lg text-gray-200">
                   {selectedTime}
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-400 mt-2">
                   {meetingTypes.find((t) => t.id === selectedMeetingType)?.name} (
                   {meetingTypes.find((t) => t.id === selectedMeetingType)?.duration})
                 </p>
-                <div className="mt-4 pt-4 border-t border-purple-200 dark:border-purple-800">
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                    <strong>Platform:</strong> {platforms.find((p) => p.id === selectedPlatform)?.name}
+                <div className="mt-4 pt-4 border-t border-amber-500/20">
+                  <p className="text-sm text-gray-300 mb-2">
+                    <strong className="text-primary">Platform:</strong> {platforms.find((p) => p.id === selectedPlatform)?.name}
                   </p>
                   {selectedPlatform === "whatsapp" ? (
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      <strong>WhatsApp:</strong> {whatsappNumber}
+                    <p className="text-sm text-gray-300">
+                      <strong className="text-primary">WhatsApp:</strong> {whatsappNumber}
                     </p>
                   ) : (
-                    <p className="text-sm text-gray-600 dark:text-gray-400 break-all">
-                      <strong>Meeting Link:</strong>{" "}
+                    <p className="text-sm text-gray-300 break-all">
+                      <strong className="text-primary">Meeting Link:</strong>{" "}
                       <a
                         href={meetingLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple-600 dark:text-purple-400 hover:underline"
+                        className="text-primary hover:underline"
                       >
                         {meetingLink}
                       </a>
@@ -309,8 +309,8 @@ export default function SchedulePage() {
                   )}
                 </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
-                A confirmation email has been sent to <strong>{formData.email}</strong> with the
+              <p className="text-gray-300 mb-8">
+                A confirmation email has been sent to <strong className="text-primary">{formData.email}</strong> with the
                 meeting details.
                 {selectedPlatform === "whatsapp"
                   ? " You will be contacted via WhatsApp at the scheduled time."
@@ -373,15 +373,15 @@ export default function SchedulePage() {
                 <div key={s} className="flex items-center">
                   <div
                     className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold text-sm sm:text-base ${step >= s
-                      ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
-                      : "bg-gray-300 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
+                      ? "bg-primary text-black"
+                      : "bg-gray-800 text-gray-500"
                       }`}
                   >
                     {s}
                   </div>
                   {s < 4 && (
                     <div
-                      className={`w-8 sm:w-16 h-1 ${step > s ? "bg-gradient-to-r from-purple-600 to-pink-600" : "bg-gray-300 dark:bg-gray-700"
+                      className={`w-8 sm:w-16 h-1 ${step > s ? "bg-primary" : "bg-gray-800"
                         }`}
                     ></div>
                   )}
@@ -390,12 +390,12 @@ export default function SchedulePage() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+          <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl">
             {/* Step 1: Select Meeting Type */}
             {step === 1 && (
               <div>
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h2 className="text-2xl font-bold text-white mb-2">
                     Select Meeting Type
                   </h2>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -408,8 +408,8 @@ export default function SchedulePage() {
                       key={type.id}
                       onClick={() => setSelectedMeetingType(type.id)}
                       className={`p-6 rounded-xl border-2 transition-all text-left ${selectedMeetingType === type.id
-                        ? "border-purple-500 bg-purple-50 dark:bg-purple-900/30"
-                        : "border-gray-200 dark:border-gray-600 hover:border-purple-300 dark:hover:border-purple-700"
+                        ? "border-primary bg-amber-500/10"
+                        : "border-gray-700 hover:border-amber-500/50"
                         }`}
                     >
                       <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${type.color} flex items-center justify-center mb-4`}>
@@ -418,10 +418,10 @@ export default function SchedulePage() {
                       <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
                         {type.name}
                       </h3>
-                      <p className="text-sm text-purple-600 dark:text-purple-400 mb-2">
+                      <p className="text-sm text-primary mb-2">
                         {type.duration}
                       </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                      <p className="text-sm text-gray-400">
                         {type.description}
                       </p>
                     </button>
@@ -448,7 +448,7 @@ export default function SchedulePage() {
                     </h2>
                     <button
                       onClick={() => setStep(1)}
-                      className="text-purple-600 dark:text-purple-400 hover:underline text-sm font-medium"
+                      className="text-primary hover:underline text-sm font-medium"
                     >
                       ← Back
                     </button>
@@ -475,8 +475,8 @@ export default function SchedulePage() {
                           setPhoneError("");
                         }}
                         className={`p-4 rounded-xl border-2 transition-all text-left ${selectedPlatform === platform.id
-                          ? "border-purple-500 bg-purple-50 dark:bg-purple-900/30"
-                          : "border-gray-200 dark:border-gray-600 hover:border-purple-300 dark:hover:border-purple-700"
+                          ? "border-primary bg-amber-500/10"
+                          : "border-gray-700 hover:border-amber-500/50"
                           }`}
                       >
                         <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${platform.color} flex items-center justify-center mb-3`}>
@@ -485,7 +485,7 @@ export default function SchedulePage() {
                         <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">
                           {platform.name}
                         </h4>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                        <p className="text-xs text-gray-400">
                           {platform.description}
                         </p>
                       </button>
@@ -497,7 +497,7 @@ export default function SchedulePage() {
                 <div className="mb-8">
                   {selectedPlatform === "whatsapp" ? (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
                         <Phone className="w-4 h-4 inline mr-2" />
                         WhatsApp Number
                       </label>
@@ -518,7 +518,7 @@ export default function SchedulePage() {
                         className={`w-full px-4 py-3 rounded-lg border ${phoneError
                           ? "border-red-500 dark:border-red-500"
                           : "border-gray-300 dark:border-gray-600"
-                          } bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 ${phoneError ? "focus:ring-red-500" : "focus:ring-purple-500"
+                          } bg-gray-800 text-white focus:outline-none focus:ring-2 ${phoneError ? "focus:ring-red-500" : "focus:ring-primary"
                           }`}
                       />
                       {phoneError && (
@@ -530,7 +530,7 @@ export default function SchedulePage() {
                     </div>
                   ) : (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
                         <LinkIcon className="w-4 h-4 inline mr-2" />
                         Meeting Link
                       </label>
@@ -551,7 +551,7 @@ export default function SchedulePage() {
                         className={`w-full px-4 py-3 rounded-lg border ${linkError
                           ? "border-red-500 dark:border-red-500"
                           : "border-gray-300 dark:border-gray-600"
-                          } bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 ${linkError ? "focus:ring-red-500" : "focus:ring-purple-500"
+                          } bg-gray-800 text-white focus:outline-none focus:ring-2 ${linkError ? "focus:ring-red-500" : "focus:ring-primary"
                           }`}
                       />
                       {linkError && (
@@ -587,8 +587,8 @@ export default function SchedulePage() {
                     }
                     className={`px-8 py-3 rounded-lg font-medium transition-all shadow-lg ${((selectedPlatform === "whatsapp" && whatsappNumber.trim() && phoneError === "") ||
                       (selectedPlatform !== "whatsapp" && meetingLink.trim() && linkError === ""))
-                      ? "bg-primary text-black hover:from-purple-700 hover:to-pink-700"
-                      : "bg-gray-300 dark:bg-gray-700 text-gray-500 cursor-not-allowed"
+                      ? "bg-primary text-black hover:brightness-110"
+                      : "bg-gray-700 text-gray-500 cursor-not-allowed"
                       }`}
                   >
                     Continue
@@ -607,7 +607,7 @@ export default function SchedulePage() {
                     </h2>
                     <button
                       onClick={() => setStep(2)}
-                      className="text-purple-600 dark:text-purple-400 hover:underline text-sm font-medium"
+                      className="text-primary hover:underline text-sm font-medium"
                     >
                       ← Back
                     </button>
@@ -627,7 +627,7 @@ export default function SchedulePage() {
                           onClick={previousMonth}
                           className="p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors"
                         >
-                          <ChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                          <ChevronLeft className="w-5 h-5 text-gray-300" />
                         </button>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                           {monthName}
@@ -636,7 +636,7 @@ export default function SchedulePage() {
                           onClick={nextMonth}
                           className="p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors"
                         >
-                          <ChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                          <ChevronRight className="w-5 h-5 text-gray-300" />
                         </button>
                       </div>
 
@@ -645,7 +645,7 @@ export default function SchedulePage() {
                         {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
                           <div
                             key={day}
-                            className="text-center text-sm font-semibold text-gray-600 dark:text-gray-400"
+                            className="text-center text-sm font-semibold text-gray-400"
                           >
                             {day}
                           </div>
@@ -673,10 +673,10 @@ export default function SchedulePage() {
                               onClick={() => !disabled && setSelectedDate(date)}
                               disabled={disabled}
                               className={`aspect-square p-2 rounded-lg text-sm font-medium transition-all ${selected
-                                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+                                ? "bg-primary text-black"
                                 : disabled
-                                  ? "text-gray-400 dark:text-gray-600 cursor-not-allowed"
-                                  : "text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900/30"
+                                  ? "text-gray-600 cursor-not-allowed"
+                                  : "text-gray-300 hover:bg-amber-500/10"
                                 }`}
                             >
                               {day}
@@ -704,10 +704,10 @@ export default function SchedulePage() {
                             onClick={() => slot.available && setSelectedTime(slot.time)}
                             disabled={!slot.available}
                             className={`p-3 rounded-lg text-sm font-medium transition-all ${selectedTime === slot.time
-                              ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+                              ? "bg-primary text-black"
                               : slot.available
-                                ? "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900/30"
-                                : "bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed line-through"
+                                ? "bg-gray-800 text-gray-300 hover:bg-amber-500/10"
+                                : "bg-gray-800 text-gray-600 cursor-not-allowed line-through"
                               }`}
                           >
                             {slot.time}
@@ -727,8 +727,8 @@ export default function SchedulePage() {
                     onClick={() => setStep(4)}
                     disabled={!selectedDate || !selectedTime}
                     className={`px-8 py-3 rounded-lg font-medium transition-all shadow-lg ${selectedDate && selectedTime
-                      ? "bg-primary text-black hover:from-purple-700 hover:to-pink-700"
-                      : "bg-gray-300 dark:bg-gray-700 text-gray-500 cursor-not-allowed"
+                      ? "bg-primary text-black hover:brightness-110"
+                      : "bg-gray-700 text-gray-500 cursor-not-allowed"
                       }`}
                   >
                     Continue
@@ -747,7 +747,7 @@ export default function SchedulePage() {
                     </h2>
                     <button
                       onClick={() => setStep(3)}
-                      className="text-purple-600 dark:text-purple-400 hover:underline text-sm font-medium"
+                      className="text-primary hover:underline text-sm font-medium"
                     >
                       ← Back
                     </button>
@@ -758,13 +758,13 @@ export default function SchedulePage() {
                 </div>
 
                 {/* Meeting Summary */}
-                <div className="relative bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-purple-900/30 dark:via-pink-900/30 dark:to-blue-900/30 rounded-2xl p-6 mb-8 border border-purple-200 dark:border-purple-800/50 shadow-lg">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+                <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-amber-500/30 shadow-lg">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-yellow-400/20 rounded-full blur-3xl"></div>
 
                   <div className="relative">
                     <div className="flex items-center gap-2 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
-                        <Clock className="w-5 h-5 text-white" />
+                      <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg">
+                        <Clock className="w-5 h-5 text-black" />
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                         Meeting Summary
@@ -773,25 +773,25 @@ export default function SchedulePage() {
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                       {/* Type & Duration */}
-                      <div className="flex flex-col gap-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-purple-100 dark:border-purple-800/30">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center">
-                          <MessageSquare className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                      <div className="flex flex-col gap-3 bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-amber-500/30">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                          <MessageSquare className="w-4 h-4 text-primary" />
                         </div>
                         <div className="flex-grow">
                           <p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide font-medium mb-1">Meeting Type</p>
                           <p className="text-gray-900 dark:text-white font-semibold">
                             {meetingTypes.find((t) => t.id === selectedMeetingType)?.name}
                           </p>
-                          <p className="text-sm text-purple-600 dark:text-purple-400 mt-1">
+                          <p className="text-sm text-primary mt-1">
                             {meetingTypes.find((t) => t.id === selectedMeetingType)?.duration}
                           </p>
                         </div>
                       </div>
 
                       {/* Platform & Link/Phone */}
-                      <div className="flex flex-col gap-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-blue-100 dark:border-blue-800/30">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
-                          <Video className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                      <div className="flex flex-col gap-3 bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-amber-500/30">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                          <Video className="w-4 h-4 text-primary" />
                         </div>
                         <div className="flex-grow min-w-0">
                           <p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide font-medium mb-1">Platform</p>
@@ -800,15 +800,15 @@ export default function SchedulePage() {
                           </p>
                           {selectedPlatform === "whatsapp" ? (
                             <div className="flex items-center gap-2 text-sm">
-                              <Phone className="w-4 h-4 text-green-600 dark:text-green-400 flex-shrink-0" />
-                              <span className="text-gray-700 dark:text-gray-300 font-mono">{whatsappNumber}</span>
+                              <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                              <span className="text-gray-300 font-mono">{whatsappNumber}</span>
                             </div>
                           ) : (
                             <a
                               href={meetingLink}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors group"
+                              className="flex items-center gap-2 text-sm text-primary hover:text-amber-400 transition-colors group"
                             >
                               <LinkIcon className="w-4 h-4 flex-shrink-0" />
                               <span className="truncate group-hover:underline">{meetingLink}</span>
@@ -818,9 +818,9 @@ export default function SchedulePage() {
                       </div>
 
                       {/* Date & Time */}
-                      <div className="flex flex-col gap-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-pink-100 dark:border-pink-800/30">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-pink-100 dark:bg-pink-900/50 flex items-center justify-center">
-                          <Calendar className="w-4 h-4 text-pink-600 dark:text-pink-400" />
+                      <div className="flex flex-col gap-3 bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-amber-500/30">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                          <Calendar className="w-4 h-4 text-primary" />
                         </div>
                         <div className="flex-grow">
                           <p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide font-medium mb-1">Scheduled For</p>
@@ -828,8 +828,8 @@ export default function SchedulePage() {
                             {formatDate(selectedDate)}
                           </p>
                           <div className="flex items-center gap-2 mt-2">
-                            <Clock className="w-4 h-4 text-pink-600 dark:text-pink-400" />
-                            <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">{selectedTime}</span>
+                            <Clock className="w-4 h-4 text-primary" />
+                            <span className="text-sm text-gray-300 font-medium">{selectedTime}</span>
                           </div>
                         </div>
                       </div>
@@ -839,7 +839,7 @@ export default function SchedulePage() {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
                       <User className="w-4 h-4 inline mr-2" />
                       Full Name
                     </label>
@@ -849,13 +849,13 @@ export default function SchedulePage() {
                       name="name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="John Doe"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
                       <Mail className="w-4 h-4 inline mr-2" />
                       Email Address
                     </label>
@@ -865,13 +865,13 @@ export default function SchedulePage() {
                       name="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
                       <MessageSquare className="w-4 h-4 inline mr-2" />
                       Message (Optional)
                     </label>
@@ -880,7 +880,7 @@ export default function SchedulePage() {
                       name="message"
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="Tell us about your project or what you'd like to discuss..."
                     />
                   </div>
@@ -888,7 +888,7 @@ export default function SchedulePage() {
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="px-8 py-3 bg-primary text-black rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg font-medium"
+                      className="px-8 py-3 bg-primary text-black rounded-lg hover:brightness-110 transition-all shadow-lg font-medium"
                     >
                       {isSubmitting ? (<>
                         <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />

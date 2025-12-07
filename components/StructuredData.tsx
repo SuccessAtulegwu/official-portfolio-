@@ -4,14 +4,14 @@ export default function StructuredData() {
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://www.moredev.com/#person",
+        "@id": "https://www.more-dev.com/#person",
         "name": "Chisa Atulegwu",
         "alternateName": ["Chisa Success Atulegwu", "MoreDev"],
         "givenName": "Chisa",
         "familyName": "Atulegwu",
         "jobTitle": "Full-Stack Software Engineer",
         "description": "Results-driven Full-Stack Software Engineer with over 4 years of progressive experience in developing and deploying scalable web and mobile applications. Specializes in Angular, React Native, Next.js, Node.js, NestJS, and .NET Framework.",
-        "url": "https://www.moredev.com",
+        "url": "https://www.more-dev.com",
         "email": "chisaatulegwu@gmail.com",
         "telephone": "+234-704-824-7881",
         "address": {
@@ -131,10 +131,10 @@ export default function StructuredData() {
       },
       {
         "@type": "WebApplication",
-        "@id": "https://www.moredev.com/#webapp",
+        "@id": "https://www.more-dev.com/#webapp",
         "name": "MoreDev - Community Services Platform",
         "alternateName": ["MoreDev Portfolio", "Free Online Tools", "Chisa Atulegwu Portfolio"],
-        "url": "https://www.moredev.com",
+        "url": "https://www.more-dev.com",
         "description": "Professional developer portfolio by Chisa Atulegwu showcasing full-stack projects and free online community tools. Access free utilities and discover innovative web and mobile applications.",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Web Browser, iOS, Android, Windows, macOS",
@@ -156,7 +156,7 @@ export default function StructuredData() {
           "Web hosting solutions",
           "Domain registration services"
         ],
-        "screenshot": "https://www.moredev.com/screenshot.png",
+        "screenshot": "https://www.more-dev.com/screenshot.png",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
@@ -167,13 +167,13 @@ export default function StructuredData() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.moredev.com/#website",
-        "url": "https://www.moredev.com",
+        "@id": "https://www.more-dev.com/#website",
+        "url": "https://www.more-dev.com",
         "name": "Chisa Atulegwu - MoreDev Portfolio & Community Services",
         "description": "Professional full-stack developer portfolio by Chisa Atulegwu showcasing web and mobile applications, plus free online community tools",
         "publisher": {
           "@type": "Person",
-          "@id": "https://www.moredev.com/#person"
+          "@id": "https://www.more-dev.com/#person"
         },
         "mainEntity": {
           "@type": "ItemList",
@@ -182,49 +182,49 @@ export default function StructuredData() {
               "@type": "ListItem",
               "position": 1,
               "name": "Portfolio",
-              "url": "https://www.moredev.com/#portfolio"
+              "url": "https://www.more-dev.com/#portfolio"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "About",
-              "url": "https://www.moredev.com/#about"
+              "url": "https://www.more-dev.com/#about"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": "Services",
-              "url": "https://www.moredev.com/#services"
+              "url": "https://www.more-dev.com/#services"
             },
             {
               "@type": "ListItem",
               "position": 4,
               "name": "Community Tools",
-              "url": "https://www.moredev.com/community"
+              "url": "https://www.more-dev.com/community"
             },
             {
               "@type": "ListItem",
               "position": 5,
               "name": "Contact",
-              "url": "https://www.moredev.com/contact"
+              "url": "https://www.more-dev.com/contact"
             },
             {
               "@type": "ListItem",
               "position": 6,
               "name": "Schedule Meeting",
-              "url": "https://www.moredev.com/schedule"
+              "url": "https://www.more-dev.com/schedule"
             }
           ]
         }
       },
       {
         "@type": "Organization",
-        "@id": "https://www.moredev.com/#organization",
+        "@id": "https://www.more-dev.com/#organization",
         "name": "MoreDev - Chisa Atulegwu Portfolio",
-        "url": "https://www.moredev.com",
+        "url": "https://www.more-dev.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.moredev.com/moredevlogo.png",
+          "url": "https://www.more-dev.com/moredevlogo.png",
           "width": 512,
           "height": 512
         },
@@ -237,26 +237,26 @@ export default function StructuredData() {
         "telephone": "+234-704-824-7881",
         "sameAs": [
           "https://www.linkedin.com/in/chisaatulegwu",
-          "https://github.com/chisaatulegwu",
-          "https://twitter.com/yourtwitterhandle",
-          "https://facebook.com/yourfacebookprofile"
+          "https://github.com/successatulegwu",
+          "https://twitter.com/chisaatulegwu",
+          "https://facebook.com/chisaatulegwu",
         ]
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.moredev.com/#breadcrumb",
+        "@id": "https://www.more-dev.com/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://www.moredev.com"
+            "item": "https://www.more-dev.com"
           }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.moredev.com/#faq",
+        "@id": "https://www.more-dev.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -318,7 +318,7 @@ export default function StructuredData() {
       },
       {
         "@type": "HowTo",
-        "@id": "https://www.moredev.com/#howto",
+        "@id": "https://www.more-dev.com/#howto",
         "name": "How to Schedule a Meeting with Chisa Atulegwu",
         "description": "Step-by-step guide to schedule a consultation meeting for web development, mobile app development, or technical consultation",
         "step": [
@@ -327,46 +327,46 @@ export default function StructuredData() {
             "position": 1,
             "name": "Choose Meeting Type",
             "text": "Visit the schedule page and select your preferred meeting type: consultation call, project discussion, or technical support.",
-            "url": "https://www.moredev.com/schedule#step1"
+            "url": "https://www.more-dev.com/schedule#step1"
           },
           {
             "@type": "HowToStep",
             "position": 2,
             "name": "Select Platform",
             "text": "Choose your preferred meeting platform: Zoom, Google Meet, Microsoft Teams, or WhatsApp.",
-            "url": "https://www.moredev.com/schedule#step2"
+            "url": "https://www.more-dev.com/schedule#step2"
           },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Pick Date & Time",
             "text": "Select an available date and time slot that works best for your schedule.",
-            "url": "https://www.moredev.com/schedule#step3"
+            "url": "https://www.more-dev.com/schedule#step3"
           },
           {
             "@type": "HowToStep",
             "position": 4,
             "name": "Provide Your Information",
             "text": "Enter your name, email, and any additional details about what you'd like to discuss.",
-            "url": "https://www.moredev.com/schedule#step4"
+            "url": "https://www.more-dev.com/schedule#step4"
           },
           {
             "@type": "HowToStep",
             "position": 5,
             "name": "Confirm Booking",
             "text": "Review your meeting details and confirm the booking. You'll receive a confirmation email with meeting details.",
-            "url": "https://www.moredev.com/schedule#step5"
+            "url": "https://www.more-dev.com/schedule#step5"
           }
         ],
         "totalTime": "PT3M"
       },
       {
         "@type": "Service",
-        "@id": "https://www.moredev.com/#service",
+        "@id": "https://www.more-dev.com/#service",
         "serviceType": "Full-Stack Software Development & Community Tools",
         "provider": {
           "@type": "Person",
-          "@id": "https://www.moredev.com/#person"
+          "@id": "https://www.more-dev.com/#person"
         },
         "areaServed": {
           "@type": "Place",
@@ -374,7 +374,7 @@ export default function StructuredData() {
         },
         "availableChannel": {
           "@type": "ServiceChannel",
-          "serviceUrl": "https://www.moredev.com/contact",
+          "serviceUrl": "https://www.more-dev.com/contact",
           "servicePhone": "+234-704-824-7881",
           "availableLanguage": ["en"]
         },
