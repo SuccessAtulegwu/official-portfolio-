@@ -32,11 +32,11 @@ export default function MainNavbar() {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo/Site Name */}
-          <Link href="/">
+          <Link href="/" className="flex-shrink-0">
             <img
               src="/moredevlogo.png"
               alt="Chisa Atulegwu - Developer"
-              className="w-full h-[60px]"
+              className="h-[40px] sm:h-[50px] md:h-[60px] w-auto object-contain"
             />
           </Link>
 
