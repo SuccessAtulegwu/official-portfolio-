@@ -124,7 +124,7 @@ export const metadata: Metadata = {
         alt: "Chisa Atulegwu - Full-Stack Software Engineer Portfolio",
       },
       {
-        url: "/moredevlogo.png",
+        url: "/moredevlogowhite.png",
         width: 800,
         height: 600,
         alt: "MoreDev - Chisa Atulegwu Portfolio",
