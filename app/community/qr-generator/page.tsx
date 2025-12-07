@@ -140,7 +140,7 @@ export default function QRGeneratorPage() {
       const blob = await (await fetch(qrDataURL)).blob();
       const file = new File([blob], "qrcode.png", { type: "image/png" });
       
-      if (navigator.share) {
+      if (typeof window !== 'undefined' && 'share' in navigator) {
         await navigator.share({
           files: [file],
           title: "QR Code",
@@ -407,7 +407,7 @@ export default function QRGeneratorPage() {
                         </>
                       )}
                     </button>
-                    {navigator.share && (
+                    {typeof window !== 'undefined' && 'share' in navigator && (
                       <button
                         onClick={shareQR}
                         className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-700 hover:bg-gray-600 rounded-xl transition-all shadow-lg font-medium"

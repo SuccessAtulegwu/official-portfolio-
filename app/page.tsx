@@ -3,8 +3,9 @@
 import MainNavbar from "@/components/MainNavbar";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Instagram, Twitter, Youtube, Mail, X, ExternalLink, Download, Loader2, Facebook, Linkedin, Quote, Plus, Minus, HelpCircle } from "lucide-react";
+import { ArrowUpRight, Instagram, Twitter, Youtube, Mail, X, ExternalLink, Download, Loader2, Facebook, Linkedin, Quote, Plus, Minus, HelpCircle, Phone, Globe, MapPin } from "lucide-react";
 import { useState, useEffect } from "react";
+import SkillsSection from "@/components/SkillSection";
 
 export default function HomePage() {
   // Lightweight TypeScript code typing effect
@@ -209,7 +210,7 @@ export default function HomePage() {
     {
       id: 3,
       title: "Mobile App Development",
-      description: "Cross-platform mobile apps with React Native, Expo, Ionic and native performance optimization.",
+      description: "Cross-platform mobile apps with React Native, Expo, and Ionic, optimized for native performance.",
     },
     {
       id: 4,
@@ -246,7 +247,7 @@ export default function HomePage() {
   const faqs = [
     {
       q: "What services do you offer?",
-      a: "I build robust, intuitive software that enhances user experience and drives product success"
+      a: "I offer full-stack web development, mobile app development, desktop applications, Windows services, hosting solutions, domain management, and professional email setup. View the Services section above for complete details."
     },
     {
       q: "How fast will I receive my work?",
@@ -270,105 +271,108 @@ export default function HomePage() {
     }
   ];
 
-  // Professional skills data for progress bars
-  const skills = [
-    { label: 'HTML 5', percent: 95 },
-    { label: 'JavaScript', percent: 85 },
-    { label: 'C#', percent: 95 },
-    { label: 'TypeScript', percent: 95 },
-    { label: 'CSS', percent: 95 },
-    { label: 'Java', percent: 75 },
-  ];
-
   const frameworks = [
-    { label: 'Angular', percent: 95 },
-    { label: 'React Native & Expo', percent: 95 },
-    { label: 'Next.js', percent: 65 },
-    { label: 'Nest.js', percent: 95 },
-    { label: 'Node.js', percent: 95 },
-    { label: '.Net', percent: 95 },
+    { label: 'Angular', percent: 90 },
+    { label: 'React Native & Expo', percent: 85 },
+    { label: 'Next.js', percent: 70 },
+    { label: 'Nest.js', percent: 88 },
+    { label: 'Node.js', percent: 92 },
+    { label: '.Net', percent: 85 },
   ];
   const tools = [
     { label: 'Visual Studio', percent: 95 },
     { label: 'Vs Code', percent: 95 },
     { label: 'Postman', percent: 95 },
-    { label: 'CursorAi', percent: 95 },
-    { label: 'TraeAi', percent: 95 },
-    { label: 'Wordpress', percent: 100 },
+    { label: 'Cursor AI', percent: 95 },
+    { label: 'Trae AI', percent: 95 },
+    { label: 'WordPress', percent: 95 },
   ];
 
   const projects = [
     {
       title: "Vital Flow",
       tech: "Node.js • Javascript • Html5 • CSS3",
-      image: "/projects/vital.png",
+      image: "/projects/vitalflow.svg",
       gradient: "from-purple-600/90 to-pink-600/90",
       description: "Full-stack doctor booking web app.",
       longDescription: "A comprehensive healthcare platform connecting patients with doctors. Features include appointment scheduling, video consultations, prescription management, and real-time chat support.",
       screenshots: [
-        "/projects/vital.png",
-        "/projects/vital-dashboard.png",
-        "/projects/vital-booking.png",
-        "/projects/vital-profile.png",
-        "/projects/vital-chat.png",
-        "/projects/vital-prescriptions.png"
+        "/projects/vitalflow1.svg",
+        "/projects/vitalflow2.svg",
+        "/projects/vitalflow3.svg",
+        "/projects/vitalflow4.svg",
+        "/projects/vitalflow5.svg",
+        "/projects/vitalflow6.svg",
+        "/projects/vitalflow7.svg",
+        "/projects/vitalflow8.svg",
+        "/projects/vitalflow9.svg",
+        "/projects/vitalflow10.svg",
+        "/projects/vitalflow11.svg",
+        "/projects/vitalflow12.svg",
+        "/projects/vitalflow13.svg"
       ],
-      liveUrl: "https://vitalflow-demo.com",
-      githubUrl: "https://github.com/yourusername/vitalflow"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "Together Culture",
       tech: "Node.js • Javascript • Html5 • CSS3",
-      image: "/projects/culture.png",
+      image: "/projects/culture.svg",
       gradient: "from-blue-600/90 to-cyan-500/90",
       description: "Community empowerment platform",
       longDescription: "A social platform designed to bring communities together, featuring event management, discussion forums, resource sharing, and community-driven initiatives.",
       screenshots: [
-        "/projects/culture.png",
-        "/projects/culture-events.png",
-        "/projects/culture-forum.png",
-        "/projects/culture-members.png",
-        "/projects/culture-resources.png",
-        "/projects/culture-calendar.png"
+        "/projects/culture1.svg",
+        "/projects/culture2.svg",
+        "/projects/culture3.svg",
+        "/projects/culture4.svg",
+        "/projects/culture5.svg",
+        "/projects/culture6.svg",
+        "/projects/culture7.svg",
+        "/projects/culture8.svg"
       ],
-      liveUrl: "https://togetherculture-demo.com",
-      githubUrl: "https://github.com/yourusername/culture"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "JoME App",
-      tech: "React Native • NestJS • Postgres • Expo",
+      tech: "React Native • NestJS • Postgres • Expo • TypeScript",
       image: "/projects/jome.png",
       gradient: "from-green-600/90 to-emerald-500/90",
       description: "Skill-based job marketplace app.",
       longDescription: "Mobile-first job marketplace connecting skilled workers with opportunities. Features real-time job matching, in-app messaging, portfolio showcase, and secure payment processing.",
       screenshots: [
-        "/projects/jome.png",
-        "/projects/jome-jobs.png",
-        "/projects/jome-profile.png",
-        "/projects/jome-chat.png",
-        "/projects/jome-payments.png",
-        "/projects/jome-reviews.png"
+        "/projects/jome1.png",
+        "/projects/jome2.png",
+        "/projects/jome3.png",
+        "/projects/jome4.png",
+        "/projects/jome5.png",
+        "/projects/jome6.png",
+        "/projects/jome7.png",
+        "/projects/jome8.png",
+        "/projects/jome12.png",
+        "/projects/jome13.png",
+        "/projects/jome14.png",
       ],
-      liveUrl: "https://jomeapp-demo.com",
-      githubUrl: "https://github.com/yourusername/jome"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
-      title: "Video Streaming Service",
-      tech: "React Native • AWS • WebRTC",
-      image: "/projects/video-streaming.jpg",
+      title: "FireHub",
+      tech: "Angular • TypeScript • AWS • Boostrap • .Net Framework • MYSQL",
+      image: "/projects/fire.png",
       gradient: "from-red-600/90 to-rose-500/90",
       description: "Live video streaming platform with chat",
       longDescription: "Real-time video streaming platform with live chat, user subscriptions, video uploads, and analytics dashboard for content creators.",
       screenshots: [
-        "/projects/video-streaming.jpg",
-        "/projects/video-player.jpg",
-        "/projects/video-dashboard.jpg",
-        "/projects/video-chat.jpg",
-        "/projects/video-analytics.jpg",
-        "/projects/video-upload.jpg"
+        "/projects/fire1.png",
+        "/projects/fire2.png",
+        "/projects/fire3.png",
+        "/projects/fire4.png",
+        "/projects/fire5.png",
       ],
-      liveUrl: "https://videostream-demo.com",
-      githubUrl: "https://github.com/yourusername/video-stream"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "Social Media Dashboard",
@@ -385,8 +389,8 @@ export default function HomePage() {
         "/projects/social-engagement.jpg",
         "/projects/social-trends.jpg"
       ],
-      liveUrl: "https://socialdash-demo.com",
-      githubUrl: "https://github.com/yourusername/social-dashboard"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "Weather Forecast App",
@@ -403,8 +407,8 @@ export default function HomePage() {
         "/projects/weather-alerts.jpg",
         "/projects/weather-settings.jpg"
       ],
-      liveUrl: "https://weather-demo.com",
-      githubUrl: "https://github.com/yourusername/weather"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "Fitness Tracker",
@@ -421,8 +425,8 @@ export default function HomePage() {
         "/projects/fitness-social.jpg",
         "/projects/fitness-goals.jpg"
       ],
-      liveUrl: "https://fitness-demo.com",
-      githubUrl: "https://github.com/yourusername/fitness"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "Blog CMS",
@@ -439,8 +443,8 @@ export default function HomePage() {
         "/projects/blog-comments.jpg",
         "/projects/blog-analytics.jpg"
       ],
-      liveUrl: "https://blogcms-demo.com",
-      githubUrl: "https://github.com/yourusername/blog-cms"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "Crypto Wallet",
@@ -457,8 +461,8 @@ export default function HomePage() {
         "/projects/crypto-history.jpg",
         "/projects/crypto-security.jpg"
       ],
-      liveUrl: "https://cryptowallet-demo.com",
-      githubUrl: "https://github.com/yourusername/crypto-wallet"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "Music Player",
@@ -475,8 +479,8 @@ export default function HomePage() {
         "/projects/music-library.jpg",
         "/projects/music-social.jpg"
       ],
-      liveUrl: "https://musicplayer-demo.com",
-      githubUrl: "https://github.com/yourusername/music-player"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "Code Editor",
@@ -493,8 +497,8 @@ export default function HomePage() {
         "/projects/code-themes.jpg",
         "/projects/code-terminal.jpg"
       ],
-      liveUrl: "https://codeeditor-demo.com",
-      githubUrl: "https://github.com/yourusername/code-editor"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
     {
       title: "Recipe Finder",
@@ -511,27 +515,34 @@ export default function HomePage() {
         "/projects/recipe-shopping.jpg",
         "/projects/recipe-favorites.jpg"
       ],
-      liveUrl: "https://recipefinder-demo.com",
-      githubUrl: "https://github.com/yourusername/recipe-finder"
+      liveUrl: "/contact",
+      githubUrl: "#"
     },
   ];
 
-  const experiences = [
-    {
-      company: "Amadeo Systems",
-      logo: "/amadeo.png",
-      position: "Software Engineer at Amadeo",
-      period: "Jan 2020 - Present",
-      description: "As a Software Engineer at Amadeo, I played a pivotal role in developing innovative solutions. Collaborating with a dynamic team of engineers, I contributed to the enhancement of the access control system, optimizing user experiences for millions of users worldwide."
-    },
-    {
-      company: "Bems",
-      logo: "/bems.png",
-      position: "Lead Software Engineer at Bems",
-      period: "Aug 2019 - Dec 2020",
-      description: "During my tenure at Bems, I held the role of Software Engineer, where I, as an IT student played a key role in shaping the architecture of mission-critical software projects. Responsible for designing scalable and efficient systems, I provided technical leadership to a cross-functional team."
-    },
-  ];
+  /*  const experiences = [
+     {
+       company: "Amadeo Systems",
+       logo: "/amadeo.png",
+       position: "Software Engineer at Amadeo",
+       period: "Jan 2020 - Present",
+       description: "As a Software Engineer at Amadeo, I played a pivotal role in developing innovative solutions. Collaborating with a dynamic team of engineers, I contributed to the enhancement of the access control system, optimizing user experiences for millions of users worldwide."
+     },
+     {
+       company: "Bems",
+       logo: "/bems.png",
+       position: "Lead Software Engineer at Bems",
+       period: "Aug 2019 - Dec 2020",
+       description: "During my tenure at Bems, I held the role of Software Engineer, where I, as an IT student, played a key role in shaping the architecture of mission-critical software projects. Responsible for designing scalable and efficient systems, I provided technical leadership to a cross-functional team."
+     },
+   ]; */
+
+  const contacts = [
+    { icon: Phone, label: 'Phone', value: '+2347048247881', href: 'tel:+2347048247881' },
+    { icon: Mail, label: 'Email', value: 'chisaatulegwu@gmail.com', href: 'mailto:chisaatulegwu@gmail.com' },
+    { icon: Globe, label: 'Website', value: 'www.moredev.com', href: 'https://www.moredev.com' },
+    { icon: MapPin, label: 'Address', value: 'Abuja, Nigeria', href: null }
+  ].slice(0, 4);
 
   const styles = {
     tag: {
@@ -552,9 +563,7 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background - Using page background color (black) */}
         <div className="absolute inset-0 bg-black">
-          {/* Subtle geometric patterns for visual interest */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-1/3 left-1/3 w-48 h-48 bg-white rounded-full blur-2xl"></div>
@@ -597,8 +606,8 @@ export default function HomePage() {
               <div className="uppercase">
                 <span className="me-2" style={styles.tag}>#Mobile</span>
                 <span className="me-2" style={styles.tag}>#Web</span>
-                <span className="me-2" style={styles.tag}>#desktop</span>
-                <span style={styles.tag}>#developer</span>
+                <span className="me-2" style={styles.tag}>#Desktop</span>
+                <span style={styles.tag}>#Developer</span>
               </div>
 
               {/* Subtitle - Clean modern font */}
@@ -734,33 +743,34 @@ export default function HomePage() {
                   <div className="absolute -inset-2 bg-white/10 rounded-2xl blur-lg opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
 
                   {/* Profile card container - redesigned to match reference */}
-                  <div className="relative w-72 rounded-2xl overflow-hidden bg-black border border-white/20 shadow-2xl min-h-[26rem]">
+                  <div className="relative w-80 rounded-2xl overflow-hidden bg-black border border-white/20 shadow-2xl min-h-[27rem]">
                     {/* Top: Image */}
                     <div className="relative h-64">
                       <img
                         src="/moredev.png"
                         alt="Chisa Atulegwu - Developer"
-                        className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover object-top transition-all duration-300 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
 
                     {/* Middle: Name and Title */}
                     <div className="px-4 py-3 text-center border-t border-white/10">
-                      <h3 className="text-white font-bold text-lg tracking-tight">Chisa Success</h3>
+                      <h3 className="text-white font-bold text-lg tracking-tight">Chisa Atulegwu</h3>
                       <p className="text-white/60 text-sm">Full-Stack Software Engineer</p>
                     </div>
 
                     {/* Bottom: Social Icons Bar */}
-                    <div className="px-4 py-3 border-t border-white/10">
-                      <div className="flex items-center justify-center gap-1">
+                    <div className="px-3 py-3 border-t border-white/10">
+                      <div className="flex items-center justify-center gap-2">
                         <a
                           href={socialLinks.facebook}
                           onClick={(e) => { e.preventDefault(); openSocial('facebook'); }}
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Facebook"
-                          className="w-8 h-8 rounded-full bg-neutral-900 border border-white/20 flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                          className="w-8 h-8 min-w-8 min-h-8 flex-shrink-0 rounded-full bg-neutral-900 border border-white/20 flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                          style={{ touchAction: 'manipulation' }}
                         >
                           <Facebook className="w-4 h-4 text-white" />
                         </a>
@@ -770,7 +780,8 @@ export default function HomePage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Instagram"
-                          className="w-8 h-8 rounded-full bg-neutral-900 border border-white/20 flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                          className="w-8 h-8 min-w-8 min-h-8 flex-shrink-0 rounded-full bg-neutral-900 border border-white/20 flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                          style={{ touchAction: 'manipulation' }}
                         >
                           <Instagram className="w-4 h-4 text-white" />
                         </a>
@@ -780,7 +791,8 @@ export default function HomePage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="LinkedIn"
-                          className="w-8 h-8 rounded-full bg-neutral-900 border border-white/20 flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                          className="w-8 h-8 min-w-8 min-h-8 rounded-full bg-neutral-900 flex-shrink-0 border border-white/20 flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                          style={{ touchAction: 'manipulation' }}
                         >
                           <Linkedin className="w-4 h-4 text-white" />
                         </a>
@@ -790,7 +802,8 @@ export default function HomePage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="X"
-                          className="w-8 h-8 rounded-full bg-neutral-900 border border-white/20 flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                          className="w-8 h-8 min-w-8 min-h-8 rounded-full bg-neutral-900 flex-shrink-0 border border-white/20 flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                          style={{ touchAction: 'manipulation' }}
                         >
                           <X className="w-4 h-4 text-white" />
                         </a>
@@ -807,7 +820,7 @@ export default function HomePage() {
             <div className="text-white text-center lg:text-left">
               {/* Section Title */}
               <div className="mb-3">
-                <h2 className="scroll-animate text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white/30" style={{
+                <h2 className="scroll-animate text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white leading-tight" style={{
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: '800',
                   letterSpacing: '-0.02em'
@@ -824,8 +837,7 @@ export default function HomePage() {
                   lineHeight: '1.7',
                   letterSpacing: '0.01em'
                 }}>
-                  Results-driven Full-Stack Software Engineer with over 4 years of progressive experience in developing and deploying scalable web and mobile applications. Demonstrated expertise in both frontend and backend technologies.
-                  {/*  I'm Chisa Success Atulegwu, a results-driven Full-Stack Software Engineer with over 4 years of progressive experience in developing and deploying scalable web and mobile applications. Demonstrated expertise in both frontend and backend technologies, with a solid foundation in building user-focused solutions that deliver measurable business value. Skilled in collaborating with cross-functional teams to deliver high-quality products from concept to launch. Passionate about leveraging modern technologies to solve complex problems and create seamless user experiences. */}
+                  Results-driven Full-Stack Software Engineer with over 4 years of progressive experience in developing and deploying scalable web and mobile applications. I have demonstrated expertise in both frontend and backend technologies, with a solid foundation in building user-focused solutions that deliver measurable business value.
                 </p>
               </div>
 
@@ -874,90 +886,21 @@ export default function HomePage() {
                   </button>
                 </div>
               </div>
-
-              {/* Personal Information */}
-              <div className="space-y-4 flex flex-col items-center lg:items-start">
-
-                {/* <div className="scroll-animate-right stagger-3 flex flex-col lg:flex-row lg:items-center space-y-1 lg:space-y-0">
-                  <span className="font-bold text-base lg:w-40 lg:whitespace-nowrap" style={{ 
-                    fontFamily: "'Montserrat', sans-serif",
-                    background: 'linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}>NATIONALITY:</span>
-                  <span className="text-white/90 text-base" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '500' }}>Nigeria</span>
-                </div> */}
-
-                {/*  <div className="scroll-animate-right stagger-4 flex flex-col lg:flex-row lg:items-center space-y-1 lg:space-y-0">
-                  <span className="font-bold text-base lg:w-40 lg:whitespace-nowrap" style={{ 
-                    fontFamily: "'Montserrat', sans-serif",
-                    background: 'linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}>PHONE:</span>
-                  <span className="text-white/90 text-base" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '500' }}>(+234) - 8135262573</span>
-                </div> */}
-
-                {/* <div className="scroll-animate-right stagger-5 flex flex-col lg:flex-row lg:items-center space-y-1 lg:space-y-0">
-                  <span className="font-bold text-base lg:w-40 lg:whitespace-nowrap" style={{ 
-                    fontFamily: "'Montserrat', sans-serif",
-                    background: 'linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}>E-MAIL:</span>
-                  <span className="text-white/90 text-base" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '500' }}>chisaatulegwu@gmail.com</span>
-                </div> */}
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Professional Skills Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex justify-center mb-8 sm:mb-12">
-            <h2
-              className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white/30"
-              style={{
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: 800,
-                letterSpacing: '-0.02em'
-              }}
-            >
-              Technical Proficiencies
-            </h2>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-            {skills.map((skill) => (
-              <div key={skill.label} className="space-y-2">
-                <div className="flex items-center justify-between text-sm text-gray-300">
-                  <span className="uppercase tracking-wider">{skill.label}</span>
-                  <span className="text-gray-400">{skill.percent}%</span>
-                </div>
-                <div className="h-1.5 bg-white/10 rounded-full relative overflow-hidden">
-                  <div
-                    className="skill-bar h-1.5 rounded-full transition-[width] duration-700 bg-gradient-to-r from-primary to-black"
-                    data-percent={skill.percent}
-                    style={{ width: "0%" }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Professional Skills Section */}
+      <SkillsSection />
 
       {/* Framework Skills Section */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
         <div className="container mx-auto max-w-6xl">
           <div className="flex justify-center mb-8 sm:mb-12">
             <h2
-              className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white/30"
+              className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white leading-tight"
               style={{
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 800,
@@ -979,7 +922,7 @@ export default function HomePage() {
                   </div>
                   <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-primary animate-spin" style={{ animationDuration: '3s' }}></div>
                 </div>
-                <div className="md:flex-none md:text-center">
+                <div className="md:flex-none md:text-start">
                   <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-primary transition-colors">{skill.label}</h3>
                   <p className="text-xs text-gray-400 uppercase tracking-wider">Mastery Level</p>
                 </div>
@@ -994,7 +937,7 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex justify-center mb-8 sm:mb-12">
             <h2
-              className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white/30"
+              className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white leading-tight"
               style={{
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 800,
@@ -1039,13 +982,13 @@ export default function HomePage() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black mb-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-8">
             {/* Left: Experience Cards */}
             <div>
               <h2
-                className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30"
+                className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white leading-tight"
                 style={{
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: 800,
@@ -1057,78 +1000,100 @@ export default function HomePage() {
 
               <div className="space-y-4 border overflow-hidden rounded-sm border-gray-800 transition-all duration-300 hover:border-gray-700">
                 {/* Card 1 */}
-                <div className="group relativ backdrop-blur-sm p-6">
+                <div className="group relative backdrop-blur-sm p-6">
                   <div className="absolute top-6 right-6">
-                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2023 — Present</span>
+                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2021 — Present</span>
                   </div>
-                  <h3 className="text-white text-xl font-semibold">UI/UX Designer</h3>
-                  <p className="text-gray-400 text-sm">At Wegems</p>
+                  <h3 className="text-white text-xl font-semibold">Software Engineer</h3>
+                  <p className="text-gray-400 text-sm">At AllPrime</p>
                   <p className="text-gray-300 mt-3 text-sm">
-                    Designing intuitive interfaces, improving user flows, conducting usability tests, and collaborating with teams to create engaging digital experiences.
+                    Collaborated with cross-functional teams to develop scalable applications and intuitive user interfaces. Led the implementation of modern web solutions that improved user engagement and system performance.
                   </p>
                 </div>
 
                 {/* Card 2 */}
                 <div className="group relative backdrop-blur-sm p-6">
                   <div className="absolute top-6 right-6">
-                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2022 — 2023</span>
+                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2024 - Present</span>
                   </div>
-                  <h3 className="text-white text-xl font-semibold">Product Designer</h3>
-                  <p className="text-gray-400 text-sm">At LuminUI</p>
+                  <h3 className="text-white text-xl font-semibold">Software Engineer</h3>
+                  <p className="text-gray-400 text-sm">At CloseBuy</p>
                   <p className="text-gray-300 mt-3 text-sm">
-                    Crafting interactive designs, prototyping innovative features, analyzing user behavior, and ensuring products meet user needs and business goals.
+                    Developing full-stack web and mobile applications using modern technologies. Contributing to architecture decisions, code reviews, and implementing best practices for scalable software solutions.
                   </p>
                 </div>
 
                 {/* Card 3 */}
                 <div className="group relative backdrop-blur-sm p-6">
                   <div className="absolute top-6 right-6">
-                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2020 — 2022</span>
+                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2020 — 2020</span>
                   </div>
-                  <h3 className="text-white text-xl font-semibold">Senior UX Designer</h3>
-                  <p className="text-gray-400 text-sm">At Urgency</p>
+                  <h3 className="text-white text-xl font-semibold">Project Manager</h3>
+                  <p className="text-gray-400 text-sm">At Bems</p>
                   <p className="text-gray-300 mt-3 text-sm">
-                    Leading UX projects, conducting user research and testing, and optimizing products for usability, engagement, and overall satisfaction.
+                    Managed software development projects while pursuing my IT degree. Coordinated with technical teams to design scalable system architectures and ensure timely delivery of mission-critical applications.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Right: Contact Panel */}
-            <div className="md:mt-28">
+
+            <div>
               <h2
-                className="scroll-animate skills-title opacity-0 text-sm sm:text-3xl font-bold mb-4 tracking-wider text-white/30 md:ms-5"
+                className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white leading-tight"
                 style={{
                   fontFamily: "'Poppins', sans-serif",
-                  fontWeight: 600,
+                  fontWeight: 800,
                   letterSpacing: '-0.02em'
                 }}
               >
-                Contact
+                Education
               </h2>
 
-              <div className="space-y-3">
-                <div className="scroll-animate-left stagger-1 flex items-center justify-between bg-gray-900/30 border border-gray-800  p-4">
-                  <span className="text-gray-400">Phone</span>
-                  <span className="text-white">+039 9484 94894</span>
+              <div className="space-y-4 border overflow-hidden rounded-sm border-gray-800 transition-all duration-300 hover:border-gray-700">
+                {/* Card 1 */}
+                <div className="group relative backdrop-blur-sm p-6">
+                  <div className="absolute top-6 right-6">
+                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2016 — 2020</span>
+                  </div>
+                  <h3 className="text-white text-xl font-semibold">Bachelor of Science</h3>
+                  <p className="text-gray-400 text-sm">Computer Science</p>
+                  <p className="text-gray-300 mt-3 text-sm">
+                    Michael Okpara University of Agriculture, Umudike, Umuahia, Abia State, Nigeria
+                  </p>
                 </div>
-                <div className="scroll-animate-left stagger-2 flex items-center justify-between bg-gray-900/30 border border-gray-800 p-4">
-                  <span className="text-gray-400">Email</span>
-                  <span className="text-white">luminiu@gmail.com</span>
+
+                {/* Card 2 */}
+                <div className="group relative backdrop-blur-sm p-6">
+                  <div className="absolute top-6 right-6">
+                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2012 — 2014</span>
+                  </div>
+                  <h3 className="text-white text-xl font-semibold">National Diploma</h3>
+                  <p className="text-gray-400 text-sm">Electrical and Electronics Engineering</p>
+                  <p className="text-gray-300 mt-3 text-sm">
+                    Imo State Polytechnic Umuagwo, Imo State, Nigeria
+                  </p>
                 </div>
-                <div className="scroll-animate-left stagger-3 flex items-center justify-between bg-gray-900/30 border border-gray-800  p-4">
-                  <span className="text-gray-400">Website</span>
-                  <span className="text-white">www.luminiu.com</span>
-                </div>
-                <div className="scroll-animate-left stagger-4 flex items-center justify-between bg-gray-900/30 border border-gray-800  p-4">
-                  <span className="text-gray-400">Address</span>
-                  <span className="text-white text-right">19 Southern Way, UK</span>
+
+                {/* Card 3 */}
+                <div className="group relative backdrop-blur-sm p-6">
+                  <div className="absolute top-6 right-6">
+                    <span className="inline-flex items-center rounded-full bg-amber-500/10 border border-amber-600 text-amber-400 text-xs px-3 py-1">2010 — 2012</span>
+                  </div>
+                  <h3 className="text-white text-xl font-semibold">Professional Computer Training</h3>
+                  <p className="text-gray-400 text-sm">Computer Science & Software Development</p>
+                  <p className="text-gray-300 mt-3 text-sm">
+                    Lexvee Computer Institute, Aba Road, Umuahia, Abia State, Nigeria
+                  </p>
                 </div>
               </div>
             </div>
+
           </div>
+
         </div>
       </section>
+
 
       {/* Services Section */}
       <section id="services" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12">
@@ -1151,7 +1116,7 @@ export default function HomePage() {
 
             {/* Heading + Description */}
             <div className="lg:col-span-2">
-              <h2 className="scroll-animate text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white/30" style={{
+              <h2 className="scroll-animate text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white leading-tight" style={{
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: '800',
                 letterSpacing: '-0.02em'
@@ -1169,19 +1134,28 @@ export default function HomePage() {
 
             {
               services.map((service) => (
-                <div className="scroll-animate stagger-${service.id} border border-gray-800 group-hover:border-transparent group relative rounded-1xl p-6 transition-all overflow-hidden">
-                  {/* Hover gradient overlay */}
-                  <div aria-hidden className="pointer-events-none absolute inset-0 rounded-1xl bg-gradient-to-r from-yellow-400 via-amber-500 to-black opacity-0 group-hover:opacity-25 transition-opacity duration-300 group-hover:border-transparent"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-1">
-                      <h3 className="text-2xl sm:text-2xl font-medium">{service.title}</h3>
-                      {/* <div className="shrink-0">
-                        <div className="w-9 h-9 rounded-full bg-gray-800/80 flex items-center justify-center text-white/80 group-hover:bg-amber-500 group-hover:text-black transition-colors">
-                          <ArrowUpRight className="w-4 h-4" />
-                        </div>
-                      </div> */}
-                    </div>
-                    <div className="text-xs text-white/40 ">{service.description}</div>
+                <div
+                  key={service.id}
+                  className="group relative bg-white/[0.02] backdrop-blur-sm rounded-3xl p-5 lg:p-5 border border-white/[0.05] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-500 cursor-pointer"
+                >
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-600/0 via-purple-600/0 to-pink-600/0 group-hover:from-blue-600/[0.03] group-hover:via-purple-600/[0.03] group-hover:to-pink-600/[0.03] transition-all duration-700 pointer-events-none" />
+
+                  {/* Content */}
+                  <div className="relative">
+
+                    {/* Title */}
+                    <h3 className="text-1xl lg:text-1xl font-bold text-white mb-1 group-hover:text-white transition-colors duration-300">
+                      {service.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-base lg:text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                      {service.description}
+                    </p>
+
+                    {/* Bottom accent line */}
+                    <div className="mt-8 h-[2px] w-16 bg-gradient-to-r from-yellow-300 via-yellow-500 to-amber-600 group-hover:w-32 transition-all duration-500" />
                   </div>
                 </div>
               ))
@@ -1208,28 +1182,30 @@ export default function HomePage() {
               </div>
             </div>
             <div className="lg:col-span-2">
-              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>Showcasing My Work Work for Your Inspiration</h2>
-              <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Discover a showcase of digital creativity — modern mobile and web projects crafted to inspire your next big idea.</p>
+              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white leading-tight" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>Showcasing My Work for Your Inspiration</h2>
+              <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Discover a showcase of digital creativity, modern mobile and web projects crafted to inspire your next big idea.</p>
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            <div onClick={() => setSelectedProject(0)} className="group rounded-lg overflow-hidden">
-              <div className="relative aspect-[5/4]">
-                <Image src="/projects/vital.png" alt="Website Redesign" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => setSelectedProject(0)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
-                    View Project
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
+            {
+              projects.slice(0, 4).map((item, index) => (
+                <div key={index} onClick={() => setSelectedProject(index)} className="group rounded-lg overflow-hidden">
+                  <div className="relative aspect-[5/4]">
+                    <Image src={item.image} alt="Website Redesign" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <button onClick={() => setSelectedProject(0)} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary text-black text-xs font-semibold">
+                        View Project
+                        <ArrowUpRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="px-1 mt-2">
-                <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors">Website Redesign</h3>
-                <p className="text-xs md:text-sm text-gray-400 mt-1">Revamping layouts into modern, responsive websites that improve usability and engagement.</p>
-              </div>
-            </div>
-            <div onClick={() => setSelectedProject(1)} className="group rounded-lg overflow-hidden">
+              ))
+            }
+
+
+            {/*  <div onClick={() => setSelectedProject(1)} className="group rounded-lg overflow-hidden">
               <div className="relative aspect-[5/4]">
                 <Image src="/projects/culture.png" alt="Branding Identity Design" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -1245,6 +1221,7 @@ export default function HomePage() {
                 <p className="text-xs md:text-sm text-gray-400 mt-1">Crafting unique brand identities that reflect values, connect with audiences, and stand out.</p>
               </div>
             </div>
+
             <div className="group rounded-lg overflow-hidden">
               <div className="relative aspect-[5/4]">
                 <Image src="/vsstudio.png" alt="Creative Hub Website" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
@@ -1261,6 +1238,7 @@ export default function HomePage() {
                 <p className="text-xs md:text-sm text-gray-400 mt-1">Designing an engaging platform that brings ideas, content, and communities together.</p>
               </div>
             </div>
+
             <div className="group rounded-lg overflow-hidden">
               <div className="relative aspect-[5/4]">
                 <Image src="/projects/jome.png" alt="Mobile App MVP Designs" fill className="object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-[1.03]" unoptimized />
@@ -1276,12 +1254,10 @@ export default function HomePage() {
                 <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors">Mobile App MVP Designs</h3>
                 <p className="text-xs md:text-sm text-gray-400 mt-1">Building clean, user-friendly MVPs that validate ideas quickly and deliver impact.</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
-
-
 
       <section id="testimonials" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
         <div className="relative container mx-auto max-w-6xl">
@@ -1315,7 +1291,7 @@ export default function HomePage() {
                 />
               </div>
             </div>
-            <p className="mt-3 text-sm sm:text-base text-white/70">Trusted <span className="text-primary font-semibold">18,000+</span> Satisfied Clients</p>
+            <p className="mt-3 text-sm sm:text-base text-white/70">Trusted <span className="text-primary font-semibold">50+</span> Satisfied Clients</p>
           </div>
           <div className="relative mx-auto max-w-[680px] sm:max-w-[760px]">
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-0">
@@ -1325,7 +1301,7 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative z-10 justify-items-center">
               <div className="scroll-animate-right stagger-3 rounded-xl bg-black border border-white/10 p-4 sm:p-5 w-full max-w-[300px] sm:max-w-[340px]">
-                <p className="text-xs sm:text-sm italic text-primary">“SmileDev captured our vision and turned it into a polished website.”</p>
+                <p className="text-xs sm:text-sm italic text-primary">“MoreDev captured our vision and turned it into a polished website.”</p>
                 <p className="mt-2 text-[11px] sm:text-xs text-white/70">Your work is exceptional and well organized , the best I must say and I would definitely recommend you to anyone out there.</p>
                 <div className="mt-3 flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -1373,7 +1349,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
       <section id="faqs" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -1382,7 +1357,7 @@ export default function HomePage() {
                 <span className="text-lg">✦</span>
                 <span>Support</span>
               </div>
-              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>FAQS</h2>
+              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white leading-tight" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>FAQS</h2>
               <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Not sure yet? Have some questions? We listed the ones most frequently asked.</p>
             </div>
 
@@ -1419,7 +1394,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="team" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
+      <section id="team" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden hidden">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div>
@@ -1431,30 +1406,6 @@ export default function HomePage() {
               <p className="scroll-animate-left stagger-3 text-white/70 text-sm sm:text-base mt-3 max-w-2xl">A small, passionate crew focused on building clean, user‑centered products with craft and care.</p>
             </div>
             <div className="scroll-animate-right stagger-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {/* <div className="scroll-animate-right stagger-2 group relative rounded-xl bg-black border border-white/10 p-4 sm:p-5 overflow-hidden h-[320px] sm:h-[360px] flex flex-col">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity bg-gradient-to-r from-primary/25 via-black/60 to-black" aria-hidden></div>
-                <div className="relative z-10">
-                  <div className="relative w-full h-10 rounded-lg overflow-hidden scroll-animate-scale stagger-2">
-                    <Image src="/moredev.png" alt="Team member" fill sizes="100vw" className="object-cover" />
-                  </div>
-                  <div className="mt-3">
-                    <p className="text-white font-medium text-sm sm:text-base">Alex Carter</p>
-                    <p className="text-white/60 text-xs">Lead Engineer</p>
-                  </div>
-                </div>
-
-                <div className="scroll-animate-right stagger-4 relative z-10 mt-4 flex items-center gap-2">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group p-2 bg-transparent border border-white/20 rounded-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px]">
-                    <Linkedin className="w-4 h-4 text-white" />
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="group p-2 bg-transparent border border-white/20 rounded-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px]">
-                    <Twitter className="w-4 h-4 text-white" />
-                  </a>
-                  <a href="https://alex.dev" target="_blank" rel="noopener noreferrer" aria-label="Website" className="group p-2 bg-transparent border border-white/20 rounded-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-[2px]">
-                    <ExternalLink className="w-4 h-4 text-white" />
-                  </a>
-                </div>
-              </div> */}
               <div className="scroll-animate-right stagger-2 group relative rounded-2xl bg-gradient-to-br from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-primary/40 p-6 sm:p-7 overflow-hidden h-[350px] sm:h-[350px] flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
                 {/* Animated background gradient */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-primary/10 via-amber-500/5 to-transparent" aria-hidden></div>
@@ -1602,7 +1553,7 @@ export default function HomePage() {
                 <span className="text-lg">✦</span>
                 <span>Got a project?</span>
               </div>
-              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white/30" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>
+              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white leading-tight" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>
                 Surround yourself
                 <br className="hidden sm:block" />
                 with an expert
@@ -1630,10 +1581,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {/* Brand Section */}
             <div className="space-y-4">
-              <Link href="/" className="inline-block group">
-                <span className="text-2xl sm:text-3xl font-bold text-white group-hover:scale-105 transition-transform inline-block">
-                  {"<moredev/>"}
-                </span>
+              <Link href="/">
+                <img
+                  src="/moredevlogo.png"
+                  alt="Chisa Atulegwu - Developer"
+                />
               </Link>
               <p className="text-sm text-white leading-relaxed">
                 Full-Stack Software Engineer passionate about building innovative web solutions and sharing knowledge with the community.
@@ -1801,7 +1753,7 @@ export default function HomePage() {
                           className="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-black rounded-full text-sm font-medium transition-all hover:scale-105"
                         >
                           <ExternalLink className="w-4 h-4" />
-                          Live Demo
+                          Request Demo
                         </a>
                       )}
                       {projects[selectedProject].githubUrl && (

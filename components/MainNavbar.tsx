@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
   /* {id:4, url:'/#projects', name:'Projects'},
   {id:5, url:'/#experience', name:'Experience'}, */
   {id:6, url:'/about', name:'About'},
-  {id:7, url:'/#contact', name:'Contact'},
+  {id:7, url:'/contact', name:'Contact'},
   {id:8, url:'/technews', name:'Tech News'}
 ]
 export default function MainNavbar() {
@@ -32,16 +32,12 @@ export default function MainNavbar() {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo/Site Name */}
-          <Link href="/" className="flex items-center justify-center gap-2 group">
+          <Link href="/">
             <img
-              src="/moredev.png"
+              src="/moredevlogo.png"
               alt="Chisa Atulegwu - Developer"
-              className="w-[25px] h-[25px] object-cover object-center rounded-full border bg-primary"
+              className="w-full h-[60px]"
             />
-            <span className="text-2xl font-medium  text-white group-hover:scale-105 transition-transform"
-            style={{fontFamily: "'Montserrat', sans-serif",}}>
-              {"MoreDev"}
-            </span>
           </Link>
 
           {/* Desktop Navigation - Centered */}
@@ -153,7 +149,7 @@ export default function MainNavbar() {
             </Link>
 
             <Link
-              href="/#contact"
+              href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-4 py-2.5 text-sm font-medium text-white hover:bg-gray-800 rounded-lg transition-colors"
             >

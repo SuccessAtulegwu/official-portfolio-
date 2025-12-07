@@ -202,10 +202,11 @@ export default function TermsOfServicePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {/* Brand Section */}
             <div className="space-y-4">
-              <Link href="/" className="inline-block group">
-                <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent group-hover:scale-105 transition-transform inline-block">
-                  moredev
-                </span>
+              <Link href="/">
+                <img
+                  src="/moredevlogo.png"
+                  alt="Chisa Atulegwu - Developer"
+                />
               </Link>
               <p className="text-sm text-gray-400 leading-relaxed">
                 Full-Stack Software Engineer passionate about building innovative web solutions and sharing knowledge with the community.

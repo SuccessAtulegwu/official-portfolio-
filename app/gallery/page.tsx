@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import MainNavbar from "@/components/MainNavbar";
-import { 
-  FolderOpen, 
-  Globe, 
-  Smartphone, 
-  Monitor, 
-  Palette, 
-  Server, 
-  Code, 
+import {
+  FolderOpen,
+  Globe,
+  Smartphone,
+  Monitor,
+  Palette,
+  Server,
+  Code,
   Image as ImageIcon,
   Briefcase,
   ShoppingCart,
@@ -218,22 +218,20 @@ export default function GalleryPage() {
               <div className="flex items-center gap-2 bg-gray-800/60 backdrop-blur-sm rounded-xl p-1 border border-gray-700">
                 <button
                   onClick={() => setViewMode("grid")}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                    viewMode === "grid"
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${viewMode === "grid"
                       ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                       : "text-gray-400 hover:text-white"
-                  }`}
+                    }`}
                 >
                   <Grid3X3 className="w-4 h-4" />
                   <span className="text-sm font-medium">Grid</span>
                 </button>
                 <button
                   onClick={() => setViewMode("list")}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                    viewMode === "list"
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${viewMode === "list"
                       ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                       : "text-gray-400 hover:text-white"
-                  }`}
+                    }`}
                 >
                   <List className="w-4 h-4" />
                   <span className="text-sm font-medium">List</span>
@@ -405,12 +403,13 @@ export default function GalleryPage() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
               {/* Brand */}
               <div className="md:col-span-1">
-                <Link href="/" className="inline-block mb-4">
-                  <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                    {"<moredev/>"}
-                  </span>
+                <Link href="/">
+                  <img
+                    src="/moredevlogo.png"
+                    alt="Chisa Atulegwu - Developer"
+                  />
                 </Link>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-400 text-sm mt-3">
                   Building innovative digital solutions with passion and precision.
                 </p>
               </div>

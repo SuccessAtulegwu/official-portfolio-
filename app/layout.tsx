@@ -5,6 +5,8 @@ import "./nprogress.css";
 import StructuredData from "@/components/StructuredData";
 import ProgressBar from "@/components/ProgressBar";
 import Chatbot from "@/components/Chatbot";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { Toaster } from 'react-hot-toast';
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -18,26 +20,52 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fbdownloader.com'), // Replace with your actual domain
+  metadataBase: new URL('https://www.moredev.com'), // Your actual domain
   title: {
-    default: "Full Stack Developer Portfolio & Free Online Tools | Community Services",
-    template: "%s | Developer Portfolio"
+    default: "Chisa Atulegwu | Full-Stack Software Engineer | Portfolio & Community Tools",
+    template: "%s | Chisa Atulegwu - MoreDev"
   },
-  description: "Professional full stack developer portfolio showcasing web applications and software projects. Access free online tools including Facebook & Instagram video downloader, image enhancement, PDF tools, and more. Expert in React, Next.js, Node.js, and modern web technologies.",
+  description: "Chisa Atulegwu - Results-driven Full-Stack Software Engineer with 4+ years of experience in developing scalable web and mobile applications. Expert in Angular, React Native, Next.js, Node.js, NestJS, and .NET. Portfolio showcasing innovative projects and free online community tools.",
   keywords: [
+    // Personal branding
+    "Chisa Atulegwu",
+    "MoreDev",
+    "Chisa Success Atulegwu",
+    
     // Portfolio keywords
     "full stack developer",
+    "full-stack software engineer",
     "web developer portfolio",
-    "software engineer",
+    "software engineer Nigeria",
     "react developer",
+    "angular developer",
     "nextjs developer",
     "nodejs developer",
     "frontend developer",
     "backend developer",
     "full stack engineer",
     
+    // Technical skills
+    "Angular developer",
+    "React Native developer",
+    "Expo developer",
+    "NestJS developer",
+    "Node.js developer",
+    ".NET developer",
+    "TypeScript developer",
+    "JavaScript developer",
+    "C# developer",
+    "Java developer",
+    "mobile app development",
+    "desktop app development",
+    "Windows services",
+    "responsive web design",
+    "API development",
+    "database design",
+    
     // Portfolio projects
     "web application development",
+    "mobile application development",
     "custom web solutions",
     "professional portfolio",
     "software development projects",
@@ -45,34 +73,27 @@ export const metadata: Metadata = {
     
     // Community tools keywords
     "free online tools",
-    "facebook video downloader",
-    "instagram video downloader",
     "community services",
     "online utilities",
     "web tools",
     "free utilities",
     
-    // Technical skills
-    "typescript developer",
-    "javascript developer",
-    "responsive web design",
-    "modern web development",
-    "api development",
-    "database design",
-    
-    // Service keywords
+    // Services
     "developer for hire",
     "web development services",
+    "mobile development services",
     "consultation services",
     "project collaboration",
     "freelance developer",
+    "web hosting solutions",
+    "domain registration",
   ],
   authors: [
-    { name: "Full Stack Developer" },
-    { name: "Community Services Platform", url: "https://fbdownloader.com" }
+    { name: "Chisa Atulegwu" },
+    { name: "MoreDev", url: "https://www.moredev.com" }
   ],
-  creator: "Professional Full Stack Developer",
-  publisher: "Developer Portfolio & Community Services",
+  creator: "Chisa Atulegwu - Full-Stack Software Engineer",
+  publisher: "MoreDev - Developer Portfolio & Community Services",
   
   // Robots and indexing
   robots: {
@@ -89,35 +110,45 @@ export const metadata: Metadata = {
   
   // Open Graph (Facebook, LinkedIn)
   openGraph: {
-    type: "website",
+    type: "profile",
     locale: "en_US",
-    url: "https://fbdownloader.com",
-    siteName: "Developer Portfolio & Community Services",
-    title: "Full Stack Developer Portfolio & Free Online Tools",
-    description: "Professional full stack developer portfolio featuring modern web applications and software projects. Access free online tools: video downloader, image enhancement, PDF tools, and more community services.",
+    url: "https://www.moredev.com",
+    siteName: "Chisa Atulegwu - MoreDev Portfolio",
+    title: "Chisa Atulegwu | Full-Stack Software Engineer & Developer Portfolio",
+    description: "Results-driven Full-Stack Software Engineer with 4+ years of experience. Expert in Angular, React Native, Node.js, NestJS, and .NET. Showcasing innovative web and mobile projects, plus free community tools.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Full Stack Developer Portfolio & Community Services",
+        alt: "Chisa Atulegwu - Full-Stack Software Engineer Portfolio",
+      },
+      {
+        url: "/moredevlogo.png",
+        width: 800,
+        height: 600,
+        alt: "MoreDev - Chisa Atulegwu Portfolio",
       },
     ],
+    // Profile-specific fields
+    firstName: "Chisa",
+    lastName: "Atulegwu",
+    username: "chisaatulegwu",
   },
   
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    site: "@developerportfolio",
-    creator: "@developerportfolio",
-    title: "Full Stack Developer Portfolio & Free Online Tools",
-    description: "Professional developer portfolio showcasing web applications. Free online tools including video downloader, image enhancement, PDF tools, and more.",
+    site: "@_smilemoredev", // Update with your actual Twitter handle
+    creator: "@_smilemoredev", // Update with your actual Twitter handle
+    title: "Chisa Atulegwu | Full-Stack Software Engineer Portfolio",
+    description: "4+ years experience building scalable web & mobile apps. Expert in Angular, React Native, Node.js, NestJS, .NET. Check out my projects & free tools!",
     images: ["/twitter-image.png"],
   },
   
   // Additional metadata
   category: "Technology",
-  classification: "Developer Portfolio & Online Tools Platform",
+  classification: "Professional Developer Portfolio & Software Engineering Services",
   
   // Icons
   icons: {
@@ -137,7 +168,7 @@ export const metadata: Metadata = {
   
   // Additional tags
   alternates: {
-    canonical: "https://fbdownloader.com",
+    canonical: "https://www.moredev.com",
   },
   
   // Verification (add your verification codes)
@@ -153,6 +184,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '';
+
   return (
     <html lang="en">
       <head>
@@ -162,11 +195,37 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body>
+        {/* Google Analytics */}
+        {GA_MEASUREMENT_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />}
+        
         <Suspense fallback={null}>
           <ProgressBar />
         </Suspense>
         {children}
         <Chatbot />
+        <Toaster 
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: '#141414',
+              color: '#fff',
+              border: '1px solid #2a2a2a',
+            },
+            success: {
+              iconTheme: {
+                primary: '#fbbf24',
+                secondary: '#0a0a0a',
+              },
+            },
+            error: {
+              iconTheme: {
+                primary: '#ef4444',
+                secondary: '#fff',
+              },
+            },
+          }}
+        />
       </body>
     </html>
   );

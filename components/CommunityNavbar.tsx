@@ -40,88 +40,83 @@ export default function Navbar({
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-              {/* Logo/Site Name */}
-              <Link href="/" className="flex items-center gap-2 group">
-                <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
-                  moredev
-                </span>
-              </Link>
+          {/* Logo/Site Name */}
+          <Link href="/">
+            <img
+              src="/moredevlogo.png"
+              alt="Chisa Atulegwu - Developer"
+              className="w-full h-[60px] pb-1 pt-1"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             <Link
               href="/"
-              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                isActive('/') && pathname === '/'
+              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${isActive('/') && pathname === '/'
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Home
             </Link>
 
             <Link
               href="/about"
-              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                isActive('/about')
+              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${isActive('/about')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               About
             </Link>
 
             <Link
               href="/contact"
-              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                isActive('/contact')
+              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${isActive('/contact')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Contact
             </Link>
 
             <Link
               href="/privacy"
-              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                isActive('/privacy')
+              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${isActive('/privacy')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Privacy
             </Link>
 
             <Link
               href="/terms"
-              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                isActive('/terms')
+              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${isActive('/terms')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Terms
             </Link>
 
             <Link
               href="/technews"
-              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                isActive('/technews')
+              className={`px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-colors ${isActive('/technews')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Tech News
             </Link>
 
             <Link
               href="/donation"
-              className={`flex items-center gap-1 px-3 xl:px-4 py-2 text-sm font-medium text-white rounded-lg transition-all shadow-md ${
-                isActive('/donation')
+              className={`flex items-center gap-1 px-3 xl:px-4 py-2 text-sm font-medium text-white rounded-lg transition-all shadow-md ${isActive('/donation')
                   ? 'bg-gradient-to-r from-orange-600 via-pink-600 to-purple-700 scale-105'
                   : 'bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 hover:scale-105'
-              }`}
+                }`}
             >
               <Heart className="w-4 h-4" />
               Donate
@@ -212,11 +207,10 @@ export default function Navbar({
             <Link
               href="/"
               onClick={closeMenus}
-              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${
-                isActive('/') && pathname === '/'
+              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${isActive('/') && pathname === '/'
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Home
             </Link>
@@ -224,11 +218,10 @@ export default function Navbar({
             <Link
               href="/about"
               onClick={closeMenus}
-              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${
-                isActive('/about')
+              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${isActive('/about')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               About
             </Link>
@@ -236,11 +229,10 @@ export default function Navbar({
             <Link
               href="/contact"
               onClick={closeMenus}
-              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${
-                isActive('/contact')
+              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${isActive('/contact')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Contact
             </Link>
@@ -248,11 +240,10 @@ export default function Navbar({
             <Link
               href="/privacy"
               onClick={closeMenus}
-              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${
-                isActive('/privacy')
+              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${isActive('/privacy')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Privacy Policy
             </Link>
@@ -260,11 +251,10 @@ export default function Navbar({
             <Link
               href="/terms"
               onClick={closeMenus}
-              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${
-                isActive('/terms')
+              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${isActive('/terms')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Terms of Service
             </Link>
@@ -272,11 +262,10 @@ export default function Navbar({
             <Link
               href="/technews"
               onClick={closeMenus}
-              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${
-                isActive('/technews')
+              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors touch-manipulation ${isActive('/technews')
                   ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 font-semibold'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/20'
-              }`}
+                }`}
             >
               Tech News
             </Link>
@@ -284,11 +273,10 @@ export default function Navbar({
             <Link
               href="/donation"
               onClick={closeMenus}
-              className={`flex items-center justify-center gap-2 mx-4 px-4 py-2.5 text-white rounded-lg transition-all shadow-md touch-manipulation ${
-                isActive('/donation')
+              className={`flex items-center justify-center gap-2 mx-4 px-4 py-2.5 text-white rounded-lg transition-all shadow-md touch-manipulation ${isActive('/donation')
                   ? 'bg-gradient-to-r from-orange-600 via-pink-600 to-purple-700 scale-105'
                   : 'bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 hover:opacity-90'
-              }`}
+                }`}
             >
               <Heart className="w-4 h-4" />
               <span className="text-sm font-medium">Donate</span>

@@ -10,10 +10,19 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 pt-24 sm:pt-28 pb-16">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
+          <div className="text-center mb-12 mt-10">
+            <h2
+              className="text-center text-5xl sm:text-6xl font-bold tracking-wider text-white leading-tight mb-5"
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 800,
+              }}
+            >
+              About Me
+            </h2>
+            {/* <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
               About moredev
-            </h1>
+            </h1> */}
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Building innovative solutions and empowering developers worldwide
             </p>
@@ -24,7 +33,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-4">Our Story</h2>
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                <span className="text-white font-semibold">moredev</span> was born from a passion for creating tools that make developers' lives easier. With over 8 years of hands-on experience in full-stack development, we've witnessed firsthand the challenges developers face daily.
+                <span className="text-white font-semibold">moredev</span> was born from a passion for creating tools that make developers' lives easier. With over 4 years of hands-on experience in full-stack development, we've witnessed firsthand the challenges developers face daily.
               </p>
               <p>
                 What started as a personal portfolio has evolved into a platform offering powerful community tools, from video downloaders to URL shorteners, all designed with simplicity and efficiency in mind.
@@ -124,7 +133,7 @@ export default function AboutPage() {
                   <p className="text-sm text-gray-400">Excellence in every line of code we write</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-3">
                 <div className="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex-shrink-0"></div>
                 <div>
@@ -132,7 +141,7 @@ export default function AboutPage() {
                   <p className="text-sm text-gray-400">Your data security is our top priority</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-3">
                 <div className="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex-shrink-0"></div>
                 <div>
@@ -140,7 +149,7 @@ export default function AboutPage() {
                   <p className="text-sm text-gray-400">Free tools available to everyone, everywhere</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-3">
                 <div className="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex-shrink-0"></div>
                 <div>
@@ -148,7 +157,7 @@ export default function AboutPage() {
                   <p className="text-sm text-gray-400">Continuous improvement and experimentation</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-3">
                 <div className="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex-shrink-0"></div>
                 <div>
@@ -156,7 +165,7 @@ export default function AboutPage() {
                   <p className="text-sm text-gray-400">Building together, learning from each other</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-3">
                 <div className="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex-shrink-0"></div>
                 <div>
@@ -175,7 +184,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap gap-2">
               {["Next.js", "React", "TypeScript", "Node.js", "NestJS", "Angular", "React Native", "Expo", ".NET", "C#", "Tailwind CSS", "PostgreSQL", "MongoDB"].map((tech) => (
-                <span 
+                <span
                   key={tech}
                   className="px-3 py-1.5 bg-gray-800/50 border border-gray-700 rounded-lg text-sm text-gray-300 hover:border-purple-500 transition-colors"
                 >
@@ -186,15 +195,15 @@ export default function AboutPage() {
           </div>
 
           {/* CTA */}
-          <div className="bg-gradient-to-br from-orange-900/50 via-pink-900/50 to-purple-900/50 backdrop-blur-sm border border-orange-800/50 rounded-2xl p-6 sm:p-8 text-center">
+          <div className="bg-black border border-gray-800/50 rounded-2xl p-6 sm:p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Let's Build Something Amazing</h2>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-2xl mx-auto">
               Whether you're looking to collaborate on a project, need development services, or just want to connect, I'd love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/#contact"
-                className="px-6 py-3 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-all hover:scale-105"
+                href="/contact"
+                className="px-6 py-3 bg-primary text-black font-medium rounded-lg hover:opacity-90 transition-all hover:scale-105"
               >
                 Get in Touch
               </Link>
@@ -216,10 +225,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {/* Brand Section */}
             <div className="space-y-4">
-              <Link href="/" className="inline-block group">
-                <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent group-hover:scale-105 transition-transform inline-block">
-                  moredev
-                </span>
+              <Link href="/">
+                <img
+                  src="/moredevlogo.png"
+                  alt="Chisa Atulegwu - Developer"
+                />
               </Link>
               <p className="text-sm text-gray-400 leading-relaxed">
                 Full-Stack Software Engineer passionate about building innovative web solutions and sharing knowledge with the community.
@@ -318,7 +328,7 @@ export default function AboutPage() {
                   className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span className="break-all">abmcodehub@gmail.com</span>
+                  <span className="break-all">chisaatulegwu@gmail.com</span>
                 </a>
               </div>
             </div>
