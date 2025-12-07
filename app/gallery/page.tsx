@@ -194,9 +194,9 @@ export default function GalleryPage() {
             <p className="text-gray-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
               Browse through my visual portfolio organized by categories. Click on any category to view a collection of images showcasing my work in web development, mobile apps, design, and more.
             </p>
-            <p className="text-gray-400 text-sm mt-4 max-w-2xl mx-auto">
+            {/* <p className="text-gray-400 text-sm mt-4 max-w-2xl mx-auto">
               💡 To add your images: Create folders in <code className="bg-gray-800 px-2 py-1 rounded">/public/gallery/[category-name]/</code> and add your images as <code className="bg-gray-800 px-2 py-1 rounded">1.jpg, 2.jpg, 3.jpg</code>, etc.
-            </p>
+            </p> */}
           </div>
 
           {/* Search and View Controls */}

@@ -129,7 +129,7 @@ export default function BackgroundMusic() {
               </div>
 
               {/* Play/Pause Button */}
-              <button
+             <button
                 onClick={togglePlay}
                 className="w-full px-4 py-2 bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary rounded-lg transition-all text-sm font-medium"
               >
@@ -139,7 +139,7 @@ export default function BackgroundMusic() {
           </div>
 
           {/* Main Floating Button */}
-          <button
+          { isPlaying ?? <button
             onClick={togglePlay}
             className={`group relative flex items-center justify-center w-14 h-14 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-full hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-110 overflow-hidden ${
               isPlaying ? 'animate-pulse' : ''
@@ -174,7 +174,7 @@ export default function BackgroundMusic() {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
               </div>
             )}
-          </button>
+          </button>}
         </div>
       </div>
 
