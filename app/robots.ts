@@ -19,7 +19,7 @@ export default function robots(): MetadataRoute.Robots {
         crawlDelay: 0,
       },
     ],
-    sitemap: 'https://fbdownloader.com/sitemap.xml',
+    sitemap: 'https://www.more-dev.com/sitemap.xml',
   }
 }
 

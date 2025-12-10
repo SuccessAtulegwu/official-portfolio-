@@ -141,7 +141,7 @@ export default function StructuredData() {
         "offers": {
           "@type": "Offer",
           "price": "0",
-          "priceCurrency": "USD",
+          "priceCurrency": "USD"
         },
         "featureList": [
           "Professional portfolio showcase",
@@ -239,7 +239,7 @@ export default function StructuredData() {
           "https://www.linkedin.com/in/chisaatulegwu",
           "https://github.com/successatulegwu",
           "https://twitter.com/chisaatulegwu",
-          "https://facebook.com/chisaatulegwu",
+          "https://facebook.com/chisaatulegwu"
         ]
       },
       {

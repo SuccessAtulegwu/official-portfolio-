@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowUpRight, Instagram, Twitter, Youtube, Mail, X, ExternalLink, Download, Loader2, Facebook, Linkedin, Quote, Plus, Minus, HelpCircle, Phone, Globe, MapPin, LinkedinIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 import SkillsSection from "@/components/SkillSection";
+import ServiceCards from "@/components/ServiceCards";
 
 export default function HomePage() {
   // Lightweight TypeScript code typing effect
@@ -199,49 +200,19 @@ export default function HomePage() {
   const services = [
     {
       id: 1,
-      title: "Frontend Development",
-      description: "Modern, responsive web interfaces using React, Angular, Next.js, and Native web languages with pixel-perfect designs.",
+      title: "Web Development",
+      description: "Modern, responsive web applications built with React, Angular, Next.js, or native web technologies, featuring pixel-perfect designs.",
     },
     {
       id: 2,
-      title: "Backend Development",
-      description: "Scalable server-side solutions with .Net, Node.js, NestJS, Express, and RESTful API development.",
+      title: "Mobile App Development",
+      description: "Cross-platform mobile applications using React Native, Expo, or Ionic, delivering native-level performance and user experience.",
     },
     {
       id: 3,
-      title: "Mobile App Development",
-      description: "Cross-platform mobile apps with React Native, Expo, and Ionic, optimized for native performance.",
-    },
-    {
-      id: 4,
       title: "Desktop App Development",
-      description: "Native desktop applications for Windows, macOS, and Linux using Electron, .NET, and WPF.",
+      description: "Native desktop applications for Windows using .NET and WPF frameworks.",
     },
-    {
-      id: 5,
-      title: "Windows Services Development",
-      description: "Background Windows services, system utilities, and enterprise-level Windows applications.",
-    },
-    {
-      id: 6,
-      title: "Project Consultation",
-      description: "Expert technical guidance, architecture planning, and strategic technology recommendations.",
-    },
-    {
-      id: 7,
-      title: "Web Hosting Solutions",
-      description: "Reliable hosting setup, server configuration, SSL certificates, and performance optimization.",
-    },
-    {
-      id: 8,
-      title: "Domain Registration & Management",
-      description: "Domain name registration, DNS configuration, email setup, and domain transfers.",
-    },
-    {
-      id: 9,
-      title: "Professional Email Service Setup",
-      description: "Custom business email setup, G Suite/Microsoft 365 integration, and email security.",
-    }
   ];
 
   const faqs = [
@@ -817,18 +788,29 @@ export default function HomePage() {
             </div>
 
             {/* About Me Content */}
-            <div className="text-white text-center lg:text-left">
-              {/* Section Title */}
-              <div className="mb-3">
-                <h2 className="scroll-animate text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white leading-tight" style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontWeight: '800',
-                  letterSpacing: '-0.02em'
-                }}>
-                  Behind the Code
+            <div className="text-white lg:text-left">
+              <div className="scroll-animate relative mb-3 group">
+                <h2 className="scroll-animate-left text-5xl sm:text-6xl lg:text-8xl font-extralight text-white/5 tracking-tighter absolute -top-6 sm:-top-8 left-0 group-hover:text-white/10 transition-colors duration-700">
+                  ABOUT ME
                 </h2>
+                <h2 className="scroll-animate-right relative text-3xl sm:text-4xl lg:text-6xl text-white tracking-tight pt-6 sm:pt-8">
+                  <span className="inline-block font-light animate-fade-in-up animation-delay-100">Behind</span>
+                  <br />
+                  <span className="inline-block font-semibold bg-gradient-to-r from-white via-amber-300 to-gray-400 bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift animation-delay-300">
+                    The Code
+                  </span>
+                </h2>
+                <div className="scroll-animate mt-4 flex items-center gap-3">
+                  <div className="w-12 sm:w-16 h-px bg-white/20 animate-expand-width"></div>
+                  <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse-glow"></span>
+                  <div className="w-6 sm:w-8 h-px bg-white/20 animate-expand-width animation-delay-200"></div>
+                </div>
+                
+                {/* Animated particles */}
+                <div className="absolute -left-10 top-1/2 w-1 h-1 rounded-full bg-amber-400/30 animate-float"></div>
+                <div className="absolute -right-10 top-1/3 w-1.5 h-1.5 rounded-full bg-amber-400/20 animate-float animation-delay-500"></div>
+                <div className="absolute left-1/4 -top-4 w-1 h-1 rounded-full bg-amber-400/40 animate-float animation-delay-1000"></div>
               </div>
-
               {/* Description */}
               <div className="mb-8">
                 <p className="scroll-animate-left stagger-1 text-white/90 text-lg leading-relaxed" style={{
@@ -852,7 +834,7 @@ export default function HomePage() {
                   >
                     {/* Animated shine effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    
+
                     {/* Content */}
                     <div className="relative z-10 flex items-center gap-2">
                       {isDownloading ? (
@@ -870,7 +852,7 @@ export default function HomePage() {
                         </>
                       )}
                     </div>
-                    
+
                     {/* Pulse ring effect */}
                     <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
                   </button>
@@ -884,7 +866,7 @@ export default function HomePage() {
                   >
                     {/* Animated border shine effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    
+
                     {/* Content */}
                     <div className="relative z-10 flex items-center gap-2">
                       {/* Community service icon */}
@@ -893,7 +875,7 @@ export default function HomePage() {
                       </svg>
                       <span>View Community Service</span>
                     </div>
-                    
+
                     {/* Pulse ring effect */}
                     <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-50 group-hover:scale-110 transition-all duration-500"></div>
                   </button>
@@ -911,17 +893,37 @@ export default function HomePage() {
       {/* Framework Skills Section */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
         <div className="container mx-auto max-w-6xl">
+          <div className="max-w-4xl px-4 sm:px-6 lg:px-0">
+            <div className="relative">
+              <h2 className="text-5xl sm:text-6xl lg:text-8xl font-extralight text-white/5 tracking-tighter absolute -top-6 sm:-top-8 left-0">
+                FRAMEWORKS
+              </h2>
+              <h2 className="scroll-animate-left relative text-3xl sm:text-4xl lg:text-6xl text-white tracking-tight pt-6 sm:pt-8">
+                <span className="font-light">Framework</span>
+                <br />
+                <span className="font-semibold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                  Proficiencies
+                </span>
+              </h2>
+              <div className="scroll-animate-down mt-4 flex items-center gap-3">
+                <div className="w-12 sm:w-16 h-px bg-white/20"></div>
+                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                <div className="w-6 sm:w-8 h-px bg-white/20"></div>
+              </div>
+            </div>
+          </div>
           <div className="flex justify-center mb-8 sm:mb-12">
-            <h2
-              className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white leading-tight"
+
+            {/* <h2
+              className="scroll-animate skills-title opacity-0 text-2xl sm:text-3xl font-bold mb-2 tracking-wider text-white leading-tight"
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontWeight: 800,
+                fontWeight: 300,
                 letterSpacing: '-0.02em'
               }}
             >
               Framework Proficiencies
-            </h2>
+            </h2> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
@@ -946,7 +948,7 @@ export default function HomePage() {
       </section>
 
       {/* Tools Skills Section */}
-     {/*  <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
+      {/*  <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
         <div className="container mx-auto max-w-6xl">
           <div className="flex justify-center mb-8 sm:mb-12">
             <h2
@@ -1003,19 +1005,40 @@ export default function HomePage() {
         </div>
 
         <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="max-w-4xl px-4 sm:px-6 lg:px-0 mb-4">
+            <div className="relative">
+              <h2 className="text-5xl sm:text-6xl lg:text-8xl font-extralight text-white/5 tracking-tighter absolute -top-6 sm:-top-8 left-0">
+                EXPERIENCE
+              </h2>
+              <h2 className="scroll-animate-right relative text-3xl sm:text-4xl lg:text-6xl text-white tracking-tight pt-6 sm:pt-8">
+                <span className="font-light">Work</span>
+                <br />
+                <span className="font-semibold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                  Experience
+                </span>
+              </h2>
+              <div className="mt-4 flex items-center gap-3">
+                <div className="w-12 sm:w-16 h-px bg-white/20"></div>
+                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                <div className="w-6 sm:w-8 h-px bg-white/20"></div>
+              </div>
+            </div>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: Experience Cards */}
             <div className="scroll-animate-left">
-              <h2
+              {/* <h2
                 className="skills-title text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 tracking-tight text-white leading-tight"
                 style={{
                   fontFamily: "'Poppins', sans-serif",
-                  fontWeight: 800,
+                  fontWeight: 300,
                   letterSpacing: '-0.02em'
                 }}
               >
                 Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-500">Experience</span>
-              </h2>
+              </h2> */}
+
+
 
               <div className="space-y-4">
                 {/* Card 1 */}
@@ -1025,10 +1048,10 @@ export default function HomePage() {
                       2021 — Present
                     </span>
                   </div>
-                  
+
                   {/* Accent line */}
                   <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-primary to-amber-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
+
                   <h3 className="text-white text-xl sm:text-2xl font-bold pr-32">Software Engineer</h3>
                   <p className="text-primary text-sm font-semibold mt-1">AllPrime</p>
                   <p className="text-gray-300 mt-4 text-sm leading-relaxed">
@@ -1043,10 +1066,10 @@ export default function HomePage() {
                       2024 — Present
                     </span>
                   </div>
-                  
+
                   {/* Accent line */}
                   <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-primary to-amber-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
+
                   <h3 className="text-white text-xl sm:text-2xl font-bold pr-32">Software Engineer</h3>
                   <p className="text-primary text-sm font-semibold mt-1">CloseBuy</p>
                   <p className="text-gray-300 mt-4 text-sm leading-relaxed">
@@ -1055,32 +1078,32 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            
+
             {/* Right: Professional Image */}
             <div className="scroll-animate-right relative">
               {/* Image container with professional styling */}
               <div className="relative group">
                 {/* Glowing border effect */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary via-amber-500 to-primary rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-                
+
                 {/* Main image container */}
                 <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-4 overflow-hidden">
                   {/* Decorative corner accents */}
                   <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary rounded-tl-2xl"></div>
                   <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-primary rounded-br-2xl"></div>
-                  
+
                   {/* Image with overlay gradient */}
                   <div className="relative rounded-xl overflow-hidden">
-                    <img 
-                      src="/experience.png" 
-                      alt="Professional experience illustration" 
+                    <img
+                      src="/experience.png"
+                      alt="Professional experience illustration"
                       className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                    
+
                     {/* Subtle overlay gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
                   </div>
-                  
+
                   {/* Optional stats overlay - uncomment if desired */}
                   {/* <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-md border border-gray-700 rounded-xl p-4">
                     <div className="flex justify-around text-center">
@@ -1126,23 +1149,42 @@ export default function HomePage() {
 
         <div className="container mx-auto max-w-7xl relative z-10">
           {/* Header Section */}
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="scroll-animate inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6">
+          <div className="mb-12 sm:mb-16">
+            {/* <div className="scroll-animate inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6">
               <span className="text-lg">✦</span>
               <span>My Services</span>
+            </div> */}
+
+            <div className="max-w-4xl">
+              <div className="flex items-start gap-6">
+                <div className="flex flex-col items-center gap-2 pt-2">
+                  <div className="w-2 h-2 rounded-full bg-amber-500"></div>
+                  <div className="w-px h-24 bg-gradient-to-b from-amber-400 to-transparent"></div>
+                </div>
+                <div>
+                  <h2 className="scroll-animate-right text-5xl lg:text-7xl font-light text-white tracking-tight leading-none">
+                    My Services
+                  </h2>
+                  <h2 className="scroll-animate-left text-5xl lg:text-7xl text-white tracking-tight leading-none mt-1">
+                    <span className="font-semibold">How I Deliver Value</span>
+                  </h2>
+                  <p className="text-gray-500 text-lg font-light mt-4 max-w-xl">
+                    I build robust, intuitive software that enhances user experience and drives product success
+                  </p>
+                </div>
+              </div>
             </div>
-            
-            <h2 className="scroll-animate text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-white leading-tight" style={{
+            {/*  <h2 className="scroll-animate text-2xl sm:text-3xl lg:text-6xl font-bold mb-4 tracking-tight text-white leading-tight" style={{
               fontFamily: "'Poppins', sans-serif",
-              fontWeight: '800',
+              fontWeight: '300',
               letterSpacing: '-0.02em'
             }}>
               How I <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-500">Deliver Value</span>
             </h2>
-            
+
             <p className="scroll-animate text-white/70 text-base sm:text-lg max-w-3xl mx-auto mb-8">
               I build robust, intuitive software that enhances user experience and drives product success
-            </p>
+            </p> */}
 
             {/* <div className="scroll-animate">
               <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-black font-semibold hover:bg-amber-400 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
@@ -1153,82 +1195,72 @@ export default function HomePage() {
           </div>
 
           {/* Services Grid with Image */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* Service Cards */}
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                className={`scroll-animate-scale stagger-${index + 1} group relative bg-gradient-to-br from-gray-900/60 to-gray-900/40 backdrop-blur-sm rounded-2xl p-6 lg:p-7 border border-gray-800 hover:border-primary/30 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10`}
-              >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/0 via-amber-500/0 to-primary/0 group-hover:from-primary/5 group-hover:via-amber-500/5 group-hover:to-primary/5 transition-all duration-700 pointer-events-none" />
+          <ServiceCards />
+        </div>
+      </section>
 
-                {/* Top accent line */}
-                <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <section id="cta" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
+        {/* Animated Background */}
 
-                {/* Content */}
-                <div className="relative">
-                  {/* Icon placeholder - you can add icons here */}
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                    <span className="text-2xl">💼</span>
-                  </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300">
-                    {service.title}
-                  </h3>
+        {/* Content */}
+        <div className="relative container mx-auto max-w-6xl">
+          {/* Main container with glassmorphism effect */}
+          <div className="relative bg-gradient-to-br from-gray-900/50 via-amber-950/20 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-3xl p-8 sm:p-12 shadow-2xl">
+            {/* Shine effect */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-50" />
 
-                  {/* Description */}
-                  <p className="text-sm lg:text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                    {service.description}
-                  </p>
-
-                  {/* Bottom accent line */}
-                  <div className="mt-6 h-[2px] w-12 bg-gradient-to-r from-primary via-amber-500 to-primary group-hover:w-full transition-all duration-500" />
+            {/* Content wrapper */}
+            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="flex-1 text-center md:text-left">
+                <div className="scroll-animate-left stagger-1 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-medium mb-6">
+                  <span className="text-lg animate-pulse">✦</span>
+                  <span>Got a project?</span>
                 </div>
+                <h2 className="scroll-animate skills-title opacity-0 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-wider text-white leading-tight mb-4" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>
+                  Surround yourself
+                  <br />
+                  with an <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-amber-400 to-primary animate-gradient">expert</span>
+                </h2>
+                <p className="text-gray-400 text-lg max-w-xl mx-auto md:mx-0">
+                  Let's turn your vision into reality with cutting-edge technology and expert craftsmanship
+                </p>
               </div>
-            ))}
 
-            {/* Professional Service Image - Spans 3 columns on large screens */}
-            <div className="lg:col-span-3 scroll-animate-scale">
-              <div className="relative group">
-                {/* Glowing border effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-amber-500 to-primary rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-                
-                {/* Main image container */}
-                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-4 overflow-hidden">
-                  {/* Decorative corner accents */}
-                  <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-primary rounded-tr-2xl"></div>
-                  <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-primary rounded-bl-2xl"></div>
-                  
-                  {/* Image with overlay gradient */}
-                  <div className="relative rounded-xl overflow-hidden">
-                    <img 
-                      src="/service.png" 
-                      alt="Professional services illustration showcasing expertise in software development" 
-                      className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                    />
-                    
-                    {/* Subtle overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
-                  </div>
+              <div className="scroll-animate-right stagger-3 flex flex-col gap-4 items-center md:items-end">
+                <Link href="/contact" className="group relative inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-xl hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 font-bold text-lg whitespace-nowrap overflow-hidden">
+                  {/* Animated shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
 
-                  {/* Optional overlay text */}
-                  <div className="absolute bottom-8 left-8 right-8">
-                    <div className="bg-black/80 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                      <p className="text-white font-semibold text-lg mb-2">
-                        Ready to bring your ideas to life?
-                      </p>
-                      <p className="text-gray-300 text-sm">
-                        Let's collaborate on building exceptional software solutions tailored to your needs.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  <span className="relative z-10">Start a Project Now</span>
+                  <ArrowUpRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+
+                  {/* Pulse ring effect */}
+                  <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
+                </Link>
+
+                <p className="text-sm text-gray-500">
+                  <span className="text-primary font-semibold">Free consultation</span> • Quick response
+                </p>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Add shine animation */}
+        <style jsx>{`
+          @keyframes shine {
+            from {
+              transform: translateX(-100%) skewX(-12deg);
+            }
+            to {
+              transform: translateX(200%) skewX(-12deg);
+            }
+          }
+          .group:hover .group-hover\\:animate-shine {
+            animation: shine 0.8s ease-in-out;
+          }
+        `}</style>
       </section>
 
       {/* Featured work Section */}
@@ -1240,77 +1272,106 @@ export default function HomePage() {
         </div>
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          {/* Header Section */}
-          <div className="text-center mb-12 sm:mb-16">
+          {/*  <div className="text-center mb-12 sm:mb-16">
             <div className="scroll-animate inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6">
               <span className="text-lg">✦</span>
               <span>Featured Work</span>
             </div>
-            
-            <h2 className="scroll-animate text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-white leading-tight" style={{ 
-              fontFamily: "'Poppins', sans-serif", 
-              fontWeight: 800,
-              letterSpacing: '-0.02em' 
+
+            <h2 className="scroll-animate text-2xl sm:text-3xl lg:text-6xl font-bold mb-4 tracking-tight text-white leading-tight" style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontWeight: 300,
+              letterSpacing: '-0.02em'
             }}>
               Showcasing My <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-500">Work</span>
             </h2>
-            
+
             <p className="scroll-animate text-white/70 text-base sm:text-lg max-w-3xl mx-auto mb-8">
               Discover a showcase of digital creativity, modern mobile and web projects crafted to inspire your next big idea.
             </p>
 
-            
+
+          </div>
+ */}
+          <div className="max-w-4xl mb-6">
+            <div className="flex items-start gap-6">
+              <div className="flex flex-col items-center gap-2 pt-2">
+                <div className="w-2 h-2 rounded-full bg-amber-500"></div>
+                <div className="w-px h-24 bg-gradient-to-b from-amber-400 to-transparent"></div>
+              </div>
+              <div>
+                <h2 className="scroll-animate-right text-5xl lg:text-7xl font-light text-white tracking-tight leading-none">
+                  Featured Work
+                </h2>
+                <h2 className="scroll-animate-left text-5xl lg:text-7xl text-white tracking-tight leading-none mt-1">
+                  <span className="font-semibold">Showcasing My Work</span>
+                </h2>
+                <p className="scroll-animate text-gray-500 text-lg font-light mt-4 max-w-xl">
+                  Discover a showcase of digital creativity, modern mobile and web projects crafted to inspire your next big idea.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {projects.slice(0, 4).map((item, index) => (
-              <div 
-                key={index} 
-                onClick={() => setSelectedProject(index)} 
-                className={`scroll-animate-scale stagger-${index + 1} group relative rounded-2xl overflow-hidden cursor-pointer border border-gray-800 hover:border-primary/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10`}
+              <div
+                key={index}
+                onClick={() => setSelectedProject(index)}
+                className={`scroll-animate-scale stagger-${index + 1} relative group cursor-pointer`}
               >
-                {/* Image Container */}
-                <div className="relative aspect-[4/5] bg-gray-900">
-                  <Image 
-                    src={item.image} 
-                    alt={item.title || "Project showcase"} 
-                    fill 
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" 
-                    unoptimized 
-                  />
-                  
-                  {/* Gradient Overlays */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-                  
-                  {/* Hover accent border */}
-                  <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/50 rounded-2xl transition-all duration-500"></div>
-                  
-                  {/* View Project Button - Center */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
-                    <button 
-                      onClick={() => setSelectedProject(index)} 
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-black text-sm font-bold hover:bg-amber-400 transition-colors shadow-xl"
-                    >
-                      View Project
-                      <ArrowUpRight className="w-4 h-4" />
-                    </button>
-                  </div>
+                {/* Glowing border effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-amber-500 to-primary rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
 
-                  {/* Project Number Badge - Top Left */}
-                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-black/80 backdrop-blur-sm border border-primary/30 flex items-center justify-center">
-                    <span className="text-primary font-bold text-sm">{String(index + 1).padStart(2, '0')}</span>
-                  </div>
+                {/* Main container */}
+                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-3 sm:p-4 overflow-hidden">
+                  {/* Decorative corner accents */}
+                  <div className="absolute top-0 left-0 w-12 h-12 sm:w-20 sm:h-20 border-t-2 border-l-2 border-primary rounded-tl-2xl"></div>
+                  <div className="absolute bottom-0 right-0 w-12 h-12 sm:w-20 sm:h-20 border-b-2 border-r-2 border-primary rounded-br-2xl"></div>
 
-                  {/* Bottom Info Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="bg-black/90 backdrop-blur-md border border-gray-700/50 rounded-xl p-3">
-                      <h3 className="text-white font-bold text-sm sm:text-base mb-1 line-clamp-1 group-hover:text-primary transition-colors">
-                        {item.title || "Featured Project"}
-                      </h3>
-                      <div className="flex items-center gap-2">
-                        <div className="h-[2px] flex-1 bg-gradient-to-r from-primary to-transparent"></div>
-                        <span className="text-primary text-xs font-medium">View Details</span>
+                  {/* Image with overlay */}
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-[4/5]">
+                    <Image
+                      src={item.image}
+                      alt={item.title || "Project showcase"}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                      unoptimized
+                    />
+
+                    {/* Subtle overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
+
+                    {/* Gradient Overlays */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+
+                    {/* View Project Button - Center */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100 z-20">
+                      <button
+                        onClick={() => setSelectedProject(index)}
+                        className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-primary text-black text-xs sm:text-sm font-bold hover:bg-amber-400 transition-colors shadow-xl"
+                      >
+                        View Project
+                        <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      </button>
+                    </div>
+
+                    {/* Project Number Badge - Top Left */}
+                    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/80 backdrop-blur-sm border border-primary/30 flex items-center justify-center z-10">
+                      <span className="text-primary font-bold text-xs sm:text-sm">{String(index + 1).padStart(2, '0')}</span>
+                    </div>
+
+                    {/* Bottom Info Bar */}
+                    <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300 z-10">
+                      <div className="bg-black/90 backdrop-blur-md border border-gray-700/50 rounded-lg sm:rounded-xl p-2 sm:p-3">
+                        <h3 className="text-white font-bold text-xs sm:text-sm mb-1 line-clamp-1 group-hover:text-primary transition-colors">
+                          {item.title || "Featured Project"}
+                        </h3>
+                        <div className="flex items-center gap-2">
+                          <div className="h-[2px] flex-1 bg-gradient-to-r from-primary to-transparent"></div>
+                          <span className="text-primary text-[10px] sm:text-xs font-medium">View Details</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1324,8 +1385,8 @@ export default function HomePage() {
             <p className="text-gray-400 text-sm mb-4">
               Want to see more of my work?
             </p>
-            <Link 
-              href="/gallery" 
+            <Link
+              href="/gallery"
               className="inline-flex items-center gap-2 text-primary hover:text-amber-400 font-semibold transition-colors group"
             >
               Browse Full Portfolio
@@ -1335,106 +1396,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="testimonials" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
-        <div className="relative container mx-auto max-w-6xl">
-          <div className="text-center mb-8 sm:mb-12 scroll-animate stagger-1">
-            <div className="inline-flex -space-x-3">
-              <div className="w-10 h-10 rounded-full ring-2 overflow-hidden flex-shrink-0 shadow-lg shadow-primary/30">
-                <Image
-                  src="/test.jpeg"
-                  alt="Client"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="w-10 h-10 rounded-full  ring-2 overflow-hidden flex-shrink-0 shadow-lg shadow-primary/30">
-                <Image
-                  src="/ola.jpg"
-                  alt="Client"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="w-10 h-10 rounded-full  ring-2 overflow-hidden flex-shrink-0 shadow-lg shadow-primary/30">
-                <Image
-                  src="/test1.jpg"
-                  alt="Client"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <p className="mt-3 text-sm sm:text-base text-white/70">Trusted <span className="text-primary font-semibold">50+</span> Satisfied Clients</p>
-          </div>
-          <div className="relative mx-auto max-w-[680px] sm:max-w-[760px]">
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-0">
-              <span className="block scroll-animate-scale stagger-2 text-transparent text-[5rem] sm:text-[7.5rem] lg:text-[10rem] font-bold tracking-[0.12em] uppercase leading-none select-none whitespace-nowrap mix-blend-soft-light" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.14)' }}>
-                Testimonials
-              </span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative z-10 justify-items-center">
-              <div className="scroll-animate-right stagger-3 rounded-xl bg-black border border-white/10 p-4 sm:p-5 w-full max-w-[300px] sm:max-w-[340px]">
-                <p className="text-xs sm:text-sm italic text-primary">“MoreDev captured our vision and turned it into a polished website.”</p>
-                <p className="mt-2 text-[11px] sm:text-xs text-white/70">Your work is exceptional and well organized , the best I must say and I would definitely recommend you to anyone out there.</p>
-                <div className="mt-3 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
-                      <Image
-                        src="/ola.jpg"
-                        alt="Client"
-                        width={32}
-                        height={32}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-xs sm:text-sm text-white font-medium">Ola from UK</p>
-                      <p className="text-[11px] sm:text-xs text-white/60">CEO, VitalFlow</p>
-                    </div>
-                  </div>
-                  <Quote className="w-5 h-5 text-white/40" />
-                </div>
-              </div>
-              <div className="scroll-animate-left stagger-4 rounded-xl bg-black border border-white/10 p-4 sm:p-5 w-full max-w-[300px] sm:max-w-[340px]">
-                <p className="text-xs sm:text-sm italic text-primary">“The design exceeded our expectations. Clean, modern, and user‑friendly.”</p>
-                <p className="mt-2 text-[11px] sm:text-xs text-white/70">The app runs perfectly, and the codebase is clean and easy to navigate. Your support throughout development was outstanding—patient, clear, and very helpful. You're the best developer I’ve worked with. 10/10, highly recommended.</p>
-                <div className="mt-3 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
-                      <Image
-                        src="/test1.jpg"
-                        alt="Client"
-                        width={32}
-                        height={32}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-xs sm:text-sm text-white font-medium">Daniel Kim</p>
-                      <p className="text-[11px] sm:text-xs text-white/60">CEO, Wegems Agency</p>
-                    </div>
-                  </div>
-                  <Quote className="w-5 h-5 text-white/40" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <section id="faqs" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
+            {/* <div>
               <div className="scroll-animate-left stagger-1 text-amber-400 text-sm font-medium flex items-center gap-2">
                 <span className="text-lg">✦</span>
                 <span>Support</span>
               </div>
-              <h2 className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-5 tracking-wider text-white leading-tight" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>FAQS</h2>
+              <h2 className="scroll-animate skills-title opacity-0 text-2xl sm:text-3xl font-bold mb-5 tracking-wider text-white leading-tight" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>FAQS</h2>
               <p className="scroll-animate-left text-white/70 text-base sm:text-lg max-w-2xl">Not sure yet? Have some questions? We listed the ones most frequently asked.</p>
+            </div> */}
+
+            <div className="max-w-4xl mb-6">
+              <div className="flex items-start gap-6">
+                <div className="flex flex-col items-center gap-2 pt-2">
+                  <div className="w-2 h-2 rounded-full bg-amber-500"></div>
+                  <div className="w-px h-24 bg-gradient-to-b from-amber-400 to-transparent"></div>
+                </div>
+                <div>
+                  <h2 className="scroll-animate-right text-5xl lg:text-7xl font-light text-white tracking-tight leading-none">
+                    Support
+                  </h2>
+                  <h2 className="scroll-animate-left text-5xl lg:text-7xl text-white tracking-tight leading-none mt-1">
+                    <span className="font-semibold">FAQS</span>
+                  </h2>
+                  <p className="text-gray-500 text-lg font-light mt-4 max-w-xl">
+                    Not sure yet? Have some questions? We listed the ones most frequently asked.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div className="scroll-animate-right space-y-3">
@@ -1615,68 +1608,94 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="cta" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
-        {/* Animated Background */}
-        
-
-        {/* Content */}
+      <section id="testimonials" className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black overflow-x-hidden">
         <div className="relative container mx-auto max-w-6xl">
-          {/* Main container with glassmorphism effect */}
-          <div className="relative bg-gradient-to-br from-gray-900/50 via-amber-950/20 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-3xl p-8 sm:p-12 shadow-2xl">
-            {/* Shine effect */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-50" />
-            
-            {/* Content wrapper */}
-            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="flex-1 text-center md:text-left">
-                <div className="scroll-animate-left stagger-1 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-medium mb-6">
-                  <span className="text-lg animate-pulse">✦</span>
-                  <span>Got a project?</span>
-                </div>
-                <h2 className="scroll-animate skills-title opacity-0 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-wider text-white leading-tight mb-4" style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '-0.02em' }}>
-                  Surround yourself
-                  <br />
-                  with an <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-amber-400 to-primary animate-gradient">expert</span>
-                </h2>
-                <p className="text-gray-400 text-lg max-w-xl mx-auto md:mx-0">
-                  Let's turn your vision into reality with cutting-edge technology and expert craftsmanship
-                </p>
+          {/*  <div className="text-center mb-8 sm:mb-12 scroll-animate stagger-1">
+            <div className="inline-flex -space-x-3">
+              <div className="w-10 h-10 rounded-full ring-2 overflow-hidden flex-shrink-0 shadow-lg shadow-primary/30">
+                <Image
+                  src="/test.jpeg"
+                  alt="Client"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              
-              <div className="scroll-animate-right stagger-3 flex flex-col gap-4 items-center md:items-end">
-                <Link href="/contact" className="group relative inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-xl hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 font-bold text-lg whitespace-nowrap overflow-hidden">
-                  {/* Animated shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                  
-                  <span className="relative z-10">Start a Project Now</span>
-                  <ArrowUpRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  
-                  {/* Pulse ring effect */}
-                  <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
-                </Link>
-                
-                <p className="text-sm text-gray-500">
-                  <span className="text-primary font-semibold">Free consultation</span> • Quick response
-                </p>
+              <div className="w-10 h-10 rounded-full  ring-2 overflow-hidden flex-shrink-0 shadow-lg shadow-primary/30">
+                <Image
+                  src="/ola.jpg"
+                  alt="Client"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="w-10 h-10 rounded-full  ring-2 overflow-hidden flex-shrink-0 shadow-lg shadow-primary/30">
+                <Image
+                  src="/test1.jpg"
+                  alt="Client"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <p className="mt-3 text-sm sm:text-base text-white/70">Trusted <span className="text-primary font-semibold">50+</span> Satisfied Clients</p>
+          </div> */}
+          <div className="relative mx-auto max-w-[680px] sm:max-w-[760px]">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-0">
+              <span className="block scroll-animate-scale stagger-2 text-transparent text-[5rem] sm:text-[7.5rem] lg:text-[10rem] font-bold tracking-[0.12em] uppercase leading-none select-none whitespace-nowrap mix-blend-soft-light" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.14)' }}>
+                Testimonials
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative z-10 justify-items-center">
+              <div className="scroll-animate-right stagger-3 rounded-xl bg-black border border-white/10 p-4 sm:p-5 w-full max-w-[300px] sm:max-w-[340px]">
+                <p className="text-xs sm:text-sm italic text-primary">“MoreDev captured our vision and turned it into a polished website.”</p>
+                <p className="mt-2 text-[11px] sm:text-xs text-white/70">Your work is exceptional and well organized , the best I must say and I would definitely recommend you to anyone out there.</p>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
+                      <Image
+                        src="/ola.jpg"
+                        alt="Client"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-xs sm:text-sm text-white font-medium">Ola from UK</p>
+                      <p className="text-[11px] sm:text-xs text-white/60">CEO, VitalFlow</p>
+                    </div>
+                  </div>
+                  <Quote className="w-5 h-5 text-white/40" />
+                </div>
+              </div>
+              <div className="scroll-animate-left stagger-4 rounded-xl bg-black border border-white/10 p-4 sm:p-5 w-full max-w-[300px] sm:max-w-[340px]">
+                <p className="text-xs sm:text-sm italic text-primary">“The design exceeded our expectations. Clean, modern, and user‑friendly.”</p>
+                <p className="mt-2 text-[11px] sm:text-xs text-white/70">The app runs perfectly, and the codebase is clean and easy to navigate. Your support throughout development was outstanding—patient, clear, and very helpful. You're the best developer I’ve worked with. 10/10, highly recommended.</p>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
+                      <Image
+                        src="/test1.jpg"
+                        alt="Client"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-xs sm:text-sm text-white font-medium">Daniel Kim</p>
+                      <p className="text-[11px] sm:text-xs text-white/60">CEO, Wegems Agency</p>
+                    </div>
+                  </div>
+                  <Quote className="w-5 h-5 text-white/40" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Add shine animation */}
-        <style jsx>{`
-          @keyframes shine {
-            from {
-              transform: translateX(-100%) skewX(-12deg);
-            }
-            to {
-              transform: translateX(200%) skewX(-12deg);
-            }
-          }
-          .group:hover .group-hover\\:animate-shine {
-            animation: shine 0.8s ease-in-out;
-          }
-        `}</style>
       </section>
 
       {/* Footer */}

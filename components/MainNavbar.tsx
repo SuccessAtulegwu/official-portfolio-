@@ -84,7 +84,7 @@ export default function MainNavbar() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               
               <Calendar className="w-4 h-4 relative z-10 text-black" />
-              <span className="relative z-10">Schedule Meeting</span>
+              <span className="relative z-10">Let's Talk</span>
               
               {/* Pulse ring effect */}
               <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
@@ -118,8 +118,10 @@ export default function MainNavbar() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-800 py-4 space-y-2">
+        <div className={`md:hidden mt-2 overflow-hidden transition-all duration-300 ease-in-out ${
+          mobileMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="bg-black/90 backdrop-blur-xl border border-gray-800/50 rounded-2xl shadow-xl py-4 space-y-2 px-2">
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
@@ -139,7 +141,6 @@ export default function MainNavbar() {
                   : 'text-white hover:bg-gray-800'
                 }`}
             >
-              <FolderOpen className="w-4 h-4" />
               Gallery
             </Link>
 
@@ -153,23 +154,7 @@ export default function MainNavbar() {
             >
               Community
             </Link>
-
-            <Link
-              href="/#projects"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2.5 text-sm font-medium text-white hover:bg-gray-800 rounded-lg transition-colors"
-            >
-              Projects
-            </Link>
-
-            <Link
-              href="/#experience"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2.5 text-sm font-medium text-white hover:bg-gray-800 rounded-lg transition-colors"
-            >
-              Experience
-            </Link>
-
+           
             <Link
               href="/about"
               onClick={() => setMobileMenuOpen(false)}
@@ -197,25 +182,27 @@ export default function MainNavbar() {
                   : 'text-white hover:bg-gray-800'
                 }`}
             >
-              <Newspaper className="w-4 h-4" />
               Tech News
             </Link>
 
             <div className="border-t border-gray-800 my-2"></div>
 
+           
             <Link
               href="/schedule"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-sm transition-all shadow-md ${isActive('/schedule')
-                  ? 'bg-primary text-black scale-105'
-                  : 'bg-primary text-black hover:brightness-110 active:brightness-95'
-                }`}
+              className="relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-xl hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 font-bold text-sm overflow-hidden group"
             >
-              <Calendar className="w-4 h-4 text-black" />
-              <span className="text-sm font-medium">Schedule Meeting</span>
+              {/* Animated shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              
+              <Calendar className="w-4 h-4 relative z-10 text-black" />
+              <span className="relative z-10">Let's Talk</span>
+              
+              {/* Pulse ring effect */}
+              <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
             </Link>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

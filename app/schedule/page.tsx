@@ -34,6 +34,13 @@ export default function SchedulePage() {
   const [phoneError, setPhoneError] = useState<string>("");
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [honeypot, setHoneypot] = useState("");
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [submitTime, setSubmitTime] = useState<number | null>(null);
 
 
   // Validation functions
@@ -50,6 +57,47 @@ export default function SchedulePage() {
     // Must start with + and contain only digits, spaces, and hyphens
     const phoneRegex = /^\+[0-9\s\-()]{10,}$/;
     return phoneRegex.test(phone.trim());
+  };
+
+  // Validate individual fields
+  const validateField = (name: string, value: string): string => {
+    switch (name) {
+      case 'name':
+        if (value.trim().length < 2) return 'Name must be at least 2 characters';
+        if (value.trim().length > 100) return 'Name is too long';
+        if (!/^[a-zA-Z\s'-]+$/.test(value)) return 'Name contains invalid characters';
+        return '';
+      
+      case 'email':
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) return 'Please enter a valid email address';
+        if (value.length > 100) return 'Email is too long';
+        if (/[<>]/.test(value)) return 'Email contains invalid characters';
+        return '';
+      
+      case 'message':
+        if (value && value.trim().length > 0) {
+          if (value.trim().length < 10) return 'Message must be at least 10 characters';
+          if (value.trim().length > 2000) return 'Message is too long';
+          const urlCount = (value.match(/https?:\/\//gi) || []).length;
+          if (urlCount > 2) return 'Too many links in message';
+        }
+        return '';
+      
+      default:
+        return '';
+    }
+  };
+
+  // Handle input change with validation
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear error when user starts typing
+    if (errors[name as keyof typeof errors]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
   };
 
   const getMeetingPlatform = (platform: Platform): string => {
@@ -195,9 +243,38 @@ export default function SchedulePage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Honeypot check (bots will fill this)
+    if (honeypot) {
+      console.log('Bot detected via honeypot');
+      return;
+    }
+
+    // Time-based bot detection (form filled too quickly)
+    if (submitTime && Date.now() - submitTime < 3000) {
+      toast.error('Please take your time filling the form.');
+      return;
+    }
+
+    // Validate all fields
+    const newErrors = {
+      name: validateField('name', formData.name),
+      email: validateField('email', formData.email),
+      message: validateField('message', formData.message),
+    };
+
+    setErrors(newErrors);
+
+    // Check if there are any errors
+    if (Object.values(newErrors).some(error => error !== '')) {
+      toast.error('Please fix the errors in the form');
+      return;
+    }
+
     setStatus('sending');
     setErrorMessage('');
     SetisSubmitting(true);
+    
     try {
       var formD: MeetingFormData = {
         meetingType: getMeetingType(selectedMeetingType),
@@ -226,6 +303,7 @@ export default function SchedulePage() {
           email: '',
           message: '',
         });
+        setSubmitTime(null);
         toast.success('Meeting scheduled successfully', {
           style: {
             background: '#141414',
@@ -329,9 +407,13 @@ export default function SchedulePage() {
                   setPhoneError("");
                   setFormData({ name: "", email: "", message: "" });
                 }}
-                className="px-8 py-3 bg-primary text-black rounded-sm hover:brightness-110 active:brightness-95 transition-all shadow-lg font-medium"
+                className="group relative flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-xl hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 font-bold text-sm overflow-hidden"
               >
-                Schedule Another Meeting
+                {/* Animated shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <span className="relative z-10">Schedule Another Meeting</span>
+                {/* Pulse ring effect */}
+                <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
               </button>
             </div>
           </div>
@@ -346,7 +428,7 @@ export default function SchedulePage() {
 
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 mt-5">
+          {/* <div className="text-center mb-12 mt-5">
             <h2
               className="text-center text-5xl sm:text-6xl font-bold tracking-wider text-white leading-tight mb-4"
               style={{
@@ -357,13 +439,49 @@ export default function SchedulePage() {
             >
               Schedule a Meeting
             </h2>
-
-            {/* <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Schedule a Meeting
-          </h1> */}
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Choose your preferred time and platform for a seamless collaboration experience
             </p>
+          </div> */}
+
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-0 mt-6">
+            <div className="flex flex-col items-center text-center relative">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                {[...Array(20)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-1 h-1 bg-amber-400 rounded-full opacity-20"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+                      animationDelay: `${Math.random() * 2}s`
+                    }}
+                  ></div>
+                ))}
+              </div>
+
+              <div className="relative z-10 mb-8">
+                <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 border border-cyan-400/30 backdrop-blur-sm mb-4">
+                  <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div>
+                  <span className="text-sm text-amber-400 font-medium tracking-wider uppercase">Portfolio</span>
+                </div>
+
+                <h2 className="text-5xl sm:text-3xl lg:text-4xl font-bold mb-2">
+                  <span className="bg-gradient-to-r from-gray-200 via-gray-200 to-gray-200 bg-clip-text text-transparent">
+                    Schedule a Meeting
+                  </span>
+                </h2>
+
+                <div className="relative w-32 h-1 mx-auto mb-2 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 rounded-full overflow-hidden">
+                  <div className="absolute inset-0 bg-white/50 animate-shimmer"></div>
+                </div>
+
+                <p className="text-gray-300 text-xl sm:text-2xl font-light max-w-2xl leading-relaxed">
+                  Choose your preferred time and platform for a seamless collaboration experience
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Progress Steps */}
@@ -430,9 +548,13 @@ export default function SchedulePage() {
                 <div className="flex justify-end">
                   <button
                     onClick={() => setStep(2)}
-                    className="px-8 py-3 bg-primary text-black rounded-sm hover:brightness-110 active:brightness-95 transition-all shadow-lg font-medium"
+                    className="group relative flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-xl hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 font-bold text-sm overflow-hidden"
                   >
-                    Continue
+                    {/* Animated shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    <span className="relative z-10">Continue</span>
+                    {/* Pulse ring effect */}
+                    <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
                   </button>
                 </div>
               </div>
@@ -585,13 +707,21 @@ export default function SchedulePage() {
                       (selectedPlatform === "whatsapp" && (!whatsappNumber.trim() || phoneError !== "")) ||
                       (selectedPlatform !== "whatsapp" && (!meetingLink.trim() || linkError !== ""))
                     }
-                    className={`px-8 py-3 rounded-sm font-medium transition-all shadow-lg ${((selectedPlatform === "whatsapp" && whatsappNumber.trim() && phoneError === "") ||
+                    className={`group relative flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-bold text-sm transition-all duration-500 shadow-lg overflow-hidden ${((selectedPlatform === "whatsapp" && whatsappNumber.trim() && phoneError === "") ||
                       (selectedPlatform !== "whatsapp" && meetingLink.trim() && linkError === ""))
-                      ? "bg-primary text-black hover:brightness-110"
-                      : "bg-gray-700 text-gray-500 cursor-not-allowed"
+                      ? "bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black hover:bg-[position:100%_0] shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105"
+                      : "bg-gray-700 text-gray-500 cursor-not-allowed opacity-70"
                       }`}
                   >
-                    Continue
+                    {/* Animated shine effect */}
+                    {((selectedPlatform === "whatsapp" && whatsappNumber.trim() && phoneError === "") ||
+                      (selectedPlatform !== "whatsapp" && meetingLink.trim() && linkError === "")) && (
+                        <>
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                          <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
+                        </>
+                      )}
+                    <span className="relative z-10">Continue</span>
                   </button>
                 </div>
               </div>
@@ -726,12 +856,19 @@ export default function SchedulePage() {
                   <button
                     onClick={() => setStep(4)}
                     disabled={!selectedDate || !selectedTime}
-                    className={`px-8 py-3 rounded-sm font-medium transition-all shadow-lg ${selectedDate && selectedTime
-                      ? "bg-primary text-black hover:brightness-110"
-                      : "bg-gray-700 text-gray-500 cursor-not-allowed"
+                    className={`group relative flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-bold text-sm transition-all duration-500 shadow-lg overflow-hidden ${selectedDate && selectedTime
+                      ? "bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black hover:bg-[position:100%_0] shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105"
+                      : "bg-gray-700 text-gray-500 cursor-not-allowed opacity-70"
                       }`}
                   >
-                    Continue
+                    {/* Animated shine effect */}
+                    {selectedDate && selectedTime && (
+                      <>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
+                      </>
+                    )}
+                    <span className="relative z-10">Continue</span>
                   </button>
                 </div>
               </div>
@@ -837,37 +974,58 @@ export default function SchedulePage() {
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6" onFocus={() => !submitTime && setSubmitTime(Date.now())}>
+                  {/* Honeypot field - hidden from users, bots will fill it */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
                       <User className="w-4 h-4 inline mr-2" />
-                      Full Name
+                      Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       required
                       name="name"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                      onChange={handleInputChange}
+                      className={`w-full px-4 py-3 rounded-lg border bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary ${
+                        errors.name ? 'border-red-500' : 'border-gray-700'
+                      }`}
                       placeholder="John Doe"
+                      minLength={2}
+                      maxLength={100}
                     />
+                    {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
                       <Mail className="w-4 h-4 inline mr-2" />
-                      Email Address
+                      Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
                       required
                       name="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                      onChange={handleInputChange}
+                      className={`w-full px-4 py-3 rounded-lg border bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary ${
+                        errors.email ? 'border-red-500' : 'border-gray-700'
+                      }`}
                       placeholder="john@example.com"
+                      maxLength={100}
                     />
+                    {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                   </div>
 
                   <div>
@@ -878,22 +1036,34 @@ export default function SchedulePage() {
                     <textarea
                       value={formData.message}
                       name="message"
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={handleInputChange}
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                      className={`w-full px-4 py-3 rounded-lg border bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary ${
+                        errors.message ? 'border-red-500' : 'border-gray-700'
+                      }`}
                       placeholder="Tell us about your project or what you'd like to discuss..."
+                      maxLength={2000}
                     />
+                    {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+                    {formData.message && <p className="text-gray-500 text-xs mt-1">{formData.message.length}/2000 characters</p>}
                   </div>
 
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="px-8 py-3 bg-primary text-black rounded-sm hover:brightness-110 transition-all shadow-lg font-medium"
+                      className="group relative flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-primary via-amber-400 to-primary bg-[length:200%_100%] text-black rounded-xl hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 font-bold text-sm overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      disabled={isSubmitting}
                     >
-                      {isSubmitting ? (<>
-                        <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
-                        <span className="transition-all duration-300">Send...</span>
-                      </>) : <>Confirm Booking</>}
+                      {/* Animated shine effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      <div className="relative z-10 flex items-center gap-2">
+                        {isSubmitting ? (<>
+                          <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
+                          <span className="transition-all duration-300">Send...</span>
+                        </>) : <>Confirm Booking</>}
+                      </div>
+                      {/* Pulse ring effect */}
+                      <div className="absolute inset-0 rounded-xl border-2 border-primary opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
                     </button>
                   </div>
                 </form>

@@ -29,22 +29,29 @@ const SkillsSection = () => {
       logo: '/java.png'
     },
   ];
-
+   /* text-5xl sm:text-6xl */
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-black">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex justify-center mb-8 sm:mb-12">
-          <h2
-            className="scroll-animate skills-title opacity-0 text-5xl sm:text-6xl font-bold mb-2 tracking-wider text-white leading-tight"
-            style={{
-              fontFamily: "'Poppins', sans-serif",
-              fontWeight: 800,
-              letterSpacing: '-0.02em'
-            }}
-          >
-            Technical Proficiencies
-          </h2>
-        </div>
+         <div className="max-w-4xl px-4 sm:px-6 lg:px-0">
+              <div className="relative mb-8">
+                <h2 className="text-5xl sm:text-6xl lg:text-8xl font-extralight text-white/5 tracking-tighter absolute -top-6 sm:-top-8 left-0">
+                  TECH. STACK
+                </h2>
+                <h2 className="scroll-animate-right relative text-3xl sm:text-4xl lg:text-6xl text-white tracking-tight pt-6 sm:pt-8">
+                  <span className="font-light">Technical</span>
+                  <br />
+                  <span className="scroll-animate-left font-semibold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                    Proficiencies
+                  </span>
+                </h2>
+                <div className="mt-4 flex items-center gap-3">
+                  <div className="w-12 sm:w-16 h-px bg-white/20"></div>
+                  <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                  <div className="w-6 sm:w-8 h-px bg-white/20"></div>
+                </div>
+              </div>
+            </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8">
           {skills.map((skill, index) => (
