@@ -616,7 +616,7 @@ export default function HomePage() {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="relative pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden">
+      <section id="about" className="relative pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 lg:pb-20 overflow-hidden">
         {/* Custom CSS for scroll animations */}
         <style jsx>{`
           .scroll-animate {
